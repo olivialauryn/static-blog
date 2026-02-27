@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>STATIC BLOG WITH HUGO, GIT, &amp; AWS &middot; </title>
+        <meta name="description" content="Until now, the blog I use to document my projects has been hosted on WordPress. To cut down on the cost of running my blog (and to complete a cool project), I’ve made my blog a static website.
+Most websites we visit are dynamic websites, meaning that a web server generates the site with content that can change and be interacted with by users. Static websites are the opposite, they display the same content for every user and are shown exactly as they are written (usually using HTML).">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="STATIC BLOG WITH HUGO, GIT, &amp; AWS">
+<meta property="og:description" content="Until now, the blog I use to document my projects has been hosted on WordPress. To cut down on the cost of running my blog (and to complete a cool project), I’ve made my blog a static website.
+Most websites we visit are dynamic websites, meaning that a web server generates the site with content that can change and be interacted with by users. Static websites are the opposite, they display the same content for every user and are shown exactly as they are written (usually using HTML).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/static-blog/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">STATIC BLOG WITH HUGO, GIT, &amp; AWS</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-08-30" itemprop="datePublished">Mon, Aug 30, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Olivia Snowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p><img src="/static13.png" alt=""></p>
+<p>Until now, the blog I use to document my projects has been hosted on WordPress. To cut down on the cost of running my blog (and to complete a cool project), I’ve made my blog a static website.</p>
+<p>Most websites we visit are dynamic websites, meaning that a web server generates the site with content that can change and be interacted with by users. Static websites are the opposite, they display the same content for every user and are shown exactly as they are written (usually using HTML).</p>
+<p>Creating your static website does involve some coding, but all-in-all it can be easy. I used Hugo, Git, AWS Amplify, and AWS Route53 to create my static website.</p>
+<h4 id="hugo">Hugo</h4>
+<p>Hugo is an open-source static website generator. In a nutshell, you install Hugo on your machine and use it to create static website folders. You can select a website theme from Hugo and then add your posts to the static website’s folder on your computer. Hugo can be run with a few simple CLI commands, but you must also write your posts in the markdown language that Hugo uses.</p>
+<p>I used homebrew to install hugo on my MacBook, but you can find other ways to install Hugo on their <a href="https://gohugo.io/getting-started/installing">website</a></p>
+<p><strong>brew install hugo</strong></p>
+<p>To check that hugo has successfully installed, run <strong>hugo version</strong> in your terminal.
+<img src="/static1.png" alt="hugo version"></p>
+<p>Now that hugo is installed, you can create a static website using <strong>hugo new site <code>nameofsite</code></strong>.</p>
+<p>This will create a variety of folders for your static webpage.
+<img src="/static2.png" alt=""></p>
+<p>Before you begin adding content to your site, you must install a theme. There are a variety of themes to choose from on Hugo’s <a href="https://themes.gohugo.io/">webpage</a> but the more complex the theme, the more difficult it is to configure your site.</p>
+<p>The location of where you need to upload your posts/images varies depending on what theme you use. This can make getting your site up and running a little difficult. Themes do come with an “exampleSite” folder that you can reference for how to set up the folders of your static site, but there is some trial-and-error when creating your posts to see what loads correctly.</p>
+<p>To install your theme, Hugo recommends using Git-but for simplicity’s sake I navigated to my theme of choice (<a href="https://themes.gohugo.io/ghostwriter/">https://themes.gohugo.io/ghostwriter/</a>) on Hugo’s website and downloaded a .zip file of the theme. I then unzipped that theme in the /theme folder of my static website.</p>
+<p>Once your theme is installed, navigate to that theme’s folder and find the /exampleSite folder. From there-copy any folders under the example site’s /content folder you would like to use into your site’s /content folder. I wanted to use /page and /post.
+<img src="/static3.png" alt=""></p>
+<p>You’ll notice there is also a sample config file in the exampleSite. You can copy the content of the example config file into your site’s config.toml to add your theme’s information to your site.</p>
+<p>NOTE: My theme was originally unzipped as “ghostwriter-master” in the /theme folder, but after copying the example config into my site’s real one- I saw that the theme = “ghostwriter”. To make the config file find my theme, I renamed the theme folder from “ghostwriter-master” to “ghostwriter”.</p>
+<p>Further editing the config.toml file allows you to change the title, heading, and other options on your site.</p>
+<p>To test your static website locally, run <strong>hugo server -D</strong> in the root directory of your website then navigate to (http://localhost:1313/) in your browser. This allows you to see what your website will look like before you actually deploy it.</p>
+<p>To deploy your website run <strong>hugo</strong> in the root directory of your website. This generates a /public folder with all the necessary files for your static web page-which you will need later in the process of setting up your static website.</p>
+<h3 id="wordpress-to-hugo">WordPress to Hugo</h3>
+<p>Once you have created the folders for your static website with Hugo and set up a theme, you can begin adding posts. Since I was moving my blog from WordPress, I needed to transfer my existing posts from WordPress to Hugo to avoid having to rewrite all my posts from scratch.</p>
+<p>I used the ExitWP extension to convert my existing WordPress posts to markdown for me.
+First, download the extension using <strong>git clone <a href="https://github.com/wooni005/exitwp-for-hugo.git">https://github.com/wooni005/exitwp-for-hugo.git</a></strong> which creates a variety of folders.
+Next, on WordPress, I navigated to the export tool and chose to download just the posts.</p>
+<p><img src="/static4.png" alt=""></p>
+<p><img src="/static5.png" alt=""></p>
+<p>The posts export as .xml files, which I placed into the wordpress-xml folder the ExitWP extension created. A handful of dependencies are required to run the ExitWP extension. The commands to download these dependencies can be found on the extension’s Git <a href="https://github.com/wooni005/exitwp-for-hugo">page.</a></p>
+<p>On my Mac I ran: <strong>sudo pip install &ndash;upgrade -r pip_requirements.txt</strong></p>
+<p>Once the dependencies are installed, run <strong>./exitwp.py</strong> in the root directory of the extension to execute the python script that converts the WordPress posts to markdown. The converted files should show up in the extension’s /build folder.</p>
+<h3 id="writing-posts">Writing Posts</h3>
+<p>Although I converted posts from WordPress to markdown, a little tweaking on the converted posts was necessary. For example, I changed the extension of the posts to be “.md” instead of “.markdown” to match the post format from the example site. I also had to download all the photos in my posts from WordPress and store them in the /static folder of my site.</p>
+<p>NOTE: The example site of my theme had images stored in an /image folder under the main directory, but I discovered they only showed up on my site when I stored them in the /static folder instead-once again trial and error.</p>
+<p>Once my photos were downloaded into the correct folder, I had to open each post file and change the format of the image elements to point to the correct photo. For my blog the syntax was ![alternate text] (/photo name).</p>
+<p>When writing new posts using Hugo, you have to use markdown language to format your posts correctly. The syntax for markdown can be found on Hugo’s <a href="https://www.markdownguide.org/tools/hugo/">website.</a> and it&rsquo;s pretty similar to writing in HTML.</p>
+<p>You define the format of your post (like italics, bulleted lists, etc.) using markdown, but the actual style of your post and website is defined by your theme. You can edit that style by editing the config.toml file or the config files in your theme folder, but I chose to get the site working before making any style changes.</p>
+<h3 id="git">Git</h3>
+<p>Once the Hugo static website is set up on your machine, the next step is making the site available to the public. To do this, I set up a Git repository of the /public folder my Hugo site generated. I then used AWS Amplify to point to that repository and serve the website using an AWS Route 53 custom domain name.</p>
+<p>While you can place all the static site’s folders in the repo, the /public folder stores all the files for the public version of the website and adding anything more would be unnecessary.</p>
+<p>I have Git and the GitHub Desktop app installed on my machine. First I navigated to the /public folder of my website in the terminal and ran <strong>git init <code>name_of_repo</code></strong> and then <strong>git add .</strong></p>
+<p>These commands initialized a repo for the /public folder (and gave that repo a name) then added all the files in that folder to the repo. Now that the files are staged to be committed to the repository, I ran <strong>git commit</strong> and then <strong>git push</strong>.</p>
+<p>At this point, I navigated to my GitHub account and confirmed that the git repository was there with all the files under the site’s /public folder.</p>
+<h3 id="aws-amplify">AWS Amplify</h3>
+<p>Once the /public folder of the static website was placed into a public Git repo, I used AWS Amplify to host the website.</p>
+<p>AWS <a href="https://aws.amazon.com/amplify/">Amplify</a> allows you to host apps in the cloud using Amazon Web Services. While Amplify does offer a variety of complex services for things like machine learning and targeted campaigns, creating a static website using Amplify is pretty simple.</p>
+<p>You must have an AWS account to use Amplify and Route 53 (discussed later). Once you log in to your AWS account navigate to the “AWS Amplify” service.</p>
+<p><img src="/static6.png" alt=""></p>
+<p>In Amplify, select “New app” &gt; “Host web app”
+<img src="/static7.png" alt=""></p>
+<p>Select GitHub under “From your existing code” since you will be connecting the Git repo with the /public folder in it to Amplify. From there, you can select the repo you would like to connect to Amplify and the branch (in my case, it was just the main branch since I did not add more branches to the repo).
+Next, you can change the app name and the app’s settings which I kept the same. Finally, you review the contents of your app and then select “Deploy” to create it.</p>
+<p>Now in the AWS Amplify service, you should see your website as an app under “all apps”. If you click on your app you can watch the process as Amplify provisions, builds, deploys, and verifies it for you.</p>
+<p><img src="/static8.png" alt=""></p>
+<p>You can click on the link Amplify provides you under the picture of your app to visit your static webpage and make sure it looks like it should.</p>
+<h3 id="route-53">Route 53</h3>
+<p>The last step I took in configuring my static website was to add a custom domain name to my Amplify app using Route 53. The instructions to do so can be found <a href="https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-amazon-route-53.html">here</a>.</p>
+<p>Route 53 is a Domain Name System (DNS) service AWS provides. You can use Route 53 to route end users to your apps using custom, or “prettier” domain names.</p>
+<p>To use Route 53, first navigate to the Route 53 service in AWS. From there, you can view your registered domains. If you don’t have any, you can select the “Register Domain” button to do so-but the domain for my blog (osnowden.com) had already been registered.</p>
+<p><img src="/static9.png" alt=""></p>
+<p>Back in Amplify, select App Settings &gt; Domain Management</p>
+<p><img src="/static10.png" alt=""></p>
+<p>Then choose to “Add domain” and fill out your domain’s information.
+When I added my domain, it became stuck on the “Domain activation” step.</p>
+<p><img src="/static11.png" alt=""></p>
+<p>To fix this, I had to add two records to my domain in Route 53 so that it would resolve the Amplify app correctly. The instructions to do so can be found under the Actions &gt; View DNS Records button on Amplify’s “Domain management” page.</p>
+<p>To add the records, I navigated to Route 53 &gt; “Hosted zones” and selected my domain to view it’s records. Selecting “Create records” allowed me to then add the two necessary records.</p>
+<p>I first added an A record with the format <strong>@.osnowden.com A appid.cloudfront.net</strong> and a CNAME record with the format <strong><a href="http://www.osnowden.com">www.osnowden.com</a> CNAME appid.cloudfront.net</strong></p>
+<p>The appid of my Amplify app I copied from the URL at the bottom of the “Domain management” page in Amplify. The URL should be in the format: https://master.<strong>appid</strong>.amplifyapp.com</p>
+<p><img src="/static12.png" alt=""></p>
+<p>Once the records were added, my static website was then accessible from <a href="http://www.osnowden.com">www.osnowden.com</a>!</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=STATIC%20BLOG%20WITH%20HUGO%2c%20GIT%2c%20%26%20AWS&url=%2fstatic-blog%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

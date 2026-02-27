@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HOME-LAB SETUP &middot; </title>
+        <meta name="description" content="For the home-lab, we used the following devices:
+ Ubiquiti EdgeRouter X Ubiquiti UniFi 24 port switch 2 VMware ESXi Hosts A Synology NAS DS420j (Diskstation)  Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="HOME-LAB SETUP">
+<meta property="og:description" content="For the home-lab, we used the following devices:
+ Ubiquiti EdgeRouter X Ubiquiti UniFi 24 port switch 2 VMware ESXi Hosts A Synology NAS DS420j (Diskstation)  Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/home-lab-setup/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">HOME-LAB SETUP</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-06-12" itemprop="datePublished">Fri, Jun 12, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>For the home-lab, we used the following devices:</p>
+<ul>
+<li>Ubiquiti EdgeRouter X</li>
+<li>Ubiquiti UniFi 24 port switch</li>
+<li>2 VMware ESXi Hosts</li>
+<li>A Synology NAS DS420j (Diskstation)</li>
+</ul>
+<p>Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.</p>
+<p><img src="/home-cable.png" alt="Patch Cable"></p>
+<p>The first step in building the home-lab was finding a way to connect our home network to the garage. The lab needed to be in it&rsquo;s own subnet so that anything done in the lab (or anything that goes <em>wrong</em> in the lab) doesn&rsquo;t bleed over into the home network. To extend the home network to the garage, we used two Ubiquiti UniFi access points. One was connected to the home network and then placed on top of the house. The other was put on the garage, and the two access points were aligned.</p>
+<p>The AP on the garage was plugged into port 4 on the Ubiquiti EdgeRouter X, where a new 192.168.100.x/24 network was set. The router connected to the switch, which in turn connected to the two ESXi hosts and the Diskstation storage device.</p>
+<p><img src="/home-topology.png" alt=""></p>
+<p>The Edge Router X doubles as a DHCP server, and once it gave the ESXi hosts and the Diskstation their own IP address the home-lab was ready for new projects.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/home-lab/">home-lab</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=HOME-LAB%20SETUP&url=%2fhome-lab-setup%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

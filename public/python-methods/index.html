@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PYTHON METHODS &amp; CLASSES &middot; </title>
+        <meta name="description" content="Once you get past your first &ldquo;Hello World&rdquo; Python script, it&rsquo;s good to learn how to use Python methods and classes. Methods and **functions **are a self-contained block of code that can be reused over and over. There are built-in functions that beginners in Python may already be familiar with, like print() and sum(). A user can also define a function (called a user-defined function) that executes a task they need done in their script multiple times.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="PYTHON METHODS &amp; CLASSES">
+<meta property="og:description" content="Once you get past your first &ldquo;Hello World&rdquo; Python script, it&rsquo;s good to learn how to use Python methods and classes. Methods and **functions **are a self-contained block of code that can be reused over and over. There are built-in functions that beginners in Python may already be familiar with, like print() and sum(). A user can also define a function (called a user-defined function) that executes a task they need done in their script multiple times.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/python-methods/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">PYTHON METHODS &amp; CLASSES</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-01-18" itemprop="datePublished">Mon, Jan 18, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Once you get past your first &ldquo;Hello World&rdquo; Python script, it&rsquo;s good to learn how to use Python methods and classes. <strong>Methods</strong> and **functions **are a self-contained block of code that can be reused over and over. There are built-in functions that beginners in Python may already be familiar with, like print() and sum(). A user can also define a function (called a user-defined function) that executes a task they need done in their script multiple times. This is especially useful because it keeps the user from having to write that same chunk of code repeatedly. Variables that exist outside of the function can be passed to the function as <strong>parameters</strong>, but they are not required. The format of defining your own function is below:</p>
+<pre><code>&lt;code&gt;def function_name(parameters):
+    body_of_code
+    return variable_to_be_returned&lt;/code&gt;
+</code></pre>
+<p>The <strong>return statement</strong> of a user-defined function basically provides the &ldquo;output&rdquo; of that function. Since functions are self-contained, if you want a variable returned from what task the function carried out you need to specify that variable in a return statement. Functions return a value or a group of values, while methods generally do not.</p>
+<p>Python is an object oriented language, meaning that you can model real-world things through programming. An <strong>object</strong> represents an entity in the real world that has a unique state, identity, and behaviors (such as a phone, a button, or a person). <strong>Classes</strong> define objects of the same type. For example, a type of class could be a car. However, each individual car would be an object with their own characteristics (color, fuel type, etc.).</p>
+<p><img src="/python-1.jpeg" alt=""></p>
+<p>To create an object in a class you use <strong>constructors</strong>, which are a type of method. In Python the constructor is <em>init</em>(self). This is the format to define a class:</p>
+<pre><code>&lt;code&gt;class name_of_class:
+    def ___init___(self):
+         class_body&lt;/code&gt;
+</code></pre>
+<p>Class, objects, and constructors can be difficult to wrap your mind around initially, but they are incredibly useful. To help explain, below is an example  that creates unique Python User accounts for an organization:</p>
+<p>The goal is to create an object-oriented class (PythonUsers) for generating new users. This class should have the following attributes: **<em>first_name, last_name, age, username and current</em> password_**.  When defining the class, it should a method that generates a password for the user based on the first and last initials followed by the current time stamp.</p>
+<p>First, we define the PythonUsers class, and in the constructor method <em>init</em>() we include the variables each user object will need (including the &ldquo;self&rdquo; keyword, it is required). Inside the class, we call the constructor method to assign each of those variables to become a class variable. Notice that the password variable is not included here, since a separate method will create the passwords.</p>
+<pre><code>&lt;code&gt;#PythonUsers class
+class PythonUsers:
+    def __init__(self, first_name, last_name, age, username):
+        self.firstName = first_name
+        self.lastName = last_name
+        self.age = age
+        self.username = username&lt;/code&gt;
+</code></pre>
+<p>Once the basic setup of the class is finished, we define a method that generates the password. We import the time module so that we can include the time stamps, and then compile the password using the index of the first letters of the user&rsquo;s first/last names (0) and the time module mentioned previously. Notice that since we are still defining an element of the class, the &ldquo;self&rdquo; keyword is used in the password method.</p>
+<pre><code>&lt;code&gt;#Method that generates a password for the user
+    def passwordGen(self):
+        import time
+        ts = time.time()
+        password = self.firstName[0] + self.lastName[0] + str(ts)
+        self.password = password&lt;/code&gt;
+</code></pre>
+<p>Now that we have a class defined to create users, we need a method (<strong><em>calcAverageAge</em></strong>) that accepts a list of users as a parameter and returns the average of their ages.</p>
+<pre><code>&lt;code&gt;#Method that calculates average age of the students
+def calcAverageAge(sum, n):
+    average=sum/((n + 1) - 1)
+    return average&lt;/code&gt;
+</code></pre>
+<p>Next, we need a method (<strong>validateAge</strong>) that validates the age of a user. For the purposes of this example, assume a user should be at least 15 years old and not more than 45 years old. If a user enters a date of birth that does not meet the above requirement, the method should keep prompting the user until a valid age is entered.</p>
+<pre><code>&lt;code&gt;#Method that validates user's age
+def validateAge(age):
+    while age &gt; 45 or age &lt; 15:
+        age = int(input(&quot;Please enter the age of user &quot; + str(i + 1) + &quot; [15-45]: &quot;))
+    return age&lt;/code&gt;
+</code></pre>
+<p>Using the class and methods implemented above, we can complete our script. For each user, we should request for the user to provide the <strong><em>first_name, last_name, username <em><strong>and</strong></em> age</em></strong>. Remember we need to validate each users age (using the**_ validateAge _**method). We then print to the screen the list of users including their full name, age and default password. Once the users are created and validated, we can we can compute the average age of users using the **_calcAverage _**method and print that out.</p>
+<pre><code>&lt;code&gt;#Main program that accepts integer from user and creates a Python user
+sum=0
+userList=[]
+n=int(input(&quot;Please enter the number of users: &quot;))
+for i in range(n):
+    first_name=input(&quot;Please enter the name of user &quot; + str(i+1) + &quot;: &quot;)
+    last_name=input(&quot;Please enter the last name of user &quot; + str(i+1) + &quot;: &quot;)
+    username=input(&quot;Please enter the username of user &quot; + str(i+1) + &quot;: &quot;)
+    age=int(input(&quot;Please enter the age of user &quot; + str(i+1) + &quot; [15-45]: &quot;))
+#Validate the user's age using validateAge
+    age = validateAge(age)
+    sum = age + sum
+    object=PythonUser(first_name, last_name, age, username)
+    object.passwordGen()
+    userList.append(object)
+#Print name, age, and password - outside the loop, separate loop for printing
+for i in range(len(userList)):
+    fullname = userList[i].firstName + &quot;,&quot; + userList[i].lastName
+    age = userList[i].age
+    newpassword= userList[i].password
+    print(fullname + &quot;\t&quot; + str(age) + &quot;\t&quot; + str(newpassword))
+#Compute average age of user with calcAverage
+avg = calcAverageAge(sum, n)
+print(&quot;Average Age of users: &quot; + str(avg))&lt;/code&gt;
+</code></pre>
+<p>Here we used methods and classes to generate users, but the same concepts can be applied to a variety of situations where a script can be used to automate a task. Overall, methods/functions and classes are useful aspects of Python that can make writing a script easier-and save you a lot of typing.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=PYTHON%20METHODS%20%26%20CLASSES&url=%2fpython-methods%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

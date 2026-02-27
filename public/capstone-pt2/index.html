@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DETECTING OBJECTS WITH CODE - Capstone Pt.2 &middot; </title>
+        <meta name="description" content="In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.
+I&rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&rsquo;m studying self-driving cars, I&rsquo;d like to see if using biased data to train an object detection script affects the model&rsquo;s performance.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="DETECTING OBJECTS WITH CODE - Capstone Pt.2">
+<meta property="og:description" content="In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.
+I&rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&rsquo;m studying self-driving cars, I&rsquo;d like to see if using biased data to train an object detection script affects the model&rsquo;s performance.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/capstone-pt2/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">DETECTING OBJECTS WITH CODE - Capstone Pt.2</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-02-17" itemprop="datePublished">Wed, Feb 17, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.</p>
+<p>I&rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&rsquo;m studying self-driving cars, I&rsquo;d like to see if using biased data to train an object detection script affects the model&rsquo;s performance. To do this, I&rsquo;m using a training dataset of clear, bright road images to train a neural network and then testing that script with corrupted images of roads. If the model can&rsquo;t recognize obstacles in images that are corrupted, then the biased training dataset did have an affect on the model.</p>
+<p>Its safe to assume that yes-using biased datasets to train a neural network (NN) will cause the network to function poorly.  Its important for NNs to be trained with large, diverse datasets so that they can prepare for unpredictable real-world scenarios. This point has been made in almost any piece of work pertaining to NN. That being said, I&rsquo;d like to use Tensorflow to create a NN and then test the affects of bias myself. Tensorflow allows for testing and training accuracy of a model to be quantified easily, and you can use python modules to make nifty little graphs that show results.</p>
+<p>Its also important to mention that the software of real self-driving cars, like those from Waymo or Audi, are not opensource (no surprise there). So any model created by a novice Tensorflow user like myself is a far cry from the object-detection systems in actual self-driving cars. That being said, the point here is to test how biased training data could affect an object detection system and practice using Tensorflow along the way.</p>
+<h4 id="script-breakdown">Script Breakdown</h4>
+<p>The object detection script I wrote using Tensorflow consisted of two datasets (one to train the model and one to test the model), a convolutional neural network (CNN), and a diagram to display the accuracy of the model. The sections of the script are:</p>
+<ul>
+<li>import modules</li>
+<li>create training dataset</li>
+<li>create testing dataset</li>
+<li>standardize the data</li>
+<li>create + compile the model</li>
+<li>data augmentation</li>
+<li>model summary</li>
+<li>train the model</li>
+<li>visualize results</li>
+</ul>
+<p>More robust object detection scripts often use bounding boxes (little boxes that surround an item and usually name it) to recognize unique objects in an image. However, my script doesn&rsquo;t implement bounding boxes and instead classifies images as either having an obstacle, or not.</p>
+<h4 id="import-modules--datasets">Import Modules + Datasets</h4>
+<p>Since I&rsquo;m using python to write my script, the first step is to import all the modules needed:</p>
+<p><code>import os   import PIL   import PIL.Image   import tensorflow as tf   import numpy as np   from tensorflow import keras   import matplotlib.pyplot as plt   from tensorflow.keras import layers   from tensorflow.keras.models import Sequential</code></p>
+<p>With that out of the way, I next create my datasets. There are a few ways to approach datasets for your own ML script. Here I will only be discussing datasets of images since thats what I&rsquo;m familiar with, but other types of datasets do exist. I ended up using Kaggle to write my script, which allows files to be imported from your computer and added to a dataset. The path to that dataset is stored in Kaggle, and can be copied/pasted into your script to be accessed. You can also use Tensorflow&rsquo;s Google Storage Bucket option to store and reference a dataset, or you can use one of Tensorflow&rsquo;s own datasets, among other options.</p>
+<p>In most ML scripts, you only use one dataset, and use a percentage of it to train the model and the leftover percentage to test (typically 80%train/20%test).  If you train and test a model on the same dataset without it splitting into training/testing sections, accuracy metrics will say the model is 100% accurate since you aren&rsquo;t testing with new data (I learned this the hard way). For my model however, I wanted one testing dataset and one training dataset that could be corrupted later on.</p>
+<p>To create the testing and training datasets I used Tensorflow&rsquo;s &ldquo;image_dataset_from_directory&rdquo; option. I first set the image&rsquo;s height and width so they would all be a uniform size. I also set the batch size, which will I&rsquo;ll explain later:</p>
+<p><code>batch_size = 32   img_height = 180   img_width = 180</code></p>
+<p>When creating the datasets, you first specify the location of your dataset (in this case, the path that Kaggle provided me). Then, <code>seed</code> provides a random seed for shuffling and transformation. The <code>validation_split</code> represents the percentage of data you want to use to train the model and test the model. Here, a <code>validation_split</code> value of 0.2 means that 80% of the training dataset will be used to train the model and 20% of the testing dataset will be used to test (at this point in time the corrupt images have not been added to the testing dataset, so the two datasets are identical and the split should be used). Finally I then set the subset name, the image sizes, and the batch size.</p>
+<p><code>train_ds = tf.keras.preprocessing.image_dataset_from_directory(   &quot;../input/training-dataset&quot;,   seed=123,   validation_split=0.20,   subset=&quot;training&quot;,   image_size=(img_height, img_width),   batch_size=batch_size)</code></p>
+<p><code>val_ds = tf.keras.preprocessing.image_dataset_from_directory(   &quot;../input/testing-dataset&quot;,   seed=123,   subset=&quot;validation&quot;,   validation_split=0.20,   image_size=(img_height, img_width),   batch_size=batch_size)</code></p>
+<p>One thing to consider when using data to train a NN is how the model will learn &ldquo;what is what&rdquo;. An untrained model can&rsquo;t make its own conclusions, and piping random images into a model won&rsquo;t teach it anything. Data should be split into classes of whatever you want to model to learn to differentiate. In my case, I had two classes: &ldquo;obstacle&rdquo; and &ldquo;noobstacle&rdquo;.  In my datasets I included two folders, one for each class, and inside each folder I placed the respective images. I included a line in my script to double-check the classes were being read-in correctly:</p>
+<p><code>class_names = train_ds.class_names   print(class_names)</code></p>
+<p><img src="/capstone-6.png" alt="Classes from my datasets"></p>
+<h4 id="standardize-creating-and-compiling-the-model">Standardize, Creating and Compiling the Model</h4>
+<p>Now that the datasets and classes of data are working, the model itself can be created. Like in my first Capstone post, I will be using the Sequential model, relu activation function, and Adam optimizer. However, for this script I have created a convolutional neural network (CNN).</p>
+<p>A CNN is a class of deep neural networks, and are commonly used to process images since they resemble the organization of an animal&rsquo;s visual cortex. CNNs take in tensors of shapes, in this case the image height, width, and an RGB value of 3 (color). These aspects are then assigned importance through weights and biases in order for the model to differentiate one from another.</p>
+<p>In Tensorflow, you create a NN through Conv2D and MaxPooling2D layers that each output a tensor of shape. The densest (largest) layers are placed at the top, and the layers shrink as you go down. The number of output channels for each Conv2D layer is controlled by the first argument of that layer. At the end of the model, Flatten and dense layers perform classification by &ldquo;unrolling&rdquo; the 3D images into 1D and using what the NN has learned to classify.</p>
+<p>To create the CNN the data should first be normalized. This has to do with the mathematics of ML, but this normalization layer basically helps standardize the data.</p>
+<p><code>normalization_layer = layers.experimental.preprocessing.Rescaling(1./255)</code></p>
+<p>Next, I defined the model layers itself:</p>
+<p><code>num_classes = 2</code></p>
+<p><code>model = Sequential([   layers.experimental.preprocessing.Rescaling(1./255, input_shape=(img_height, img_width, 3)),   layers.Conv2D(16, 3, padding='same', activation='relu'),   layers.MaxPooling2D(),   layers.Conv2D(32, 3, padding='same', activation='relu'),   layers.MaxPooling2D(),   layers.Conv2D(64, 3, padding='same', activation='relu'),   layers.MaxPooling2D(),   layers.Dropout(0.2),   layers.Flatten(),   layers.Dense(128, activation='relu'),   layers.Dense(num_classes)   ])</code></p>
+<p>In my CNN I added a Dropout layer. This is one of the ways I improved the performance of my model. A Dropout layer randomly sets input to 0 at each layer while training. The inputs that aren&rsquo;t set to 0 are scaled up by 1. This helps prevent overfitting, which occurs when a model conforms too tightly to training data and doesn&rsquo;t learn enough to make predictions on new data.</p>
+<p>model.summary() helps to visualize what the layers of the CNN look like:</p>
+<p><img src="/capstone-7.png" alt="Output from model.summary"></p>
+<p>To compile the model I used model.compile:</p>
+<p><code>model.compile(optimizer='adam',   loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),   metrics=['accuracy'])</code></p>
+<p>In addition to a Dropout layer, I also used data augmentation to reduce overfitting. Data augmentation makes multiple different images from one training image, by flipping or zooming in on different sections of the image. This helps add in more training data without having to manually add pictures to my datasets.</p>
+<p><code>data_augmentation = keras.Sequential(   [   layers.experimental.preprocessing.RandomFlip(&quot;horizontal&quot;,   input_shape=(img_height,   img_width,   3)),   layers.experimental.preprocessing.RandomRotation(0.1),   layers.experimental.preprocessing.RandomZoom(0.1),   ]   )</code></p>
+<p><img src="/capstone-8.png" alt="Examples of data augmentation on one training image"></p>
+<h4 id="train-and-visualize">Train and Visualize</h4>
+<p>Training and testing your model with Tensorflow can be done in a few lines of code:</p>
+<p><code>epochs=27   history = model.fit(   train_ds,   validation_data=val_ds,   epochs=epochs   )</code></p>
+<p>You&rsquo;ll notice that here epochs are set to 27. I explained back/forward propagation in my first Capstone post, but epochs are basically the number of times your NN loops through its layers to learn. Batch size, which we set earlier, defines how much of your dataset is put into your model at a time. This is a good way to save computation resources, so you aren&rsquo;t trying to put a dataset of potentially millions of images into your model at a time.</p>
+<p>However, if you set the number of epochs too low, the NN won&rsquo;t learn enough. If there are too many epochs, the NN can become too familiar with only the training data and overfit when tested. Unfortunately, there is no easy formula to determine how many epochs to use. I just monitored the performance of my NN with different numbers of epochs, and settled on 27.</p>
+<p><img src="/capstone-9.png" alt="One epoch from my model"></p>
+<p>What can help you determine the number of epochs to use, along with check your model&rsquo;s accuracy, is visualizing your results.  In my script I used matplotlib.pyplot to make a graph.</p>
+<p><code>acc = history.history['accuracy']   val_acc = history.history['val_accuracy']</code></p>
+<p><code>loss = history.history['loss']   val_loss = history.history['val_loss']</code></p>
+<p><code>epochs_range = range(epochs)</code></p>
+<p><code>plt.figure(figsize=(8, 8))   plt.subplot(1, 2, 1)   plt.plot(epochs_range, acc, label='Training Accuracy')   plt.plot(epochs_range, val_acc, label='Testing Accuracy')   plt.legend(loc='lower right')   plt.title('Training and Testing Accuracy')</code></p>
+<p><code>plt.subplot(1, 2, 2)   plt.plot(epochs_range, loss, label='Training Loss')   plt.plot(epochs_range, val_loss, label='Testing Loss')   plt.legend(loc='upper right')   plt.title('Training and Testing Loss')   plt.show()</code></p>
+<p><img src="/capstone-10.png" alt="Graph from my model"></p>
+<h4 id="wrapping-it-up">Wrapping it Up</h4>
+<p>In this case, the two most important metrics are the training accuracy and the testing accuracy. The training accuracy for my model was nearly 100%, while the testing accuracy was 72-80% (this varied between runs of my script). To put it into perspective, 50% accuracy would be guessing-since the model has only two options to choose from (obstacle or no obstacle).  I can live with 72-80% accuracy, although the large difference between my training and testing accuracy means that my model is overfitting. To help fight overfitting, I most likely need to add more images to my dataset (most image datasets have 10,000+ images, mine have 200) or change the type of activation function/optimizer I am using.</p>
+<p>From the graph, you can also see that the training loss (prediction error) drastically lowers over epochs, while testing loss doesn&rsquo;t significantly lower. This is another result of overfitting, although my model does work much better with the inclusion of data augmentation and dropout.</p>
+<p>The next step is to edit my model slightly to be more robust, then begin corrupting testing images and experimenting. For now, I have a moderately accurate object detection CNN that would almost certainly cause a real self-driving car to crash, but it works for me.</p>
+<p>The full script can be found on <a href="https://github.com/olivialauryn/capstone-object-detection">my Github</a> or on<a href="https://www.kaggle.com/oliviasnowden/obstacle-detection"> Kaggle</a>.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/ai/">AI</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=DETECTING%20OBJECTS%20WITH%20CODE%20-%20Capstone%20Pt.2&url=%2fcapstone-pt2%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

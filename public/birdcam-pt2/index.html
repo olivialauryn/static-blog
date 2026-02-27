@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BIRDCAM Pt. 2 &middot; </title>
+        <meta name="description" content="After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.
+First, I put the Raspbian Lite OS on a mini SD card.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="BIRDCAM Pt. 2">
+<meta property="og:description" content="After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.
+First, I put the Raspbian Lite OS on a mini SD card.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/birdcam-pt2/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">BIRDCAM Pt. 2</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-05-20" itemprop="datePublished">Wed, May 20, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.</p>
+<p>First, I put the Raspbian Lite OS on a mini SD card. Once the OS was finished downloading, I removed the card from my computer and inserted it again. On my computer&rsquo;s terminal I entered the SD card&rsquo;s boot directory (found with <strong>df -h</strong>) and created a new file to configure the wifi information for my home network.</p>
+<pre><code>cd &lt;em&gt;card's-boot-directory&lt;/em&gt;
+vim wpa_supplicant.conf
+</code></pre>
+<p>In the file I added:</p>
+<pre><code>   country=US
+   ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev 
+   update_config=1
+   network={
+    ssid=&quot;&lt;em&gt;Network's-name&lt;/em&gt;&quot;
+    psk=&quot;&lt;em&gt;Network's-password&lt;/em&gt;&quot;
+    key_mgmt=WPA-PSK
+   }
+</code></pre>
+<p>This allowed the Raspberry Pi Zero to automatically know my home network&rsquo;s wifi info and be able to connect without having to attach a keyboard and enter the information manually.</p>
+<p>The final step in creating a headless setup on the Zero is to enable ssh so that you are able to connect to the Pi through secure shell.  To do this, I created an empty file in the boot directory of the SD card named ssh.</p>
+<pre><code>cd &lt;em&gt;card's-boot-directory &lt;/em&gt;
+touch ssh 
+</code></pre>
+<p>Then, after plugging in the Raspberry Pi Zero and finding it&rsquo;s IP on my network, I was able to ssh into it and set up the camera.</p>
+<p>To take photos with the Zero I used a Raspberry Pi camera and an adapter for the Zero&rsquo;s tiny camera port. Once the adapter was snapped into the camera on one end and the Zero on the other (with the circuitry facing the back of the Zero) I configured the camera and tested it. To do so I entered the configuration program for the Raspberry Pi:</p>
+<pre><code>sudo raspi-config 
+</code></pre>
+<p>I then enabled the camera under &ldquo;Interfacing Options&rdquo;. To test that the camera works, I ran the **raspistill **command:</p>
+<pre><code>raspistill -v -o &lt;em&gt;name&lt;/em&gt;.jpg 
+</code></pre>
+<p>Once the camera was attached and working, I created a directory to store the photos using **mkdir **(this should be the same directory used to mount the NFS share, so that the photos are mapped to the NFS server).</p>
+<p>I wanted to configure the camera to take photos every half hour from 8am-5pm. I did this by writing a simple bash script to use <strong>raspistill</strong> to take photos and give them a unique name of the date/time.</p>
+<pre><code>vim &lt;em&gt;script&lt;/em&gt;.sh
+#!/bin/bash
+DATE=$(date +&quot;%Y-%m-%d_%H%M&quot;)
+raspistill -o /&lt;em&gt;path-to-photos&lt;/em&gt;/$DATE.jpg
+</code></pre>
+<p>I then made that script executable:</p>
+<pre><code>chmod +x &lt;em&gt;script&lt;/em&gt;.sh 
+</code></pre>
+<p>Finally, I created two cron jobs, one to take a photo every hour and another to take a photo every half hour. <strong>cronab -e</strong> will place you in the cron editor.</p>
+<pre><code>crontab -e
+0 8,9,10,11,12,13,14,15,16,17 * * * ./&lt;em&gt;script&lt;/em&gt;.sh
+30 8,9,10,11,12,13,14,15,16,17 * * * ./&lt;em&gt;script&lt;/em&gt;.sh
+</code></pre>
+<p>Once I added the jobs I wanted to schedule I entered Ctrl+X, Y, Enter to exit. To double check the jobs, I viewed them with <strong>crontab -l.</strong> Now, the Raspberry Pi Zero W is able to take multiple photos a day, and store them on the NFS server through the shared folder.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/docker/">docker</a>, 
+                <a href="/tags/raspberrypi/">raspberrypi</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=BIRDCAM%20Pt.%202&url=%2fbirdcam-pt2%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>COGNITIVE SERVICES-SENTIMENT IN TEXT &middot; </title>
+        <meta name="description" content="As I continue to study artificial intelligence I&rsquo;ve been able to practice using Microsoft&rsquo;s cognitive services. I was first introduced to cognitive services during the virtual Microsoft Build 2020 conference, and I&rsquo;ve enjoyed getting to use them for myself. Since creating and training your own artificial intelligence/machine learning software is all kinds of complicated, cognitive services allow anyone to use AI in their projects without having to write much code. All you have to do is call the service that you want, and it will do the hard work for you.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="COGNITIVE SERVICES-SENTIMENT IN TEXT">
+<meta property="og:description" content="As I continue to study artificial intelligence I&rsquo;ve been able to practice using Microsoft&rsquo;s cognitive services. I was first introduced to cognitive services during the virtual Microsoft Build 2020 conference, and I&rsquo;ve enjoyed getting to use them for myself. Since creating and training your own artificial intelligence/machine learning software is all kinds of complicated, cognitive services allow anyone to use AI in their projects without having to write much code. All you have to do is call the service that you want, and it will do the hard work for you.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/cognitive-services-text/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">COGNITIVE SERVICES-SENTIMENT IN TEXT</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-06-24" itemprop="datePublished">Wed, Jun 24, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>As I continue to study artificial intelligence I&rsquo;ve been able to practice using Microsoft&rsquo;s cognitive services. I was first introduced to cognitive services during the virtual Microsoft Build 2020 conference, and I&rsquo;ve enjoyed getting to use them for myself. Since creating and training your own artificial intelligence/machine learning software is all kinds of complicated, cognitive services allow anyone to use AI in their projects without having to write much code.  All you have to do is call the service that you want, and it will do the hard work for you.</p>
+<p>The first step in using cognitive services is to deploy the appropriate <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/welcome#:~:text=The%20catalog%20of%20services%20within,%2C%20Web%20Search%2C%20and%20Decision.">resource</a> in Azure. In the case of text analytics you&rsquo;ll deploy the text analytics resource, but if you are wanting to use speech cognitive services you&rsquo;d deploy a speech resource, etc. When deploying resources in Azure the basic steps are:</p>
+<ul>
+<li>Sign into you Azure account</li>
+<li>Select &ldquo;create a new resource&rdquo;</li>
+<li>Search for the resource you want and click &ldquo;create&rdquo;</li>
+<li>Give the resource a unique name, assign it to a subscription, a pricing tier, and a resource group. Here you can create a new resource group to place the resource in if you would like.</li>
+</ul>
+<p><img src="/cognitive-1.png" alt=""></p>
+<p>Cognitive services require that you have a key (found under the &ldquo;keys and endpoints&rdquo; menu of a resource) and that you know which location your resource is deployed in. This allows you to use your resource to talk to Microsoft&rsquo;s cognitive service through API (application programming interface) calls or SKDs (software development kits).</p>
+<p>The text analytics service allows you to detect the language of written text, key phrases, sentiment, and key elements that state intent called &ldquo;entities&rdquo;.</p>
+<p>I used text analytics to detect sentiment in text, although the process is similar for any action using text analytics. The text analytics landing page &ldquo;https://[location].dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0&rdquo; (where  [location] is the region you deployed your text analytics resource)  allows you to easily use POST methods to call the Text Analytics API. I selected the &ldquo;sentiment&rdquo; tab where you choose your region and enter the key of your text analytics resource. This information is included in the header section of the request so that it can be made from the right place.</p>
+<p>The request body itself consists of a document array. Each document has a language, id and text property that defines the text the text analytics service will be analyzing. You can pass documents up to 5,000 characters, and a single request can have 1,000 documents.</p>
+<p>Once you enter the documents you want and give them the appropriate <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/language-support?tabs=sentiment-analysis">language</a> property, a unique id and some text you can see the complete http request that will be sent to the Text Analytics API.</p>
+<p><img src="/cognitive-2.png" alt=""></p>
+<p>Once you send the request you&rsquo;re given a response that lists the id of each document followed by their score. When detecting sentiment the Text Analytics API scores the text from 0-1. 0 being very negative sentiment and 1 being very positive.  Below you can see how my three documents were ranked, the first being very positive, the second being neutral, and the third being very negative.</p>
+<p><img src="/cognitive-3.png" alt=""></p>
+<p>This particular service would be useful analyzing customer feedback or comments on a project. It&rsquo;s a very powerful way to examine text without having to create your own AI or write any code (beyond creating your documents).  All of the methods offered by the Text Analytics API could be helpful time-savers in a business and serve as a great intro to working with Microsoft&rsquo;s cognitive services.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/ai/">AI</a>, 
+                <a href="/tags/cloud/">cloud</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=COGNITIVE%20SERVICES-SENTIMENT%20IN%20TEXT&url=%2fcognitive-services-text%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

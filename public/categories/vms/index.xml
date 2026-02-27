@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VMs on Olivia Snowden&#39;s Blog</title>
+    <link>/categories/vms/</link>
+    <description>Recent content in VMs on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 08 Jul 2020 18:47:39 +0000</lastBuildDate><atom:link href="/categories/vms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TERRAFORM IN vSPHERE</title>
+      <link>/terraform-in-vsphere/</link>
+      <pubDate>Wed, 08 Jul 2020 18:47:39 +0000</pubDate>
+      
+      <guid>/terraform-in-vsphere/</guid>
+      <description>Introduction to Terraform Terraform by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
+In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have.</description>
+    </item>
+    
+    <item>
+      <title>vSPHERE INTRODUCTION</title>
+      <link>/vmware-and-vsphere/</link>
+      <pubDate>Wed, 01 Jul 2020 16:29:16 +0000</pubDate>
+      
+      <guid>/vmware-and-vsphere/</guid>
+      <description>Practicing installing/updating/building machines is much more fun when you aren&amp;rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&amp;rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.</description>
+    </item>
+    
+  </channel>
+</rss>

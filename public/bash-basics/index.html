@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BASH BASICS &middot; </title>
+        <meta name="description" content="Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.
+If you are using a Linux machine, you can write and execute Bash scripts in terminal.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="BASH BASICS">
+<meta property="og:description" content="Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.
+If you are using a Linux machine, you can write and execute Bash scripts in terminal.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/bash-basics/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">BASH BASICS</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-10-03" itemprop="datePublished">Sat, Oct 3, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.</p>
+<p>If you are using a Linux machine, you can write and execute Bash scripts in terminal. Through the terminal you can use your preferred text editor (nano, vim, etc.) to write your script and save it with the extension .sh. If you are using a MacBook, like me, you can use the terminal or Visual Studio Code to write Bash scripts- just save them with the .bash extension.</p>
+<p>I love Linux, and I love Bash scripting, but it can be hard to learn. Here are some basics.</p>
+<h4 id="set-up-execution-and-redirection">Set-up, Execution, and Redirection</h4>
+<p>The Bash shell scripting language allows for loops, selection statements, input/output, and functions like other programming languages.  Each shell script starts with a comment that states which interpreter to use to run the script. For Bash, begin each file with the shebang: <code>#!/bin/bash</code>.</p>
+<p>To execute a Bash script, you must first change the permissions of the file using <code>chmod 755 _script_name_</code>. Then, you can execute a script by running <code>./script_name</code> on the command line or by hitting the play button in Visual Studio Code.</p>
+<p>Sometimes it can be useful to redirect Bash input/output. <code>script_name&gt; filename</code> will redirect output to a file, <code>script_name &gt;&gt; filename</code> will append the output of the bash script to an existing file, and <code>script_name&lt; filename</code> redirects a file as input to a script.</p>
+<h4 id="variables-and-math">Variables and Math</h4>
+<p>The body of a Bash script can consist of variables, commands, and arithmetic operations. Variables are a basic building block of Bash scripts. <code>VARIABLE=VALUE</code> is the basic assignment statement, notice there are no spaces. To call a variable in a Bash script, use<code> $VARIABLE</code>. The &ldquo;print statement&rdquo; for Bash scripting is echo. If you want to output something to the user use <code>echo &quot;statement&quot;/$VARIABLE</code>.</p>
+<p>If you want to assign an interpreted value with spaces to a variable, you must include double quotes around the value. If you want to interpret the value with spaces literally, use single quotes. Below is an example of a Bash script and its output that shows the difference between single and double quotes.</p>
+<p><img src="/bash-1.png" alt=""></p>
+<p><img src="/bash-2.png" alt=""></p>
+<p>Bash interprets everything as strings, meaning that if you want to do math-you need to explicitly tell Bash. To do that, include an arithmetic operation in <code>$(()) </code>or place <code>let</code> before it. Bash can&rsquo;t perform arithmetic on decimals or fractions. Below is a list of arithmetic operators bash can process:</p>
+<p><img src="/bash-3.png" alt=""></p>
+<h4 id="read-and-parameters">Read and Parameters</h4>
+<p>Getting input from users in Bash is a little different. Anywhere that you want to insert a user&rsquo;s input into a Bash script place $1, $2, $3, etc. Input is accepted as parameters, and the parameters are placed in those spots in the order they are given. If the number of parameters given exceeds the number of spots for them in the script, the extra parameters are ignored.</p>
+<p>If you want to provide the user a prompt, and assign their parameters names, you can use the read statement in your script: <code>read -p &quot;message&quot; var1 var 2 ...</code></p>
+<p>Sometimes, you want to use metadata about parameters in your script. Bellow is a list of helpful symbols that you can use in your scripts:</p>
+<ul>
+<li>$parameter: calls a parameter</li>
+<li>shift: rotates all parameters down one position, used in loops</li>
+<li>$0: returns the name of the script</li>
+<li>$$: returns the PID of the script</li>
+<li>$#: returns the number of parameters the user supplied</li>
+<li>$@: returns a list of all parameters</li>
+</ul>
+<p>Example script:</p>
+<p><img src="/bash-4.png" alt=""></p>
+<p><img src="/bash-5.png" alt=""></p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/bash/">bash</a>, 
+                <a href="/tags/linux/">linux</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=BASH%20BASICS&url=%2fbash-basics%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BIRDCAM Pt. 3 &middot; </title>
+        <meta name="description" content="The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.
+sudo apt install docker sudo apt install docker-compose  Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file. On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="BIRDCAM Pt. 3">
+<meta property="og:description" content="The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.
+sudo apt install docker sudo apt install docker-compose  Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file. On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/birdcam-pt3/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">BIRDCAM Pt. 3</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-05-22" itemprop="datePublished">Fri, May 22, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.</p>
+<pre><code>sudo apt install docker 
+sudo apt install docker-compose 
+</code></pre>
+<p>Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file.  On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos.  At this point, I had already configured an NFS server and made this Pi an NFS client via a shared folder. To create the photo gallery, I first signed into my personal Docker account. I then added two subdirectories to my home directory on the Pi: a config directory, and a thumbs directory.</p>
+<pre><code>sudo docker login
+sudo mkdir config 
+sudo mkdir thumbs  
+</code></pre>
+<p>I left these directories empty, since in this case they only need to exist for the YAML file used to configure Docker Compose. I then created the YAML file named docker-compose.yml and included the following content:</p>
+<pre><code>version: &quot;2.1&quot;
+services:
+  photoshow:
+    image: linuxserver/photoshow
+    container_name: photoshow
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Louisville
+    volumes:
+      - /config:/config
+      - /&lt;em&gt;photos-path-on-server&lt;/em&gt;:&lt;em&gt;/photos-path-on-client&lt;/em&gt;
+      - /thumbs:/thumbs
+    ports:
+      - 80:80
+    restart: unless-stopped
+</code></pre>
+<p>I configured a number of things in the YAML file :</p>
+<ul>
+<li>Image: Since I wanted to use photoshow to host my bird photos, I included here the exact name of the image as it appears on Docker Hub</li>
+<li>TZ: I put the appropriate timezone to match my location</li>
+<li>Volumes: Here I set three volumes. On each, the path on the left of the colon is the path on the server, the path on the right is the path within the container. In this case, the config and thumbs directories are the same for both (they&rsquo;re empty). To map the path to the photos however, on the left of the colon I put the location of the shared folder on the NFS server. On the left is the location of the shared folder on this Raspberry Pi.</li>
+</ul>
+<p>Finally, I started Docker Compose. The <strong>-d</strong> option allows Compose to run the photoshow image in the background, so that the command line is free.</p>
+<pre><code>sudo docker-compose up -d
+</code></pre>
+<p>To view the photo gallery, all I have to do is enter the IP of the Pi running the image followed by &ldquo;:80&rdquo; since the YAML file configured port 80 to run the website. There, after making an account, I can view new bird photos everyday.</p>
+<p><img src="/birdcam-1.png" alt="The gallery of my bird photos "></p>
+<p>For this project, one Raspberry Pi Zero W was outfitted with a camera scheduled to take photos all day long. The Zero mapped those photos to a shared folder with an NFS server, which in turn shared those photos with another Pi running Docker&rsquo;s photoshow image.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/docker/">docker</a>, 
+                <a href="/tags/raspberrypi/">raspberrypi</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=BIRDCAM%20Pt.%203&url=%2fbirdcam-pt3%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

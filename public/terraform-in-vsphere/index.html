@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TERRAFORM IN vSPHERE &middot; </title>
+        <meta name="description" content="Introduction to Terraform Terraform by Hashicorp is a &ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
+In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &ldquo;smart&rdquo; enough to know how many more machines to create in context of what you already have.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="TERRAFORM IN vSPHERE">
+<meta property="og:description" content="Introduction to Terraform Terraform by Hashicorp is a &ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
+In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &ldquo;smart&rdquo; enough to know how many more machines to create in context of what you already have.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/terraform-in-vsphere/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">TERRAFORM IN vSPHERE</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-07-08" itemprop="datePublished">Wed, Jul 8, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <h4 id="introduction-to-terraform">Introduction to Terraform</h4>
+<p><a href="https://www.terraform.io/intro/index.html">Terraform</a> by Hashicorp is a &ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the <code>.tf </code>extension) and Terraform builds that infrastructure for you.  The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.</p>
+<p>In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &ldquo;smart&rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.</p>
+<p>A helpful feature of Terraform is the ability to plan your infrastructure before it is constructed. There are four basic terraform commands: <code>terraform init</code>, <code>terraform plan</code>, <code>terraform apply</code>, and <code>terraform destroy</code>. <code>terraform plan</code> is what allows you to see what resources are being created/destroyed based on your configuration file. If everything checks out, <code>terraform apply</code> builds your infrastructure and reports on what was created. <code>terraform destroy</code>, you guessed it, easily destroys the resources defined in your configuration file and reports on what was destroyed.</p>
+<p>The ability to create cross-platform resources is due to Terraform&rsquo;s <a href="https://www.terraform.io/docs/providers/index.html">many providers</a> that support API interactions between their platform and Terraform. As you&rsquo;ll see below, once you define the provider of your choice in your configuration file you run <code>terraform init</code> to initialize the directory containing your Terraform config files. If you already have files created running <code>terraform init</code> will push any changes made since the command was run last.</p>
+<h4 id="using-terraform-to-build-a-vm">Using Terraform to build a VM</h4>
+<p>I used Terraform to create and destroy a VM in the vSphere environment I built in my home computer lab. VMware vSphere is a Terraform provider, and an example configuration file along with information on how to create complex resources can be found on <a href="https://www.terraform.io/docs/providers/vsphere/index.html">Terraform&rsquo;s website.</a>  However, I used a configuration file found on <a href="https://github.com/diodonfrost/terraform-vsphere-examples">GitHub </a> that worked well for practicing Terraform. These steps assume that you have a vCenter server set up and at least one functioning VM template.</p>
+<p><strong>STEP 1 Download Terraform</strong></p>
+<p><img src="/terraform-1.png" alt=""></p>
+<p>Depending on the OS of your machine, you can easily download Terraform in a number of <a href="https://www.terraform.io/downloads.html">ways</a>.  Since I use a MacBook and have homebrew installed I ran <code>brew install terraform</code> to download the single binary file. Adding <code>--version</code> to the name of a package will allow you to check 1) that the package actually downloaded and 2)  the version you have installed. I quickly ran <code>terraform --version </code>to check that the file installed correctly and noted the version.</p>
+<p><img src="/terraform-2.png" alt=""></p>
+<p><strong>STEP 2 Create a configuration file</strong></p>
+<p><img src="/terraform-3.png" alt=""></p>
+<p>Create a file and give it a <code>.tf</code> extension. The first few lines of the configuration file should define the provider you choose to use and list the login information for your account there. In my configuration file I included the username/password of my VMware account and the ip address of my vCenter server. This allows Terraform to be able to &ldquo;log in&rdquo; and create the resources for me. I also included an <code>allow_unverified_ssl</code> line, since my vSphere environment doesn&rsquo;t have a certificate signed by any official authority and I didn&rsquo;t want Terraform to throw a security error. At this point you can run <code>terraform init</code> to check that your configuration file successfully uses Terraform to reach the provider you chose and initialize.</p>
+<p><img src="/terraform-4.png" alt=""></p>
+<p>After you define the provider you wish to use, you list the information Terraform requires to work in vCenter. You can write your configuration file in JSON but I used the Hashicorp Configuration Language (HCL), which is easily readable and developed by Hashicorp especially for Terraform. There are a wide variety of options that you can list to create a VM, all are explained on Terraform&rsquo;s website, but the configuration file I used had a few simple data sources:</p>
+<ul>
+<li>vsphere_datacenter: the name of the datacenter where your VMs live</li>
+<li>vsphere_resource_pool: the name of the resource pool your VMs are under (if you do not have one put <em>your_clustername</em>/Resources in place of the name)</li>
+<li>vsphere_host: the IP address of the host where you would like your new VM(s) deployed</li>
+<li>vsphere_datastore: the name of the datastore where you store your VM ISO files (the storage device connected to your VMs)</li>
+<li>vshpere_network: the name of the network you would like your new VM(s) in</li>
+<li>vsphere_virtual_machine: the name of the VM template that you would like to use to create your new machine(s)</li>
+</ul>
+<p>You can see each data source is defined by the &ldquo;data&rdquo; keyword, the official name of the source, and then a friendly name. You then list the name of the appropriate feature in your vSphere environment and a datacenter_id. The datacenter_id is the managed object ID of the your datacenter. The line <code>datacenter_id = data.vsphere_datacenter.dc.id</code> stays the same for each data source since it points to the same place (your datacenter). It is basically a query for the ID of your unique datacenter, and the query looks different for older versions of Terraform.</p>
+<p><img src="/terraform-5.png" alt=""></p>
+<p>Once you define your data sources, you need to create a resource and call on those data sources to build it. Each resource begins with the &ldquo;resource&rdquo; keyword&quot; and the official name/friendly name. You then give the VM a name, the CPU/memory specifications and a list of managed object IDs. These lines are similar to the datacenter_id variable but instead of calling on your datacenter they call on your: datastore, host, resource pool, VM template, and network. The basic format is:</p>
+<pre><code>&lt;em&gt;source&lt;/em&gt;_id = data.&lt;em&gt;officialname&lt;/em&gt;.&lt;em&gt;friendlyname&lt;/em&gt;.id 
+</code></pre>
+<p>The only exceptions are the two variables that come from your VM template. Instead of a <code>.id</code> they end with a<code> ._nameofvariable_</code> since they weren&rsquo;t explicitly listed as data sources. Then list the specifications of the disk of your new VM.</p>
+<p><img src="/terraform-6.png" alt=""></p>
+<p>Finally, you give the new VM you want created from the template a unique configuration. Since I was using an Ubuntu template, I customized using <code>linux_options</code>.  I also gave the VM a new IP address/mask/DNS/gateway so that it would be able to connect to the internet as soon as it was created.</p>
+<p>**STEP 3 Terraform plan **</p>
+<p>Once you have your configuration file written, you can run <code>terraform plan</code>. This allows you to check for errors in the file and fix them, and review the infrastructure you outlined to make sure it what you want. I wrote my config file in Visual Studio Code, and ran terraform commands from the terminal there.</p>
+<p><img src="/terraform-7.png" alt=""></p>
+<p>After <code>terraform plan</code> outlines the infrastructure you included in the configuration file it lists how many resources you plan to add/chance/destroy.</p>
+<p><img src="/terraform-8.png" alt=""></p>
+<p>**STEP 4 Terraform apply **</p>
+<p>If <code>terraform plan </code>doesn&rsquo;t throw any errors and shows the infrastructure you want, run <code>terraform apply</code> to build your resources.</p>
+<p><img src="/terraform-9.png" alt=""></p>
+<p>You will be asked to confirm that you want the resources built, this point is your last chance to go back and edit your configuration file before the resources are created.</p>
+<p><img src="/terraform-10.png" alt=""></p>
+<p>As terraform apply was run I was able to watch it execute tasks in my vSphere client. Once it was finished, I had a new VM &ldquo;vm-one&rdquo;!</p>
+<p><img src="/terraform-11.png" alt=""></p>
+<p>**STEP 5 Terraform destroy **</p>
+<p>Once you are finished with the resources you created, you can run <code>terraform destroy</code> to easily tear down the machines defined in your configuration file.</p>
+<p><img src="/terraform-12.png" alt=""></p>
+<p><img src="/terraform-13.png" alt=""></p>
+<p>After I ran <code>terraform destroy</code> I went back to my vSphere Client and saw the vm-one was successfully removed.</p>
+<p><img src="/terraform-14.png" alt=""></p>
+<p>There are a wide variety of ways you could write the configuration file to build a VM with Terraform, the file I used is only one option. In addition to VMware vSphere, Terraform can be used to create/maintain/destroy resources in Azure, AWS, and more.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/home-lab/">home-lab</a>, 
+                <a href="/tags/linux/">linux</a>, 
+                <a href="/tags/vms/">vms</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=TERRAFORM%20IN%20vSPHERE&url=%2fterraform-in-vsphere%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

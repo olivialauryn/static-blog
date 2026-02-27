@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BirdCam on Olivia Snowden&#39;s Blog</title>
+    <link>/categories/birdcam/</link>
+    <description>Recent content in BirdCam on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 22 May 2020 08:00:00 +0000</lastBuildDate><atom:link href="/categories/birdcam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BIRDCAM Pt. 3</title>
+      <link>/birdcam-pt3/</link>
+      <pubDate>Fri, 22 May 2020 08:00:00 +0000</pubDate>
+      
+      <guid>/birdcam-pt3/</guid>
+      <description>The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.
+sudo apt install docker sudo apt install docker-compose  Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file. On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos.</description>
+    </item>
+    
+    <item>
+      <title>BIRDCAM Pt. 2</title>
+      <link>/birdcam-pt2/</link>
+      <pubDate>Wed, 20 May 2020 08:00:00 +0000</pubDate>
+      
+      <guid>/birdcam-pt2/</guid>
+      <description>After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.
+First, I put the Raspbian Lite OS on a mini SD card.</description>
+    </item>
+    
+    <item>
+      <title>BIRDCAM Pt. 1</title>
+      <link>/birdcam-pt1/</link>
+      <pubDate>Mon, 18 May 2020 17:38:06 +0000</pubDate>
+      
+      <guid>/birdcam-pt1/</guid>
+      <description>In this project I wanted to set up a camera to take pictures of pretty birds at a feeder, and then view those photos online. To do so I used three Raspberry Pis, NFS, and Docker.
+One Raspberry pi served as the NFS server, while the other two were NFS clients. One of the clients was a Raspberry Pi zero w outfitted with a camera to take the pictures and store them on the NFS server.</description>
+    </item>
+    
+  </channel>
+</rss>

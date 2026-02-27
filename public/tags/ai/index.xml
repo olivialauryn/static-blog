@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Olivia Snowden&#39;s Blog</title>
+    <link>/tags/ai/</link>
+    <description>Recent content in AI on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Feb 2021 22:04:21 +0000</lastBuildDate><atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DETECTING OBJECTS WITH CODE - Capstone Pt.2</title>
+      <link>/capstone-pt2/</link>
+      <pubDate>Wed, 17 Feb 2021 22:04:21 +0000</pubDate>
+      
+      <guid>/capstone-pt2/</guid>
+      <description>In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.
+I&amp;rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&amp;rsquo;m studying self-driving cars, I&amp;rsquo;d like to see if using biased data to train an object detection script affects the model&amp;rsquo;s performance.</description>
+    </item>
+    
+    <item>
+      <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.1</title>
+      <link>/capstone-pt1/</link>
+      <pubDate>Wed, 11 Nov 2020 21:48:27 +0000</pubDate>
+      
+      <guid>/capstone-pt1/</guid>
+      <description>Over the next year, I will be completing a research project exploring how biased training data effects the machine learning algorithm of self-driving cars. This project, which I&amp;rsquo;ll detail in a later post, involves deep neural networks (DNNs), computer vision, linear algebra, and more. Is this project a massive undertaking? Yes. Will that stop me? Absolutely not. Let&amp;rsquo;s get started.
+Neural Network Basics First, what is artificial intelligence (AI)? AI is a field of computer science pertaining to programming computers so that they demonstrate human-like intelligence.</description>
+    </item>
+    
+    <item>
+      <title>COGNITIVE SERVICES-TRANSLATING SPEECH</title>
+      <link>/cognitive-services-translation/</link>
+      <pubDate>Thu, 25 Jun 2020 16:41:36 +0000</pubDate>
+      
+      <guid>/cognitive-services-translation/</guid>
+      <description>In addition to text analysis Microsoft&amp;rsquo;s cognitive services allow you to convert speech to text, text to speech, and even translate between spoken languages. This powerful AI service is surprisingly easy to use. I was able to speak into my computers microphone and receive a text translation in one language or a spoken translation in multiple languages &amp;ndash;all with the code provided on Microsoft Learn. You have the option to work with the speech SDK (software development kit) in C# or python, I choose python.</description>
+    </item>
+    
+    <item>
+      <title>COGNITIVE SERVICES-SENTIMENT IN TEXT</title>
+      <link>/cognitive-services-text/</link>
+      <pubDate>Wed, 24 Jun 2020 18:24:34 +0000</pubDate>
+      
+      <guid>/cognitive-services-text/</guid>
+      <description>As I continue to study artificial intelligence I&amp;rsquo;ve been able to practice using Microsoft&amp;rsquo;s cognitive services. I was first introduced to cognitive services during the virtual Microsoft Build 2020 conference, and I&amp;rsquo;ve enjoyed getting to use them for myself. Since creating and training your own artificial intelligence/machine learning software is all kinds of complicated, cognitive services allow anyone to use AI in their projects without having to write much code. All you have to do is call the service that you want, and it will do the hard work for you.</description>
+    </item>
+    
+  </channel>
+</rss>

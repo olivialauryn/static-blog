@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BIRDCAM Pt. 1 &middot; </title>
+        <meta name="description" content="In this project I wanted to set up a camera to take pictures of pretty birds at a feeder, and then view those photos online. To do so I used three Raspberry Pis, NFS, and Docker.
+One Raspberry pi served as the NFS server, while the other two were NFS clients. One of the clients was a Raspberry Pi zero w outfitted with a camera to take the pictures and store them on the NFS server.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="BIRDCAM Pt. 1">
+<meta property="og:description" content="In this project I wanted to set up a camera to take pictures of pretty birds at a feeder, and then view those photos online. To do so I used three Raspberry Pis, NFS, and Docker.
+One Raspberry pi served as the NFS server, while the other two were NFS clients. One of the clients was a Raspberry Pi zero w outfitted with a camera to take the pictures and store them on the NFS server.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/birdcam-pt1/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">BIRDCAM Pt. 1</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-05-18" itemprop="datePublished">Mon, May 18, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>In this project I wanted to set up a camera to take pictures of pretty birds at a feeder, and then view those photos online.  To do so I used three Raspberry Pis, NFS, and Docker.</p>
+<p>One Raspberry pi served as the NFS server, while the other two were NFS clients. One of the clients was a Raspberry Pi zero w outfitted with a camera to take the pictures and store them on the NFS server. The other client hosted the docker container linuxserver/photoshow that accessed the NFS server to display the photos in a gallery.</p>
+<p>Since I wanted to take multiple photos a day, dedicating one Pi to storing the photos freed up the other Pis to do their respective jobs. This was done by making one Pi an NFS (Network File System) server. NFS allows client computers to access files over a network as if those files were stored locally. First, I configured one Pi as the NFS server. To do so, I first made sure all packages were updated on the Raspbian OS.</p>
+<pre><code>sudo apt-get update 
+sudo apt-get upgrade 
+</code></pre>
+<p>Then, I installed the nfs-kernel-server package that builds the protocol to handle the server side of NFS.</p>
+<pre><code>sudo apt-get install nfs-kernel-server -y
+</code></pre>
+<p>Next I gave the pi user/group ownership of the folder I want shared (the folder for the bird photos). I also used the <strong>find</strong> command to change the permissions of the directories and files in that folder.</p>
+<pre><code>sudo chown -R pi:pi &lt;em&gt;/path-to-folder&lt;/em&gt;
+sudo find &lt;em&gt;/path-to-folder&lt;/em&gt; -type d -exec chmod 755 {} \;
+sudo find &lt;em&gt;/path-to-folder&lt;/em&gt; -type f -exec chmod 644 {} \;
+</code></pre>
+<p>To allow the NFS protocol to know what directories to share, we need to include that path in the /etc/exports file. In addition to the path,  I included a variety of options:</p>
+<pre><code>/&lt;em&gt;path-to-folder&lt;/em&gt; *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
+</code></pre>
+<ul>
+<li>*: allow all IPs to access this share, you can also include specific IPs</li>
+<li>rw: allow reading/writing</li>
+<li>all_squash: maps uids and gids to an anonymous user</li>
+<li>insecure: allows clients that do not use a reserved NFS port</li>
+<li>async: allows the NFS server to improve performance if the server crashes, even if that causes data to be corrupted</li>
+<li>no_subtree_check: disables subtree checking, improving reliability of NFS</li>
+<li>anonuid: this is the UID of the pi user</li>
+<li>anongid: this is the GID of the pi user</li>
+</ul>
+<p>Once the Pi with the NFS server was set up, I configured the other Raspberry Pis to be clients. On each Pi, I first installed NFS tools, and created a virtual folder to serve as a mount-point to the NFS share. The location of the folder doesn&rsquo;t matter-as long as you remember the path to it.</p>
+<pre><code>sudo apt-get install nfs-common -y
+sudo mkdir -p &lt;em&gt;/path-to-folder&lt;/em&gt;
+</code></pre>
+<p>Like on the NFS server, I also changed the permissions of the mount point to the pi user and group (or the user&rsquo;s user/group name).</p>
+<pre><code>sudo chown -R pi:pi &lt;em&gt;/path-to-folder&lt;/em&gt;
+</code></pre>
+<p>Next, mount the NFS share to the mount-point.  First, name the IP of the NFS server and then the path to the shared folder on the NFS server. Then name the path to the shared folder on the client.</p>
+<pre><code>sudo mount &lt;em&gt;ip-of-NFS-server:path-on-server path-on-client&lt;/em&gt;
+</code></pre>
+<p>Edit the /etc/fstab file to include the mount and permissions so that the NFS share will automatically mount when your machine boots. One done editing the fstab file, enter Ctrl+x, Y, Enter to save and exit.</p>
+<pre><code>sudo nano /etc/fstab
+&lt;em&gt;ip-of-NFS-server:path-on-server path-on-client&lt;/em&gt; nfs rw 0 0 
+</code></pre>
+<p>Now, one Raspberry Pi is an NFS server and the other two are connected to it via a shared folder. This allows the Pi with the camera to store the photos it takes on the share, and the Pi running the photo gallery container to access those photos, all without taking up any storage on the other two Pis.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/docker/">docker</a>, 
+                <a href="/tags/raspberrypi/">raspberrypi</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=BIRDCAM%20Pt.%201&url=%2fbirdcam-pt1%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

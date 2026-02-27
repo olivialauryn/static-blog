@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Olivia Snowden&#39;s Blog</title>
+    <link>/tags/automation/</link>
+    <description>Recent content in automation on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON</title>
+      <link>/replace-json-values/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/replace-json-values/</guid>
+      <description>In this post:
+  Intro
+  JSON File
+  CSV File
+  Python Script
+  Writing the Python Script
+  I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.</description>
+    </item>
+    
+  </channel>
+</rss>

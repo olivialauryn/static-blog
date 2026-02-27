@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Olivia Snowden&#39;s Blog</title>
+    <link>/categories/networking/</link>
+    <description>Recent content in Networking on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 12 Jun 2020 18:58:24 +0000</lastBuildDate><atom:link href="/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HOME-LAB SETUP</title>
+      <link>/home-lab-setup/</link>
+      <pubDate>Fri, 12 Jun 2020 18:58:24 +0000</pubDate>
+      
+      <guid>/home-lab-setup/</guid>
+      <description>For the home-lab, we used the following devices:
+ Ubiquiti EdgeRouter X Ubiquiti UniFi 24 port switch 2 VMware ESXi Hosts A Synology NAS DS420j (Diskstation)  Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.</description>
+    </item>
+    
+  </channel>
+</rss>

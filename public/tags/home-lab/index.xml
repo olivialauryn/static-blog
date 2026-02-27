@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>home-lab on Olivia Snowden&#39;s Blog</title>
+    <link>/tags/home-lab/</link>
+    <description>Recent content in home-lab on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 17 Jul 2020 00:02:29 +0000</lastBuildDate><atom:link href="/tags/home-lab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RASPI KUBERNETES CLUSTER WITH RANCHER</title>
+      <link>/raspberry-pi-kubernetes/</link>
+      <pubDate>Fri, 17 Jul 2020 00:02:29 +0000</pubDate>
+      
+      <guid>/raspberry-pi-kubernetes/</guid>
+      <description>Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.
+K3S is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB.</description>
+    </item>
+    
+    <item>
+      <title>TERRAFORM IN vSPHERE</title>
+      <link>/terraform-in-vsphere/</link>
+      <pubDate>Wed, 08 Jul 2020 18:47:39 +0000</pubDate>
+      
+      <guid>/terraform-in-vsphere/</guid>
+      <description>Introduction to Terraform Terraform by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
+In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have.</description>
+    </item>
+    
+    <item>
+      <title>vSPHERE INTRODUCTION</title>
+      <link>/vmware-and-vsphere/</link>
+      <pubDate>Wed, 01 Jul 2020 16:29:16 +0000</pubDate>
+      
+      <guid>/vmware-and-vsphere/</guid>
+      <description>Practicing installing/updating/building machines is much more fun when you aren&amp;rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&amp;rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.</description>
+    </item>
+    
+    <item>
+      <title>ARCH LINUX INSTALL</title>
+      <link>/arch-linux-install/</link>
+      <pubDate>Wed, 17 Jun 2020 19:24:25 +0000</pubDate>
+      
+      <guid>/arch-linux-install/</guid>
+      <description>Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy.</description>
+    </item>
+    
+    <item>
+      <title>HOME-LAB SETUP</title>
+      <link>/home-lab-setup/</link>
+      <pubDate>Fri, 12 Jun 2020 18:58:24 +0000</pubDate>
+      
+      <guid>/home-lab-setup/</guid>
+      <description>For the home-lab, we used the following devices:
+ Ubiquiti EdgeRouter X Ubiquiti UniFi 24 port switch 2 VMware ESXi Hosts A Synology NAS DS420j (Diskstation)  Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.</description>
+    </item>
+    
+  </channel>
+</rss>

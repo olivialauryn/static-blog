@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RASPI KUBERNETES CLUSTER WITH RANCHER &middot; </title>
+        <meta name="description" content="Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.
+K3S is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="RASPI KUBERNETES CLUSTER WITH RANCHER">
+<meta property="og:description" content="Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.
+K3S is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/raspberry-pi-kubernetes/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">RASPI KUBERNETES CLUSTER WITH RANCHER</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-07-17" itemprop="datePublished">Fri, Jul 17, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.</p>
+<p><a href="https://k3s.io/">K3S</a> is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB. K3S is ideal for Raspberry Pis, since traditionally building a Kubernetes cluster on Pis could be too much for them to handle.  In addition to K3S this is what I used to build a simple Kubernetes cluster in my home lab:</p>
+<ul>
+<li>3 Raspberry Pi 4s</li>
+<li><a href="https://www.amazon.com/GeeekPi-Raspberry-Cluster-Cooling-Heatsink/dp/B07MW3GM1T/ref=asc_df_B07MW3GM1T/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=416652333997&amp;hvpos=&amp;hvnetw=g&amp;hvrand=18339680216412398047&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9058015&amp;hvtargid=pla-831212700454&amp;psc=1&amp;tag=&amp;ref=&amp;adgrpid=100759324064&amp;hvpone=&amp;hvptwo=&amp;hvadid=416652333997&amp;hvpos=&amp;hvnetw=g&amp;hvrand=18339680216412398047&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9058015&amp;hvtargid=pla-831212700454">GeekPi Raspberry Pi Cluster Case w/Heat Sinks and Fans </a></li>
+<li>3 power cables and a power supply</li>
+<li>3 patch cables and a switch connected to a DNS &amp; router</li>
+<li>3 miniSD cards and a <a href="https://www.canakit.com/mini-micro-sd-usb-reader.html">CanaKit MicroSD USB Reader </a></li>
+</ul>
+<p>A Kubernetes cluster runs by placing containers into groups called <em>pods</em> that run on nodes. A node can be a virtual or physical machine. Each cluster has a master node and at least one worker node that it reports to it. I had 3 Pis to use, so in my cluster I built one master node and two worker nodes. kubectl is the Kubernetes command-line tool that you can use to run commands against a cluster. When building this cluster I used a few kubectl commands to check my progress, but they can be used for a lot more.</p>
+<h4 id="step-1-build-case-optional">STEP 1: Build case (optional)</h4>
+<p>I got a case, which is basically a rack, to safely store the 3 Pis for the cluster. The first step was building the case, which consisted of screwing each Raspberry Pi to a base and stacking them one on top of the other. In between each Pi was a fan connected to the Pi below it to provide air flow, and I made sure to place heat sinks on the CPU, RAM and LAN of each Pi. The cooling equipment is probably unnecessary for this small project, but it will be good to have for a more CPU intense project in the future.</p>
+<p><img src="/raspberry-1.jpeg" alt=""></p>
+<h4 id="step-2-set-up-the-raspberry-pis">STEP 2: Set up the Raspberry Pis</h4>
+<p>Next, each Pi will need an SD card with an OS on it. They&rsquo;ll also need to be connected to the internet with a static IP and have SSH abilities. You can go about this any way you want, but I chose to install Raspberry Pi OS 64 bit, a beta version of the new Pi OS, and configure the Pis to be headless.</p>
+<p>I used a laptop running Linux Mint to put the OSs onto the SD cards. This involved downloading the OS and the app image of balenaEtcher onto the laptop and then putting the little SD cards in a USB with a MicroSD card adapter. Once plugged into the laptop, I used balenaEtcher to flash Raspberry Pi OS (64 bit) onto each card.</p>
+<p><img src="/raspberry-2.png" alt=""></p>
+<p>Once done I configured the SD cards so that the Pis would be headless (automatically boot with SSH ability and an IP).</p>
+<p>After the SD cards are in the Pis, plug each Pi into a power supply and connected each one to the switch using patch cables.</p>
+<p><img src="/raspberry-3.jpeg" alt=""></p>
+<p>Since I configured the Pis to be headless, I checked the leased IPs on the router in the lab to find the IPs of each Pi and set that IP to be static.</p>
+<p><img src="/raspberry-4.png" alt=""></p>
+<h4 id="step-3-change-hostnames-optional">STEP 3: Change hostnames (optional)</h4>
+<p>Building a Kubernetes cluster on Raspberry Pis involves a lot of SSH-ing, so to make it easier you can rename each Pi. I used the same names I gave each Pi on the router (kmaster, knode1, and knode2). On my PC (a MacBook) I ran <code>sudo nano /etc/host</code> to enter the hosts file. In the file I added three new lines, each containing the IP of a node and its friendly name.</p>
+<p>I then SSH-ed into each Pi one by one and changed its name in the hostname file by running <code>sudo nano /etc/hostname</code>.</p>
+<p><img src="/raspberry-5.png" alt=""></p>
+<p>I then entered the /etc/host file like before to remove any instance of the old hostname and replace it with the new one.</p>
+<p><img src="/raspberry-6.png" alt=""></p>
+<p>Once those files are edited, reboot the Pis.</p>
+<h4 id="step-4-create-the-master-node">STEP 4: Create the master node</h4>
+<p>SSH into the Pi you designated to be the master node.</p>
+<p>First, enter the /boot/cmdline.txt file to edit it (<code>sudo nano /boot/cmdline.txt</code>). At the end of the line in the file, add <code>cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory</code> . Save the file and reboot.</p>
+<p>To install K3S on the master node, run the following command which uses curl to download K3S from its website:</p>
+<pre><code>&lt;code&gt;curl -sfL &lt;a href=&quot;http://get.k3s.io/&quot;&gt;http://get.k3s.io&lt;/a&gt; | sh -&lt;/code&gt;
+</code></pre>
+<p>To make sure the K3S installed correctly, and to check its status, use:</p>
+<p><code>sudo systemctl status k3s</code></p>
+<p><img src="/raspberry-7.png" alt=""></p>
+<p>You should see that you have the k3s service running on your Pi. To check your nodes, run:</p>
+<p><code>sudo k3s kubectl get nodes </code></p>
+<p>At this point, you should only see your master node up and running.</p>
+<p><img src="/raspberry-8.png" alt=""></p>
+<p>To add agent, or worker, nodes to your master node you need the token the master node generates. To get it:</p>
+<p><code>sudo cat /var/lib/rancher/k3s/server/node-token</code></p>
+<p>Copy the token and save it for later.</p>
+<h4 id="step-5-create-agent-nodes">STEP 5: Create agent nodes</h4>
+<p>To create a worker node, SSH into the Raspberry Pi and run:</p>
+<p><code>curl -sfL http://get.k3s.io | K3S_URL=https://_your_master_node_IP_:643 K3S_TOKEN=_token_ sh - </code></p>
+<p>There are a few variations of commands to set up a worker node using K3S, the one listed above instals K3S and then passes along the IP/Port of the master node and its token so that the workers know who to report to.</p>
+<p>Repeat the above command for each Pi designated to be a worker node.</p>
+<h4 id="step-6-install-k3s-on-pc">STEP 6: Install K3S on PC</h4>
+<p>It can be inconvenient to SSH into the Kubernetes master node to work on your cluster. You can install K3S onto your PC by first logging on to the master node and copying the configuration file found by running <code>sudo cat /etc/rancher/k3s/k3s.yaml</code> .</p>
+<p>On your PC, make a directory for the config file ( <code>mkdir ~/.kube</code>) and paste the file into it. Before saving, change the &ldquo;https://localhost:6443&rdquo; line in the file to &ldquo;https://kmaster:6443&rdquo;.</p>
+<p>Then install kubectl on your PC, simple instructions for your PC&rsquo;s OS can be found <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">here</a>.</p>
+<p>Finally, run <code>kubectl get nodes</code> on your PC to see the kubernetes cluster you have created.</p>
+<p><img src="/raspberry-9.png" alt=""></p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/raspberrypi/">raspberrypi</a>, 
+                <a href="/tags/home-lab/">home-lab</a>, 
+                <a href="/tags/docker/">docker</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=RASPI%20KUBERNETES%20CLUSTER%20WITH%20RANCHER&url=%2fraspberry-pi-kubernetes%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

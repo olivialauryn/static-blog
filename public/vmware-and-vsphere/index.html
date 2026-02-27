@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>vSPHERE INTRODUCTION &middot; </title>
+        <meta name="description" content="Practicing installing/updating/building machines is much more fun when you aren&rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="vSPHERE INTRODUCTION">
+<meta property="og:description" content="Practicing installing/updating/building machines is much more fun when you aren&rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/vmware-and-vsphere/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">vSPHERE INTRODUCTION</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2020-07-01" itemprop="datePublished">Wed, Jul 1, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">osnowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Practicing installing/updating/building machines is much more fun when you aren&rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.</p>
+<p>In our lab we have two ESXi hosts that share a common storage device- a Synology NAS DS420j (Diskstation). We made the two hosts into a cluster, which means they act as one device and balance the load of the VMs between each other. Below you can see the two ESXi hosts sitting on top of the Diskstation in the lab.</p>
+<p><img src="/vmware-1.jpeg" alt=""></p>
+<p>vSphere provides a variety of components to manage your VMs. Within the lab I created a VM to run vCenter, which allows you manage your server on a single console and create a virtual infrastructure. The vSphere Client is an interface that allows you to connect to the vCenter server from anywhere using the IP address of the VM running vCenter. On this page you can view your clusters, VMs, virtual networks, storage devices and manage all your resources.</p>
+<p>Once you have a VM created, you can make a template of it to &ldquo;copy and paste&rdquo; an OS and avoid having to do an install for each VM you want. You&rsquo;ll need to wipe out any unique information (IP, MAC address, etc.) in a VM before clicking &ldquo;make a template&rdquo; on vSphere, so that you don&rsquo;t end up with multiple identical machines. Fortunately instructions for making a template of almost any OS can easily be found online.</p>
+<p>You also have the option to contain VMs in a virtual network that allows the VMs to talk to each other but prevents them from accessing any outside network. A virtual network could be useful for a cybersecurity project or simulating a quarantined network.</p>
+<p>Cloud computing and containers are new solutions to avoid having to create and manage VMs yourself, but working with VMware has been a good learning experience. I&rsquo;ve previously used VMware Horizon Client and VMware Fusion in my IT classes but using my VMs as a sandbox for my projects has been a useful way to implement VMware on our home lab.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/home-lab/">home-lab</a>, 
+                <a href="/tags/vms/">vms</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=vSPHERE%20INTRODUCTION&url=%2fvmware-and-vsphere%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

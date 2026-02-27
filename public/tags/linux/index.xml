@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Olivia Snowden&#39;s Blog</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in linux on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 03 Oct 2020 17:50:51 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BASH BASICS</title>
+      <link>/bash-basics/</link>
+      <pubDate>Sat, 03 Oct 2020 17:50:51 +0000</pubDate>
+      
+      <guid>/bash-basics/</guid>
+      <description>Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.
+If you are using a Linux machine, you can write and execute Bash scripts in terminal.</description>
+    </item>
+    
+    <item>
+      <title>TERRAFORM IN vSPHERE</title>
+      <link>/terraform-in-vsphere/</link>
+      <pubDate>Wed, 08 Jul 2020 18:47:39 +0000</pubDate>
+      
+      <guid>/terraform-in-vsphere/</guid>
+      <description>Introduction to Terraform Terraform by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
+In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have.</description>
+    </item>
+    
+    <item>
+      <title>ARCH LINUX INSTALL</title>
+      <link>/arch-linux-install/</link>
+      <pubDate>Wed, 17 Jun 2020 19:24:25 +0000</pubDate>
+      
+      <guid>/arch-linux-install/</guid>
+      <description>Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON &middot; </title>
+        <meta name="description" content="In this post:
+  Intro
+  JSON File
+  CSV File
+  Python Script
+  Writing the Python Script
+  I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="AUTOMATE REPLACING VALUES IN JSON USING PYTHON">
+<meta property="og:description" content="In this post:
+  Intro
+  JSON File
+  CSV File
+  Python Script
+  Writing the Python Script
+  I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/replace-json-values/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">AUTOMATE REPLACING VALUES IN JSON USING PYTHON</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-12-22" itemprop="datePublished">Wed, Dec 22, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Olivia Snowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p><img src="/json-logo2.jpeg" alt="">
+<strong>In this post:</strong></p>
+<ol>
+<li>
+<p><strong>Intro</strong></p>
+</li>
+<li>
+<p><strong>JSON File</strong></p>
+</li>
+<li>
+<p><strong>CSV File</strong></p>
+</li>
+<li>
+<p><strong>Python Script</strong></p>
+</li>
+<li>
+<p><strong>Writing the Python Script</strong></p>
+</li>
+</ol>
+<p>I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.</p>
+<p>There are a wide variety of python modules that can be used to search and replace values in a file-however the JSON file I was working with presented some challenges. In this post I&rsquo;ll go into detail about the format of that file, the CSV, and how to write a python script to search/update values in JSON.</p>
+<h4 id="json-file">JSON File</h4>
+<p>To keep things simple, I have replaced the actual JSON file I used with a fake one. However the format of the file and the location of the values to be replaced are the same. Ideally the python script could automate the replacement of any number of values, but we will only be working with 2 sets of key:value pairs. This project results in 2 JSON files-the original JSON file and a new one with updated values.
+In my project there were 6 values spread across 3 blocks that needed to be replaced. First 2 old keys together in one block, <code>old-key1</code> and <code>old-key2</code> needed to be updated.
+<img src="/original-key-block.png" alt="">
+Further down, both key:value pairs <code>old-key1:old-value1</code> and <code>old-key2:old-value2</code> needed to be updated in their own blocks- and it was very important that the keys were matched with their corresponding values.
+<img src="/original-values-block.png" alt="">
+I discovered that the nested format of the JSON file made it difficult to search for values in the file using python. Additionally-some values were of the type <em>list</em> and some were type <em>dictionaries</em>. To find the work around for this, see the &ldquo;Writing the Python Script&rdquo; section.</p>
+<h4 id="csv-file">CSV File</h4>
+<p>The new values to be placed in the json file came from a CSV file I generated from CLI output. However, the CSV can contain just about anything and use any delimiter.  In this case, I used two sets of comma separated values and column headers:
+<img src="/csv.png" alt=""></p>
+<h4 id="python-script">Python Script</h4>
+<p><img src="/entire-script.png" alt="">
+<strong>Lines 4-12: Setup</strong></p>
+<p>In the first portion of the python script, I import the necessary modules (csv and json) and initialize 2 lists and a total of 6 variables. One list will contain the keys from the CSV, the other will contain the values. This is so the content of the CSV can be easily processed in the script. The variable <code>y</code> is set to 1, while the rest are 0-this comes into play later in the script and ensures that the iterations work correctly.</p>
+<p><strong>Lines 14-19: Accept input from CSV and add values to lists</strong></p>
+<p>Once everything is setup, the CSV file must be opened and the keys/values be placed into their respective lists. First, line 14 opens the CSV file &ldquo;input.csv&rdquo; as the variable <code>myfile</code> with read <code>r</code> permission. Then the csv module is used to read the file and specify that the delimiter used is a comma &ldquo;,&rdquo;.  Line 16 specifies to skip the first line in the CSV file since mine contains column headers. Finally, lines 17-29 iterate through the rows in the CSV and add the keys to the <code>keys_list</code> and the values to the <code>values_list</code>.  This is done by specifying that the keys are in the 0 index of each row, <code>row[0]</code>, while the values are in the 1 index <code>row[1]</code>.</p>
+<p><strong>Lines 22-34: Open original JSON file and update keys in file</strong></p>
+<p>Line 22 opens the JSON file in the same way the CSV was opened, but here the JSON module is used to load the content as <code>read_content</code>. Next, 3 separate for loops are used to replace the keys in the JSON file. The first for loop replaces the keys that are together in a nested block in the JSON file, without being paired with their values. This is the only for loop that uses 2 variables to iterate. <code>a</code> iterates through <code>key_list</code> and since <code>a</code> is set to equal 0 the iteration begins at the first key in the <code>key_list</code>. <code>y</code>, which is set to equal 1, iterates through the original values in the JSON file that are being replaced in this for loop. The original JSON file has 2 values that need to be replaced using this for loop: <code>old-key1</code> and <code>old-key2</code>. This is specified in line 25 as <code>&quot;old-key&quot;+str(y)</code>. So as <code>y</code> is increased by 1 in the for loop the old key is replaced with the corresponding new key.
+<img src="/first-for-loop.png" alt="">
+The second and third for loops replace the other keys in the script when they are separated with their respective values. This means that the exact location of the value to be replaced is specified, instead of using an if statement like the first loop.
+<img src="/second-and-third-for-loop.png" alt=""></p>
+<p><strong>Lines 37-41: Update values in file</strong></p>
+<p>The values are replaced in the JSON file similarly to how the keys were replaced using for loops. Here 2 loops are used, each replacing one value in the JSON file which correspond to the second and third loops that replace keys. Once this portion of the script is ran, the key:value pairs that are grouped together in the JSON file are replaced with new key:value pairs.
+<img src="/value-for-loops.png" alt=""></p>
+<p><strong>Lines 44-45: Write to new JSON file</strong></p>
+<p>Finally, a new JSON file &ldquo;new-file.json&rdquo; is opened as <code>access_json</code> with write <code>w</code> permission. Then the json module combines the content of the old JSON file <code>read_content</code> with the updated content <code>access_json</code>. This creates a new JSON file with the updated values while the original JSON file is untouched.</p>
+<p><img src="/new-keys.png" alt="">
+<img src="/new-keys-and-values.png" alt=""></p>
+<h4 id="writing-the-python-script">Writing the Python Script</h4>
+<p>Creating the python script involved lots of trial and error since, as mentioned previously, the nesting in the JSON file caused the usual methods I use to find/replace values using python to fail. My first thought was to iterate through the JSON file and use an if statement to say <code>if oldvalue: oldvalue=newvalue</code>, <code>newvalue</code> being one of the keys/values from the CSV. However, with that method it seemed that python was only going through the outermost layer of the JSON file. While I&rsquo;m sure there is a &ldquo;better&rdquo; way of doing this-I ended up keeping the <code>if x: x=y</code> to replace the values in the JSON file, but specified the exact location inside the file to find &ldquo;x&rdquo;.</p>
+<p>This is where the trial and error comes in. For each value that needs to be replaced, I used print statements to narrow down the location of where I was inside the file. The format I used was <code>read_content</code> followed by the names of each nested layer in brackets <code>[]</code>. This is similar to using indexes to find values in a list. Some layers of the JSON file contained multiple layers of the same name which meant that using <code>[&quot;name of layer&quot;]</code> wouldn&rsquo;t work. To figure out how to get where I needed, I checked the type of where I was using <code>print(type(read_content['layer1']['layer2']etc))</code>.</p>
+<p>I discovered that layers with multiple layers within them are lists-which meant that I could use the index of the layer I wanted to go into as part of the path I was specifying. For example, <code>read_content ['json']['group2']['resources'][0]</code> to enter one layer and <code>read_content ['json']['group2']['resources'][1]</code> to enter another layer both under json &gt; group2 &gt; resources.
+<img src="/nesting-script.png" alt=""> <img src="/nesting-terminal.png" alt=""></p>
+<p><strong>NOTE</strong>: If you use Visual Studio Code to open the JSON file, you can see the path to a value at the top of the screen if you click on a value. You can use this path separated by brackets instead of using print statements to find the path.
+<img src="/vsc-path.png" alt=""></p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/python/">python</a>, 
+                <a href="/tags/automation/">automation</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON&url=%2freplace-json-values%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+
