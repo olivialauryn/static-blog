@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://www.osnowden.com/"
 title = "Olivia Snowden's Blog"
 copyright = "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
 theme = "PaperMod"
@@ -16,7 +16,7 @@ disableXML = true
 
 [pagination]
 disableAliases = false
-pagerSize = 5
+pagerSize = 6
 
 [languages.en]
 languageName = "English"

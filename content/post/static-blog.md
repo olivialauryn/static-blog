@@ -57,7 +57,7 @@ NOTE: My theme was originally unzipped as “ghostwriter-master” in the /theme
 Further editing the config.toml file allows you to change the title, heading, and other options on your site.
 
 
-To test your static website locally, run **hugo server -D** in the root directory of your website then navigate to (http://localhost:1313/) in your browser. This allows you to see what your website will look like before you actually deploy it. 
+To test your static website locally, run **hugo server -D** in the root directory of your website then navigate to (http://https://www.osnowden.com/) in your browser. This allows you to see what your website will look like before you actually deploy it. 
 
 To deploy your website run **hugo** in the root directory of your website. This generates a /public folder with all the necessary files for your static web page-which you will need later in the process of setting up your static website. 
 

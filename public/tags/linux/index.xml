@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Olivia Snowden&#39;s Blog</title>
-    <link>//localhost:1313/tags/linux/</link>
+    <link>http://www.osnowden.com/tags/linux/</link>
     <description>Recent content in Linux on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.osnowden.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BASH BASICS</title>
-      <link>//localhost:1313/bash-basics/</link>
+      <link>http://www.osnowden.com/bash-basics/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/bash-basics/</guid>
+      <guid>http://www.osnowden.com/bash-basics/</guid>
       <description>&lt;p&gt;Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.&lt;/p&gt;
 &lt;p&gt;If you are using a Linux machine, you can write and execute Bash scripts in terminal. Through the terminal you can use your preferred text editor (nano, vim, etc.) to write your script and save it with the extension .sh. If you are using a MacBook, like me, you can use the terminal or Visual Studio Code to write Bash scripts- just save them with the .bash extension.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TERRAFORM IN vSPHERE</title>
-      <link>//localhost:1313/terraform-in-vsphere/</link>
+      <link>http://www.osnowden.com/terraform-in-vsphere/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/terraform-in-vsphere/</guid>
+      <guid>http://www.osnowden.com/terraform-in-vsphere/</guid>
       <description>&lt;h4 id=&#34;introduction-to-terraform&#34;&gt;Introduction to Terraform&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.terraform.io/intro/index.html&#34;&gt;Terraform&lt;/a&gt; by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the &lt;code&gt;.tf &lt;/code&gt;extension) and Terraform builds that infrastructure for you.  The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.&lt;/p&gt;
 &lt;p&gt;In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ARCH LINUX INSTALL</title>
-      <link>//localhost:1313/arch-linux-install/</link>
+      <link>http://www.osnowden.com/arch-linux-install/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/arch-linux-install/</guid>
+      <guid>http://www.osnowden.com/arch-linux-install/</guid>
       <description>&lt;p&gt;Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&amp;rsquo;s what I did:&lt;/p&gt;</description>
     </item>
   </channel>

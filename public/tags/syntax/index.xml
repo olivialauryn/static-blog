@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Syntax on Olivia Snowden&#39;s Blog</title>
-    <link>//localhost:1313/tags/syntax/</link>
+    <link>//https://www.osnowden.com/tags/syntax/</link>
     <description>Recent content in Syntax on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//https://www.osnowden.com/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing New Theme</title>
-      <link>//localhost:1313/testing-post/</link>
+      <link>//https://www.osnowden.com/testing-post/</link>
       <pubDate>Sat, 28 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/testing-post/</guid>
+      <guid>//https://www.osnowden.com/testing-post/</guid>
       <description>Sample article</description>
     </item>
   </channel>

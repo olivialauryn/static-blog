@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/fa/facategories/</loc>
+    <loc>http://www.osnowden.com/fa/facategories/</loc>
   </url><url>
-    <loc>//localhost:1313/fa/faseries/</loc>
+    <loc>http://www.osnowden.com/fa/faseries/</loc>
   </url><url>
-    <loc>//localhost:1313/fa/fatags/</loc>
+    <loc>http://www.osnowden.com/fa/fatags/</loc>
   </url><url>
-    <loc>//localhost:1313/fa/</loc>
+    <loc>http://www.osnowden.com/fa/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="http://www.osnowden.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="//localhost:1313/fr/"
+                href="http://www.osnowden.com/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="//localhost:1313/fa/"
+                href="http://www.osnowden.com/fa/"
                 />
   </url>
 </urlset>

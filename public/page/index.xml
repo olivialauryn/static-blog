@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Pages on Olivia Snowden&#39;s Blog</title>
-    <link>//localhost:1313/page/</link>
+    <link>http://www.osnowden.com/page/</link>
     <description>Recent content in Pages on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Fri, 03 Apr 2015 02:13:50 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/page/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.osnowden.com/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>//localhost:1313/page/about/</link>
+      <link>http://www.osnowden.com/page/about/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
-      <guid>//localhost:1313/page/about/</guid>
+      <guid>http://www.osnowden.com/page/about/</guid>
       <description>Things about me.</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>//localhost:1313/page/contact/</link>
+      <link>http://www.osnowden.com/page/contact/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
-      <guid>//localhost:1313/page/contact/</guid>
+      <guid>http://www.osnowden.com/page/contact/</guid>
       <description>How to contact me.</description>
     </item>
   </channel>

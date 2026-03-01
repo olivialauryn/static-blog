@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cloud on Olivia Snowden&#39;s Blog</title>
-    <link>//localhost:1313/tags/cloud/</link>
+    <link>http://www.osnowden.com/tags/cloud/</link>
     <description>Recent content in Cloud on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.osnowden.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM</title>
-      <link>//localhost:1313/building-load-balancers-in-gcp-with-terraform/</link>
+      <link>http://www.osnowden.com/building-load-balancers-in-gcp-with-terraform/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/building-load-balancers-in-gcp-with-terraform/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/building-a-lb-with-tf-logo.png&#34;&gt;&lt;/p&gt;
+      <guid>http://www.osnowden.com/building-load-balancers-in-gcp-with-terraform/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://www.osnowden.com/building-a-lb-with-tf-logo.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you&amp;rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation &lt;a href=&#34;https://cloud.google.com/load-balancing/docs/load-balancing-overview&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.&lt;/p&gt;</description>
     </item>

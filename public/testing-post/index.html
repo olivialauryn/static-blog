@@ -11,16 +11,16 @@
 Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you&rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation here.
 However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.">
 <meta name="author" content="Olivia Snowden">
-<link rel="canonical" href="//localhost:1313/testing-post/">
+<link rel="canonical" href="//https://www.osnowden.com/testing-post/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.7f8702ad4c3159231ff7aa5f7bf1a574a69e60a988350dee1489d2c17b25d91e.css" integrity="sha256-f4cCrUwxWSMf96pfe/GldKaeYKmINQ3uFInSwXsl2R4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="//https://www.osnowden.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//https://www.osnowden.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//https://www.osnowden.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//https://www.osnowden.com/apple-touch-icon.png">
+<link rel="mask-icon" href="//https://www.osnowden.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/testing-post/">
+<link rel="alternate" hreflang="en" href="//https://www.osnowden.com/testing-post/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,7 +72,7 @@ However, if you have an understanding of how load balancers work internally, and
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="//localhost:1313/testing-post/">
+</script><meta property="og:url" content="//https://www.osnowden.com/testing-post/">
   <meta property="og:site_name" content="Olivia Snowden&#39;s Blog">
   <meta property="og:title" content="TESTING BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM">
   <meta property="og:description" content="
@@ -104,13 +104,13 @@ However, if you have an understanding of how load balancers work internally, and
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/post/"
+      "item": "//https://www.osnowden.com/post/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "TESTING BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM",
-      "item": "//localhost:1313/testing-post/"
+      "item": "//https://www.osnowden.com/testing-post/"
     }
   ]
 }
@@ -136,14 +136,14 @@ However, if you have an understanding of how load balancers work internally, and
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/testing-post/"
+    "@id": "//https://www.osnowden.com/testing-post/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Olivia Snowden's Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "//https://www.osnowden.com/favicon.ico"
     }
   }
 }
@@ -153,7 +153,7 @@ However, if you have an understanding of how load balancers work internally, and
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Olivia Snowden&#39;s Blog (Alt + H)">Olivia Snowden&#39;s Blog</a>
+            <a href="//https://www.osnowden.com/" accesskey="h" title="Olivia Snowden&#39;s Blog (Alt + H)">Olivia Snowden&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -177,11 +177,11 @@ However, if you have an understanding of how load balancers work internally, and
                 </button>
                     <ul class="lang-switch"><li>|</li>
                         <li>
-                            <a href="//localhost:1313/fr/" title="French"
+                            <a href="//https://www.osnowden.com/fr/" title="French"
                                 aria-label=":fr:">🇫🇷</a>
                         </li>
                         <li>
-                            <a href="//localhost:1313/fa/" title="Fa"
+                            <a href="//https://www.osnowden.com/fa/" title="Fa"
                                 aria-label="Fa">Fa</a>
                         </li>
                     </ul>
@@ -189,17 +189,17 @@ However, if you have an understanding of how load balancers work internally, and
         </div>
         <ul id="menu">
             <li>
-                <a href="//localhost:1313/archives" title="Archive">
+                <a href="//https://www.osnowden.com/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="//https://www.osnowden.com/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="//localhost:1313/tags/" title="Tags">
+                <a href="//https://www.osnowden.com/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -221,7 +221,7 @@ However, if you have an understanding of how load balancers work internally, and
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="//localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="//localhost:1313/post/">Posts</a></div>
+    <div class="breadcrumbs"><a href="//https://www.osnowden.com/">Home</a>&nbsp;»&nbsp;<a href="//https://www.osnowden.com/post/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       TESTING BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM
     </h1>
@@ -441,14 +441,14 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/code/">Code</a></li>
-      <li><a href="//localhost:1313/tags/terraform/">Terraform</a></li>
-      <li><a href="//localhost:1313/tags/networking/">Networking</a></li>
-      <li><a href="//localhost:1313/tags/gcp/">Gcp</a></li>
-      <li><a href="//localhost:1313/tags/cloud/">Cloud</a></li>
+      <li><a href="//https://www.osnowden.com/tags/code/">Code</a></li>
+      <li><a href="//https://www.osnowden.com/tags/terraform/">Terraform</a></li>
+      <li><a href="//https://www.osnowden.com/tags/networking/">Networking</a></li>
+      <li><a href="//https://www.osnowden.com/tags/gcp/">Gcp</a></li>
+      <li><a href="//https://www.osnowden.com/tags/cloud/">Cloud</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="//localhost:1313/building-load-balancers-in-gcp-with-terraform/">
+  <a class="next" href="//https://www.osnowden.com/building-load-balancers-in-gcp-with-terraform/">
     <span class="title">Next »</span>
     <br>
     <span>BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM</span>
