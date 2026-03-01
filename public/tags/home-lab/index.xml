@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Home-Lab on Olivia Snowden&#39;s Blog</title>
-    <link>http://www.osnowden.com/tags/home-lab/</link>
+    <link>https://www.osnowden.com/tags/home-lab/</link>
     <description>Recent content in Home-Lab on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://www.osnowden.com/tags/home-lab/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.osnowden.com/tags/home-lab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>INTRODUCTION TO ANSIBLE</title>
-      <link>http://www.osnowden.com/ansible/</link>
+      <link>https://www.osnowden.com/post/ansible/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://www.osnowden.com/ansible/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://www.osnowden.com/ansible-logo.png&#34;&gt;
+      <guid>https://www.osnowden.com/post/ansible/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.osnowden.com/ansible-logo.png&#34;&gt;
 &lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -41,40 +41,40 @@
     </item>
     <item>
       <title>RASPI KUBERNETES CLUSTER WITH RANCHER</title>
-      <link>http://www.osnowden.com/raspberry-pi-kubernetes/</link>
+      <link>https://www.osnowden.com/post/raspberry-pi-kubernetes/</link>
       <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://www.osnowden.com/raspberry-pi-kubernetes/</guid>
+      <guid>https://www.osnowden.com/post/raspberry-pi-kubernetes/</guid>
       <description>&lt;p&gt;Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3S&lt;/a&gt; is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB. K3S is ideal for Raspberry Pis, since traditionally building a Kubernetes cluster on Pis could be too much for them to handle.  In addition to K3S this is what I used to build a simple Kubernetes cluster in my home lab:&lt;/p&gt;</description>
     </item>
     <item>
       <title>TERRAFORM IN vSPHERE</title>
-      <link>http://www.osnowden.com/terraform-in-vsphere/</link>
+      <link>https://www.osnowden.com/post/terraform-in-vsphere/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://www.osnowden.com/terraform-in-vsphere/</guid>
+      <guid>https://www.osnowden.com/post/terraform-in-vsphere/</guid>
       <description>&lt;h4 id=&#34;introduction-to-terraform&#34;&gt;Introduction to Terraform&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.terraform.io/intro/index.html&#34;&gt;Terraform&lt;/a&gt; by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the &lt;code&gt;.tf &lt;/code&gt;extension) and Terraform builds that infrastructure for you.  The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.&lt;/p&gt;
 &lt;p&gt;In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.&lt;/p&gt;</description>
     </item>
     <item>
       <title>vSPHERE INTRODUCTION</title>
-      <link>http://www.osnowden.com/vmware-and-vsphere/</link>
+      <link>https://www.osnowden.com/post/vmware-and-vsphere/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://www.osnowden.com/vmware-and-vsphere/</guid>
+      <guid>https://www.osnowden.com/post/vmware-and-vsphere/</guid>
       <description>&lt;p&gt;Practicing installing/updating/building machines is much more fun when you aren&amp;rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&amp;rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ARCH LINUX INSTALL</title>
-      <link>http://www.osnowden.com/arch-linux-install/</link>
+      <link>https://www.osnowden.com/post/arch-linux-install/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://www.osnowden.com/arch-linux-install/</guid>
+      <guid>https://www.osnowden.com/post/arch-linux-install/</guid>
       <description>&lt;p&gt;Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&amp;rsquo;s what I did:&lt;/p&gt;</description>
     </item>
     <item>
       <title>HOME-LAB SETUP</title>
-      <link>http://www.osnowden.com/home-lab-setup/</link>
+      <link>https://www.osnowden.com/post/home-lab-setup/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://www.osnowden.com/home-lab-setup/</guid>
+      <guid>https://www.osnowden.com/post/home-lab-setup/</guid>
       <description>&lt;p&gt;For the home-lab, we used the following devices:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Ubiquiti EdgeRouter X&lt;/li&gt;

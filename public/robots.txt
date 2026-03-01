@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: http://www.osnowden.com/sitemap.xml
+Sitemap: https://www.osnowden.com/sitemap.xml
