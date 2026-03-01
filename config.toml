@@ -186,6 +186,3 @@ disableInlineCSS = true
 
 [services.x]
 disableInlineCSS = true
-
-[Permalinks]
-    post = "/:contentbasename/"
