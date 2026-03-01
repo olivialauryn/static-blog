@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>automation on Olivia Snowden&#39;s Blog</title>
-    <link>/tags/automation/</link>
-    <description>Recent content in automation on Olivia Snowden&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <title>Automation on Olivia Snowden&#39;s Blog</title>
+    <link>//localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>INTRODUCTION TO ANSIBLE</title>
+      <link>//localhost:1313/ansible/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/ansible/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/ansible-logo.png&#34;&gt;
+&lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;What is Ansible&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Installing Ansible&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventories&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Playbooks&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Testing Ansible&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;what-is-ansible&#34;&gt;What is Ansible?&lt;/h3&gt;
+&lt;p&gt;Ansible is an open-source infrastructure as code tool provided by Red Hat. Instead of agents, Ansible relies on SSH to pass tasks defined in YAML to remote machines.  To get familiar with Ansible, I created a simple scenario where a bash script needed to be uploaded to a remote machine and ran periodically.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON</title>
-      <link>/replace-json-values/</link>
+      <link>//localhost:1313/replace-json-values/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/replace-json-values/</guid>
-      <description>In this post:
-  Intro
-  JSON File
-  CSV File
-  Python Script
-  Writing the Python Script
-  I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.</description>
+      <guid>//localhost:1313/replace-json-values/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/json-logo2.jpeg&#34;&gt;
+&lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Intro&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JSON File&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;CSV File&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Python Script&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Writing the Python Script&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

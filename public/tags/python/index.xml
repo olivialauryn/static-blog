@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>python on Olivia Snowden&#39;s Blog</title>
-    <link>/tags/python/</link>
-    <description>Recent content in python on Olivia Snowden&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <title>Python on Olivia Snowden&#39;s Blog</title>
+    <link>//localhost:1313/tags/python/</link>
+    <description>Recent content in Python on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON</title>
-      <link>/replace-json-values/</link>
+      <link>//localhost:1313/replace-json-values/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/replace-json-values/</guid>
-      <description>In this post:
-  Intro
-  JSON File
-  CSV File
-  Python Script
-  Writing the Python Script
-  I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.</description>
+      <guid>//localhost:1313/replace-json-values/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/json-logo2.jpeg&#34;&gt;
+&lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Intro&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JSON File&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;CSV File&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Python Script&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Writing the Python Script&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

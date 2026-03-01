@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Olivia Snowden&#39;s Blog</title>
-    <link>/categories/linux/</link>
+    <link>//localhost:1313/categories/linux/</link>
     <description>Recent content in Linux on Olivia Snowden&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Jun 2020 19:24:25 +0000</lastBuildDate><atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jun 2020 19:24:25 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ARCH LINUX INSTALL</title>
-      <link>/arch-linux-install/</link>
+      <link>//localhost:1313/arch-linux-install/</link>
       <pubDate>Wed, 17 Jun 2020 19:24:25 +0000</pubDate>
-      
-      <guid>/arch-linux-install/</guid>
-      <description>Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy.</description>
+      <guid>//localhost:1313/arch-linux-install/</guid>
+      <description>&lt;p&gt;Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&amp;rsquo;s what I did:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

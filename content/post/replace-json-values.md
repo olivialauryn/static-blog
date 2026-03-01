@@ -1,11 +1,10 @@
 ---
-author: Olivia Snowden
-comments: true
-date: 2021-12-22
-layout: post
-slug: replace-json
-title: AUTOMATE REPLACING VALUES IN JSON USING PYTHON
-tags: [code, python, automation]
+author: ["Olivia Snowden"]
+title: "AUTOMATE REPLACING VALUES IN JSON USING PYTHON"
+date: "2021-12-22"
+tags: ["code", "python","automation"]
+ShowToc: true
+TocOpen: true
 ---
 ![](/json-logo2.jpeg)
 **In this post:**

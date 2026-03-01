@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BUILDING A LOADBALANCER &middot; </title>
+        <meta name="description" content="In this post:
+  What is a Load Balancer
+  GCP Load Balancers
+  Creating a Load Balancer using Terraform
+  What is a Load Balancer? Load balancers are networking resources that take in network traffic through their frontend and distribute that traffic to their backend(s). Load balancers have a few general attributes:
+ Frontend Where clients reach the load balancer, the &ldquo;face&rdquo; of the load balancer.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.87.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="BUILDING A LOADBALANCER">
+<meta property="og:description" content="In this post:
+  What is a Load Balancer
+  GCP Load Balancers
+  Creating a Load Balancer using Terraform
+  What is a Load Balancer? Load balancers are networking resources that take in network traffic through their frontend and distribute that traffic to their backend(s). Load balancers have a few general attributes:
+ Frontend Where clients reach the load balancer, the &ldquo;face&rdquo; of the load balancer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/building-a-loadbalancer/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="/">Olivia Snowden&#39;s Blog</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/olivialauryn" rel="me">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/in/olivialaurynsnowden" rel="me">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">BUILDING A LOADBALANCER</h1>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="1969-12-31" itemprop="datePublished">Wed, Dec 31, 1969</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Olivia Snowden</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p><strong>In this post:</strong></p>
+<ol>
+<li>
+<p><strong>What is a Load Balancer</strong></p>
+</li>
+<li>
+<p><strong>GCP Load Balancers</strong></p>
+</li>
+<li>
+<p><strong>Creating a Load Balancer using Terraform</strong></p>
+</li>
+</ol>
+<h2 id="what-is-a-load-balancer">What is a Load Balancer?</h2>
+<p>Load balancers are networking resources that take in network traffic through their frontend and distribute that traffic to their backend(s). Load balancers have a few general attributes:</p>
+<ul>
+<li>Frontend
+Where clients reach the load balancer, the &ldquo;face&rdquo; of the load balancer.</li>
+<li>Backend
+The server(s) where the load balancer directs traffic</li>
+<li>Forwarding Rules
+The logic the load balancer uses to distribute traffic. Also referred to as a load balancer&rsquo;s algorithm.</li>
+<li>Health Checks
+Checks the status of the backend(s) and whether they can recieve traffic. Load balancers will not send traffic to an unhealthy backend.</li>
+</ul>
+<p>Below is a simple diagram that illustrates the flow of traffic through a load balancer:</p>
+<p><img src="/load-balancer.jpg" alt=""></p>
+<p>Traffic enters the load balancer through its frontend IP, the forward rule determines how to route traffic to the backends, the health check confirms that the backend is healthy-and if so then the traffic is routed there.</p>
+<h3 id="rules">Rules</h3>
+<p>Deciding how to route traffic to a load balancer&rsquo;s backends depends on the use case. For example, if a network admin has 2 servers and server 1 can handle more requests than server 2, then the load balancer can be configured to use a weighted rule which will send more traffic to server 1.</p>
+<p>However if a network admin has 2 servers with the same processing power they can confgure the load balancer to use a least connection rule which will send traffic to the server that is the most available at the time.</p>
+<h2 id="gcp-load-balancers">GCP Load Balancers</h2>
+<p>Load balancers can exist in the cloud as well as on-premises networks. This post will primarily focus on internal/external TCP/HTTPS cloud-based load balancers in GCP, although similar load balancers exist in AWS and Azure cloud platforms. Load balancers in GCP work just like load balancers in any other network, with the exception that some or all of the traffic of GCP load balancers is betweek GCP cloud resources.</p>
+<p>When creating a load balancer  in GCP, it is important to understand the different types of load balancers supported.</p>
+<h3 id="internal-and-external-load-balancers">Internal and External Load Balancers</h3>
+<p>GCP supports 2 options for the IP address of their load balancers, internal and external.</p>
+<p>Internal LBs only distribute traffic to resources within GCP. External LBs route traffic coming from the internet into GCP. It is important to note that external LBs often require additional security measures due to the LBs being public-facing.</p>
+<h3 id="tcpudp-and-https-load-balancers">TCP/UDP and HTTP(S) Load Balancers</h3>
+<p>GCP supports 4 types of traffic on their load balancers: TCP, UDP, HTTP(S), and SSL. This post will primarily focus on TCP/UDP and HTTP(S) load balancing.</p>
+<h2 id="creating-a-load-balancer-using-terraform">Creating a Load Balancer using Terraform</h2>
+<p>Load balancers can be created in GCP using Terraform, however there is not a single Terraform resource that creates a load balancer. Instead, multiple Terraform resources together create a GCP load balancer. These resources include:</p>
+<ul>
+<li>&ldquo;google_compute_global_address&rdquo;    = The public IP address that is the frontend of the LB. (External LBs only)</li>
+<li>&ldquo;google_compute_target_http_proxy&rdquo; = Routes requests to the url map (&ldquo;google_compute_global_forwarding_rule&rdquo; for external LBs)</li>
+<li>&ldquo;google_compute_url_map&rdquo;           = Defines the rules to route traffic to the backend</li>
+<li>&ldquo;google_compute_forwarding_rule&rdquo;   = Routes traffic to the backends</li>
+<li>&ldquo;google_compute_backend_service&rdquo;   = Creates the LB&rsquo;s backend(s)</li>
+<li>&ldquo;google_compute_health_check&rdquo;      = The LB&rsquo;s health check</li>
+</ul>
+<p>Note, that the global address and http proxy resources are different between internal and external LBs. External LBs use a global address resource to make a public IP address that clients from the internet can use to access the external LB. Internal LBs do not need a global address. In addiiton, internal LBs use the &ldquo;google_compute_target_http_proxy&rdquo; proxy resource, external LBs use the &ldquo;google_compute_global_forwarding_rule&rdquo; resource.</p>
+<p>Below is a diagram illustrating the flow of traffic through the Terraform resources that make an internal load balancer:
+<img src="/tf-ilb.jpg" alt=""></p>
+<p>And this is the flow of traffic through the Terraform resources that make an external load balancer:
+<img src="/tf-xlb.jpg" alt=""></p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/code/">code</a>, 
+                <a href="/tags/networking/">networking</a>, 
+                <a href="/tags/terraform/">terraform</a>, 
+                <a href="/tags/gcp/">gcp</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=BUILDING%20A%20LOADBALANCER&url=%2fbuilding-a-loadbalancer%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="/">Olivia Snowden&#39;s Blog</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2022 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
+

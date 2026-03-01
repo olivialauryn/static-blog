@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>vms on Olivia Snowden&#39;s Blog</title>
-    <link>/tags/vms/</link>
-    <description>Recent content in vms on Olivia Snowden&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 Jul 2020 18:47:39 +0000</lastBuildDate><atom:link href="/tags/vms/index.xml" rel="self" type="application/rss+xml" />
+    <title>Vms on Olivia Snowden&#39;s Blog</title>
+    <link>//localhost:1313/tags/vms/</link>
+    <description>Recent content in Vms on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/vms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TERRAFORM IN vSPHERE</title>
-      <link>/terraform-in-vsphere/</link>
-      <pubDate>Wed, 08 Jul 2020 18:47:39 +0000</pubDate>
-      
-      <guid>/terraform-in-vsphere/</guid>
-      <description>Introduction to Terraform Terraform by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
-In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have.</description>
+      <link>//localhost:1313/terraform-in-vsphere/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/terraform-in-vsphere/</guid>
+      <description>&lt;h4 id=&#34;introduction-to-terraform&#34;&gt;Introduction to Terraform&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/intro/index.html&#34;&gt;Terraform&lt;/a&gt; by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the &lt;code&gt;.tf &lt;/code&gt;extension) and Terraform builds that infrastructure for you.  The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.&lt;/p&gt;
+&lt;p&gt;In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>vSPHERE INTRODUCTION</title>
-      <link>/vmware-and-vsphere/</link>
-      <pubDate>Wed, 01 Jul 2020 16:29:16 +0000</pubDate>
-      
-      <guid>/vmware-and-vsphere/</guid>
-      <description>Practicing installing/updating/building machines is much more fun when you aren&amp;rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&amp;rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.</description>
+      <link>//localhost:1313/vmware-and-vsphere/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/vmware-and-vsphere/</guid>
+      <description>&lt;p&gt;Practicing installing/updating/building machines is much more fun when you aren&amp;rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&amp;rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

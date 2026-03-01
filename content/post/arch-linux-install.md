@@ -1,15 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-06-17 19:24:25+00:00
-layout: post
-link: http://oliviasnowden.me/2020/06/17/arch-linux-install/
-slug: arch-linux-install
-title: ARCH LINUX INSTALL
-tags: [home-lab, linux]
-categories:
-- Home-lab
-- Linux
+author: ["Olivia Snowden"]
+title: "ARCH LINUX INSTALL"
+date: "2020-06-17"
+tags: ["linux", "home-lab"]
+ShowToc: true
+TocOpen: true
 ---
 
 

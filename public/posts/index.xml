@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Olivia Snowden&#39;s Blog</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing New Theme</title>
+      <link>//localhost:1313/posts/testing-post/</link>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/testing-post/</guid>
+      <description>Sample article</description>
+    </item>
+    <item>
+      <title>BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM</title>
+      <link>//localhost:1313/posts/building-load-balancers-in-gcp-with-terraform/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/building-load-balancers-in-gcp-with-terraform/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/building-a-lb-with-tf-logo.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you&amp;rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation &lt;a href=&#34;https://cloud.google.com/load-balancing/docs/load-balancing-overview&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>INTRODUCTION TO ANSIBLE</title>
+      <link>//localhost:1313/posts/ansible/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/ansible/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/ansible-logo.png&#34;&gt;
+&lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;What is Ansible&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Installing Ansible&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inventories&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Playbooks&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Testing Ansible&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;what-is-ansible&#34;&gt;What is Ansible?&lt;/h3&gt;
+&lt;p&gt;Ansible is an open-source infrastructure as code tool provided by Red Hat. Instead of agents, Ansible relies on SSH to pass tasks defined in YAML to remote machines.  To get familiar with Ansible, I created a simple scenario where a bash script needed to be uploaded to a remote machine and ran periodically.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON</title>
+      <link>//localhost:1313/posts/replace-json-values/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/replace-json-values/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/json-logo2.jpeg&#34;&gt;
+&lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Intro&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JSON File&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;CSV File&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Python Script&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Writing the Python Script&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>STATIC BLOG WITH HUGO, GIT, &amp; AWS</title>
+      <link>//localhost:1313/posts/static-blog/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/static-blog/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;//localhost:1313/static13.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Until now, the blog I use to document my projects has been hosted on WordPress. To cut down on the cost of running my blog (and to complete a cool project), I’ve made my blog a static website.&lt;/p&gt;
+&lt;p&gt;Most websites we visit are dynamic websites, meaning that a web server generates the site with content that can change and be interacted with by users. Static websites are the opposite, they display the same content for every user and are shown exactly as they are written (usually using HTML).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PYTHON METHODS &amp; CLASSES</title>
+      <link>//localhost:1313/posts/python-methods/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/python-methods/</guid>
+      <description>&lt;p&gt;Once you get past your first &amp;ldquo;Hello World&amp;rdquo; Python script, it&amp;rsquo;s good to learn how to use Python methods and classes. &lt;strong&gt;Methods&lt;/strong&gt; and **functions **are a self-contained block of code that can be reused over and over. There are built-in functions that beginners in Python may already be familiar with, like print() and sum(). A user can also define a function (called a user-defined function) that executes a task they need done in their script multiple times. This is especially useful because it keeps the user from having to write that same chunk of code repeatedly. Variables that exist outside of the function can be passed to the function as &lt;strong&gt;parameters&lt;/strong&gt;, but they are not required. The format of defining your own function is below:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.1</title>
+      <link>//localhost:1313/posts/capstone-pt1/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/capstone-pt1/</guid>
+      <description>&lt;p&gt;Over the next year, I will be completing a research project exploring how biased training data effects the machine learning algorithm of self-driving cars. This project, which I&amp;rsquo;ll detail in a later post, involves deep neural networks (DNNs), computer vision, linear algebra, and more. Is this project a massive undertaking? Yes. Will that stop me? Absolutely not. Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;h4 id=&#34;neural-network-basics&#34;&gt;Neural Network Basics&lt;/h4&gt;
+&lt;p&gt;First, what is &lt;strong&gt;artificial intelligence&lt;/strong&gt; (AI)? AI is a field of computer science pertaining to programming computers so that they demonstrate human-like intelligence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.2</title>
+      <link>//localhost:1313/posts/capstone-pt2/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/capstone-pt2/</guid>
+      <description>&lt;p&gt;In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&amp;rsquo;m studying self-driving cars, I&amp;rsquo;d like to see if using biased data to train an object detection script affects the model&amp;rsquo;s performance. To do this, I&amp;rsquo;m using a training dataset of clear, bright road images to train a neural network and then testing that script with corrupted images of roads. If the model can&amp;rsquo;t recognize obstacles in images that are corrupted, then the biased training dataset did have an affect on the model.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BASH BASICS</title>
+      <link>//localhost:1313/posts/bash-basics/</link>
+      <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/bash-basics/</guid>
+      <description>&lt;p&gt;Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.&lt;/p&gt;
+&lt;p&gt;If you are using a Linux machine, you can write and execute Bash scripts in terminal. Through the terminal you can use your preferred text editor (nano, vim, etc.) to write your script and save it with the extension .sh. If you are using a MacBook, like me, you can use the terminal or Visual Studio Code to write Bash scripts- just save them with the .bash extension.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RASPI KUBERNETES CLUSTER WITH RANCHER</title>
+      <link>//localhost:1313/posts/raspberry-pi-kubernetes/</link>
+      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/raspberry-pi-kubernetes/</guid>
+      <description>&lt;p&gt;Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3S&lt;/a&gt; is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB. K3S is ideal for Raspberry Pis, since traditionally building a Kubernetes cluster on Pis could be too much for them to handle.  In addition to K3S this is what I used to build a simple Kubernetes cluster in my home lab:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TERRAFORM IN vSPHERE</title>
+      <link>//localhost:1313/posts/terraform-in-vsphere/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/terraform-in-vsphere/</guid>
+      <description>&lt;h4 id=&#34;introduction-to-terraform&#34;&gt;Introduction to Terraform&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/intro/index.html&#34;&gt;Terraform&lt;/a&gt; by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the &lt;code&gt;.tf &lt;/code&gt;extension) and Terraform builds that infrastructure for you.  The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.&lt;/p&gt;
+&lt;p&gt;In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>vSPHERE INTRODUCTION</title>
+      <link>//localhost:1313/posts/vmware-and-vsphere/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/vmware-and-vsphere/</guid>
+      <description>&lt;p&gt;Practicing installing/updating/building machines is much more fun when you aren&amp;rsquo;t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware&amp;rsquo;s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COGNITIVE SERVICES-TRANSLATING SPEECH</title>
+      <link>//localhost:1313/posts/cognitive-services-translation/</link>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/cognitive-services-translation/</guid>
+      <description>&lt;p&gt;In addition to text analysis Microsoft&amp;rsquo;s cognitive services allow you to convert speech to text, text to speech, and even translate between spoken languages. This powerful AI service is surprisingly easy to use. I was able to speak into my computers microphone and receive a text translation in one language or a spoken translation in multiple languages &amp;ndash;all with the &lt;a href=&#34;https://docs.microsoft.com/en-us/learn/modules/translate-speech-speech-service/&#34;&gt;code &lt;/a&gt;provided on Microsoft Learn. You have the option to work with the speech SDK (software development kit) in C# or python, I choose python.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COGNITIVE SERVICES-SENTIMENT IN TEXT</title>
+      <link>//localhost:1313/posts/cognitive-services-text/</link>
+      <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/cognitive-services-text/</guid>
+      <description>&lt;p&gt;As I continue to study artificial intelligence I&amp;rsquo;ve been able to practice using Microsoft&amp;rsquo;s cognitive services. I was first introduced to cognitive services during the virtual Microsoft Build 2020 conference, and I&amp;rsquo;ve enjoyed getting to use them for myself. Since creating and training your own artificial intelligence/machine learning software is all kinds of complicated, cognitive services allow anyone to use AI in their projects without having to write much code.  All you have to do is call the service that you want, and it will do the hard work for you.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ARCH LINUX INSTALL</title>
+      <link>//localhost:1313/posts/arch-linux-install/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/arch-linux-install/</guid>
+      <description>&lt;p&gt;Arch Linux&amp;rsquo;s official website describes Arch as a distribution that &amp;ldquo;tries to Keep It Simple&amp;rdquo;. It also states that Arch is not for those without the ability or time for a &amp;ldquo;do-it-yourself&amp;rdquo; system&amp;ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&amp;rsquo;s what I did:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HOME-LAB SETUP</title>
+      <link>//localhost:1313/posts/home-lab-setup/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/home-lab-setup/</guid>
+      <description>&lt;p&gt;For the home-lab, we used the following devices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubiquiti EdgeRouter X&lt;/li&gt;
+&lt;li&gt;Ubiquiti UniFi 24 port switch&lt;/li&gt;
+&lt;li&gt;2 VMware ESXi Hosts&lt;/li&gt;
+&lt;li&gt;A Synology NAS DS420j (Diskstation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BIRDCAM Pt. 3</title>
+      <link>//localhost:1313/posts/birdcam-pt3/</link>
+      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/birdcam-pt3/</guid>
+      <description>&lt;p&gt;The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install docker 
+sudo apt install docker-compose 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file.  On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos.  At this point, I had already configured an NFS server and made this Pi an NFS client via a shared folder. To create the photo gallery, I first signed into my personal Docker account. I then added two subdirectories to my home directory on the Pi: a config directory, and a thumbs directory.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BIRDCAM Pt. 2</title>
+      <link>//localhost:1313/posts/birdcam-pt2/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/birdcam-pt2/</guid>
+      <description>&lt;p&gt;After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.&lt;/p&gt;
+&lt;p&gt;First, I put the Raspbian Lite OS on a mini SD card. Once the OS was finished downloading, I removed the card from my computer and inserted it again. On my computer&amp;rsquo;s terminal I entered the SD card&amp;rsquo;s boot directory (found with &lt;strong&gt;df -h&lt;/strong&gt;) and created a new file to configure the wifi information for my home network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BIRDCAM Pt. 1</title>
+      <link>//localhost:1313/posts/birdcam-pt1/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/birdcam-pt1/</guid>
+      <description>&lt;p&gt;In this project I wanted to set up a camera to take pictures of pretty birds at a feeder, and then view those photos online.  To do so I used three Raspberry Pis, NFS, and Docker.&lt;/p&gt;
+&lt;p&gt;One Raspberry pi served as the NFS server, while the other two were NFS clients. One of the clients was a Raspberry Pi zero w outfitted with a camera to take the pictures and store them on the NFS server. The other client hosted the docker container linuxserver/photoshow that accessed the NFS server to display the photos in a gallery.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2021-01-18 20:23:20+00:00
-layout: post
-link: http://oliviasnowden.me/2021/01/18/python-methods-classes/
-slug: python-methods-classes
-title: PYTHON METHODS & CLASSES
-tags: [code]
+author: ["Olivia Snowden"]
+title: "PYTHON METHODS & CLASSES"
+date: "2021-01-18"
+tags: ["code"]
+ShowToc: true
+TocOpen: true
 ---
 
 

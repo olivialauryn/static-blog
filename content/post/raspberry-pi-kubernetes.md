@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-07-17 00:02:29+00:00
-layout: post
-link: http://oliviasnowden.me/2020/07/17/raspberry-pi-kubernetes-cluster/
-slug: raspberry-pi-kubernetes-cluster
-title: RASPI KUBERNETES CLUSTER WITH RANCHER
-tags: [code, raspberrypi, home-lab, docker]
+author: ["Olivia Snowden"]
+title: "RASPI KUBERNETES CLUSTER WITH RANCHER"
+date: "2020-07-17"
+tags: ["code", "raspberrypi", "home-lab", "docker"]
+ShowToc: true
+TocOpen: true
 ---
 
 

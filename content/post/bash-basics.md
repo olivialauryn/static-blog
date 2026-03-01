@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-10-03 17:50:51+00:00
-layout: post
-link: http://oliviasnowden.me/2020/10/03/bash-basics/
-slug: bash-basics
-title: BASH BASICS
-tags: [bash, linux]
+author: ["Olivia Snowden"]
+title: "BASH BASICS"
+date: "2020-10-03"
+tags: ["linux", "bash"]
+ShowToc: true
+TocOpen: true
 ---
 
 
@@ -60,7 +58,7 @@ To execute a Bash script, you must first change the permissions of the file usin
 
 
 
-Sometimes it can be useful to redirect Bash input/output. `script_name> filename` will redirect output to a file, `script_name >> filename` will append the output of the bash script to an existing file, and `script_name< filename` redirects a file as input to a script. 
+Sometimes it can be useful to redirect Bash input/output. `script_name> contentbasename` will redirect output to a file, `script_name >> contentbasename` will append the output of the bash script to an existing file, and `script_name< contentbasename` redirects a file as input to a script. 
 
 
 

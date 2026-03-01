@@ -1,12 +1,10 @@
 ---
-author: Olivia Snowden
-comments: true
-date: 2020-11-11 21:48:27+00:00
-layout: post
-slug: neural-networks-tensorflow-capstone-pt-1
-title: NEURAL NETWORKS & TENSORFLOW - Capstone Pt.1
-wordpress_id: 377
-tags: [code, AI]
+author: ["Olivia Snowden"]
+title: "NEURAL NETWORKS & TENSORFLOW - Capstone Pt.1"
+date: "2020-11-11"
+tags: ["code", "AI"]
+ShowToc: true
+TocOpen: true
 ---
 
 

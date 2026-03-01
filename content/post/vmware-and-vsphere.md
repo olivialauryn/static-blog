@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-07-01 16:29:16+00:00
-layout: post
-link: http://oliviasnowden.me/2020/07/01/vmware-and-vsphere/
-slug: vmware-and-vsphere
-title: vSPHERE INTRODUCTION
-tags: [home-lab, vms]
+author: ["Olivia Snowden"]
+title: "vSPHERE INTRODUCTION"
+date: "2020-07-01"
+tags: ["home-lab", "vms"]
+ShowToc: true
+TocOpen: true
 ---
 
 

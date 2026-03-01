@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-06-24 18:24:34+00:00
-layout: post
-link: http://oliviasnowden.me/2020/06/24/cognitive-services-sentiment-in-text/
-slug: cognitive-services-sentiment-in-text
-title: COGNITIVE SERVICES-SENTIMENT IN TEXT
-tags: [code, AI, cloud]
+author: ["Olivia Snowden"]
+title: "COGNITIVE SERVICES-SENTIMENT IN TEXT"
+date: "2020-06-24"
+tags: ["code", "AI"]
+ShowToc: true
+TocOpen: true
 ---
 
 

@@ -1,17 +1,191 @@
 baseurl = "/"
 title = "Olivia Snowden's Blog"
-theme = "ghostwriter"
+copyright = "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
+theme = "PaperMod"
+enableInlineShortcodes = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableEmoji = true
+pygmentsUseClasses = true
+mainsections = [ "posts", "papermod"]
 
-[Params]
-    mainSections = ["post"]
-    intro = true
-    headline = "My Projects"
-    description = "The Cloud + AI + Linux + More"
-    github = "https://github.com/olivialauryn"
-    LinkedIn = "https://www.linkedin.com/in/olivialaurynsnowden"
-    opengraph = true
-    shareTwitter = true
-    dateFormat = "Mon, Jan 2, 2006"
+[minify]
+disableXML = true
+
+[pagination]
+disableAliases = false
+pagerSize = 5
+
+[languages.en]
+languageName = "English"
+weight = 1
+
+  [languages.en.taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[[languages.en.menu.main]]
+name = "Archive"
+url = "archives"
+weight = 5
+
+[[languages.en.menu.main]]
+name = "Search"
+url = "search/"
+weight = 10
+
+[[languages.en.menu.main]]
+name = "Tags"
+url = "tags/"
+weight = 10
+
+[[languages.en.menu.main]]
+name = "WiKi"
+url = "https://github.com/adityatelange/hugo-PaperMod/wiki/"
+
+[languages.fr]
+languageName = ":fr:"
+weight = 2
+title = "PaperModL2"
+
+  [languages.fr.taxonomies]
+  category = "FRcategories"
+  tag = "FRtags"
+  series = "FRseries"
+
+[[languages.fr.menu.main]]
+name = "Archive"
+url = "archives/"
+weight = 5
+
+[[languages.fr.menu.main]]
+name = "FRTags"
+url = "frtags"
+weight = 10
+
+[[languages.fr.menu.main]]
+name = "FRCategories"
+url = "frcategories"
+weight = 10
+
+[[languages.fr.menu.main]]
+name = "FRSeries"
+url = "frseries"
+weight = 10
+
+[[languages.fr.menu.main]]
+name = "NullLink"
+url = "#"
+
+  [languages.fr.params]
+  languageAltTitle = "French"
+
+    [languages.fr.params.profileMode]
+    enabled = true
+    title = "PaperMod"
+    imageUrl = "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/svg/emoji_u1f9d1_1f3fb_200d_1f4bb.svg"
+    imageTitle = "ProfileMode image"
+    subtitle = "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
+
+      [[languages.fr.params.profileMode.buttons]]
+      name = "Blog"
+      url = "posts"
+
+      [[languages.fr.params.profileMode.buttons]]
+      name = "Profile Mode"
+      url = "https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode"
+
+[languages.fa]
+languagedirection = "rtl"
+weight = 3
+title = "PaperMod RTL"
+
+  [languages.fa.taxonomies]
+  category = "FAcategories"
+  tag = "FAtags"
+  series = "FAseries"
+
+[[languages.fa.menu.main]]
+name = "FATags"
+url = "fatags"
+weight = 10
+
+[outputFormats.llms]
+mediaType = "text/plain"
+baseName = "llms"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = [ "HTML", "RSS", "JSON", "llms" ]
+
+[params]
+  mainSections = ["post"]
+  intro = true
+  headline = "My Projects"
+  LinkedIn = "www.linkedin.com/in/olivialaurynsnowden"
+  opengraph = true
+  shareTwitter = true
+  dateFormat = "Mon, Jan 2, 2006"
+  name = "Olivia"
+  env = "production"
+  description = "The Cloud + AI + Linux + More"
+  author = "Olivia Snowden"
+  defaultTheme = "auto"
+  ShowShareButtons = true
+  ShowReadingTime = true
+  displayFullLangName = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowAllPagesInArchive = true
+  ShowPageNums = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+  Title = "My alphabet soup: AI, GCP, AWS, IaC :bowl_with_spoon: "
+  Content = "This is a living resume of my favorite computer projects"
+
+  [[params.socialIcons]]
+  name = "LinkedIn"
+  url = "www.linkedin.com/in/olivialaurynsnowden"
+
+  [[params.socialIcons]]
+  name = "GitHub"
+  url = "https://github.com/olivialauryn"
+
+  [params.profileMode]
+  enabled = false
+  title = "PaperMod"
+  imageUrl = "#"
+  imageTitle = "my image"
+
+  [[params.profileMode.buttons]]
+  name = "Archives"
+  url = "archives"
+
+  [[params.profileMode.buttons]]
+  name = "Tags"
+  url = "tags"
+
+  [params.assets]
+  disableHLJS = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+[services.instagram]
+disableInlineCSS = true
+
+[services.x]
+disableInlineCSS = true
 
 [Permalinks]
-    post = "/:filename/"
+    post = "/:contentbasename/"

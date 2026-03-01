@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-06-12 18:58:24+00:00
-layout: post
-link: http://oliviasnowden.me/2020/06/12/home-lab-setup/
-slug: home-lab-setup
-title: HOME-LAB SETUP
-tags: [home-lab]
+author: ["Olivia Snowden"]
+title: "HOME-LAB SETUP"
+date: "2020-06-12"
+tags: ["home-lab"]
+ShowToc: true
+TocOpen: true
 ---
 For the home-lab, we used the following devices: 
 

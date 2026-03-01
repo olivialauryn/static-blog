@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-05-22 08:00:00+00:00
-layout: post
-link: http://oliviasnowden.me/2020/05/22/birdcam-pt-3/
-slug: birdcam-pt-3
-title: BIRDCAM Pt. 3
-tags: [code, docker, raspberrypi]
+author: ["Olivia Snowden"]
+title: "BIRDCAM Pt. 3"
+date: "2020-05-22"
+tags: ["code", "raspberrypi", "docker"]
+ShowToc: true
+TocOpen: true
 ---
 
 

@@ -1,0 +1,25 @@
+# Olivia Snowden's Blog
+
+## Posts
+- [BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM](//localhost:1313/building-load-balancers-in-gcp-with-terraform/)
+- [INTRODUCTION TO ANSIBLE](//localhost:1313/ansible/)
+- [AUTOMATE REPLACING VALUES IN JSON USING PYTHON](//localhost:1313/replace-json-values/)
+- [STATIC BLOG WITH HUGO, GIT, & AWS](//localhost:1313/static-blog/)
+- [PYTHON METHODS & CLASSES](//localhost:1313/python-methods/)
+- [NEURAL NETWORKS & TENSORFLOW - Capstone Pt.1](//localhost:1313/capstone-pt1/)
+- [NEURAL NETWORKS & TENSORFLOW - Capstone Pt.2](//localhost:1313/capstone-pt2/)
+- [BASH BASICS](//localhost:1313/bash-basics/)
+- [RASPI KUBERNETES CLUSTER WITH RANCHER](//localhost:1313/raspberry-pi-kubernetes/)
+- [TERRAFORM IN vSPHERE](//localhost:1313/terraform-in-vsphere/)
+- [vSPHERE INTRODUCTION](//localhost:1313/vmware-and-vsphere/)
+- [COGNITIVE SERVICES-TRANSLATING SPEECH](//localhost:1313/cognitive-services-translation/)
+- [COGNITIVE SERVICES-SENTIMENT IN TEXT](//localhost:1313/cognitive-services-text/)
+- [ARCH LINUX INSTALL](//localhost:1313/arch-linux-install/)
+- [HOME-LAB SETUP](//localhost:1313/home-lab-setup/)
+- [BIRDCAM Pt. 3](//localhost:1313/birdcam-pt3/)
+- [BIRDCAM Pt. 2](//localhost:1313/birdcam-pt2/)
+- [BIRDCAM Pt. 1](//localhost:1313/birdcam-pt1/)
+
+## Pages
+- [About](//localhost:1313/page/about/)
+- [Contact](//localhost:1313/page/contact/)

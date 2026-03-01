@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2021-02-17 22:04:21+00:00
-layout: post
-link: http://oliviasnowden.me/2021/02/17/detecting-objects-with-code-capstone-pt-2/
-slug: detecting-objects-with-code-capstone-pt-2
-title: DETECTING OBJECTS WITH CODE - Capstone Pt.2
-tags: [code, AI]
+author: ["Olivia Snowden"]
+title: "NEURAL NETWORKS & TENSORFLOW - Capstone Pt.2"
+date: "2020-11-11"
+tags: ["code", "AI"]
+ShowToc: true
+TocOpen: true
 ---
 
 

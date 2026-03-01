@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-06-25 16:41:36+00:00
-layout: post
-link: http://oliviasnowden.me/2020/06/25/cognitive-services-translating-speech/
-slug: cognitive-services-translating-speech
-title: COGNITIVE SERVICES-TRANSLATING SPEECH
-tags: [code, AI, cloud]
+author: ["Olivia Snowden"]
+title: "COGNITIVE SERVICES-TRANSLATING SPEECH"
+date: "2020-06-25"
+tags: ["code", "AI"]
+ShowToc: true
+TocOpen: true
 ---
 
 

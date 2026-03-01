@@ -1,11 +1,10 @@
 ---
-author: Olivia Snowden
-comments: true
-date: 2021-08-30
-layout: post
-slug: static-blog
-title: STATIC BLOG WITH HUGO, GIT, & AWS
-tags: [code]
+author: ["Olivia Snowden"]
+title: "STATIC BLOG WITH HUGO, GIT, & AWS"
+date: "2021-08-30"
+tags: ["code"]
+ShowToc: true
+TocOpen: true
 --- 
 ![](/static13.png)
 

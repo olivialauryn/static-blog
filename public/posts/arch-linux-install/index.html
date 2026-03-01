@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ARCH LINUX INSTALL | Olivia Snowden&#39;s Blog</title>
+<meta name="keywords" content="linux, home-lab">
+<meta name="description" content="Arch Linux&rsquo;s official website describes Arch as a distribution that &ldquo;tries to Keep It Simple&rdquo;. It also states that Arch is not for those without the ability or time for a &ldquo;do-it-yourself&rdquo; system&ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&rsquo;s what I did:">
+<meta name="author" content="Olivia Snowden">
+<link rel="canonical" href="//localhost:1313/posts/arch-linux-install/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/arch-linux-install/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/arch-linux-install/">
+  <meta property="og:site_name" content="Olivia Snowden&#39;s Blog">
+  <meta property="og:title" content="ARCH LINUX INSTALL">
+  <meta property="og:description" content="Arch Linux’s official website describes Arch as a distribution that “tries to Keep It Simple”. It also states that Arch is not for those without the ability or time for a “do-it-yourself” system–which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here’s what I did:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-06-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-06-17T00:00:00+00:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Home-Lab">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARCH LINUX INSTALL">
+<meta name="twitter:description" content="Arch Linux&rsquo;s official website describes Arch as a distribution that &ldquo;tries to Keep It Simple&rdquo;. It also states that Arch is not for those without the ability or time for a &ldquo;do-it-yourself&rdquo; system&ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&rsquo;s what I did:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ARCH LINUX INSTALL",
+      "item": "//localhost:1313/posts/arch-linux-install/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ARCH LINUX INSTALL",
+  "name": "ARCH LINUX INSTALL",
+  "description": "Arch Linux\u0026rsquo;s official website describes Arch as a distribution that \u0026ldquo;tries to Keep It Simple\u0026rdquo;. It also states that Arch is not for those without the ability or time for a \u0026ldquo;do-it-yourself\u0026rdquo; system\u0026ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here\u0026rsquo;s what I did:\n",
+  "keywords": [
+    "linux", "home-lab"
+  ],
+  "articleBody": "Arch Linux’s official website describes Arch as a distribution that “tries to Keep It Simple”. It also states that Arch is not for those without the ability or time for a “do-it-yourself” system–which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here’s what I did:\nThe Arch Linux installation guide lists each step to install Arch and provides links to a variety of wiki pages that are worth reviewing before you begin. I opted to practice installing Arch Linux on a virtual machine in my home lab, so I downloaded an Arch iso and spun up a VM.\nBIOS and UEFI are both interfaces that boot the operating system, but UEFI is newer and more powerful. My VM allowed BIOS, so that is what I used, but it is important to remember which you chose for steps later in the install.\nWhether you are installing Arch Linux on a VM or real computer, the first step is to confirm you can connect to the internet on the machine you are running the install. With Arch you are building the OS from basically nothing, and without an internet connection you wont be able to install the packages required for a functioning computer. Connect to an ethernet cable/wireless LAN and check your network with a few commands:\nip link ip addr ping google.com If your link is up, you have an IP address, and you can ping a website you are ready to continue with the install.\nUpdating the system clock is a surprisingly important step in installing Arch Linux. I passed over this step at first and it prevented me from reaching any mirror servers (mentioned later) to install essential packages. To avoid that you can use timedatectl commands to update the clock:\ntimedatectl status shows you the timezone/time set on your machine\ntimedatectl list-timezones to view all timezones, and find the one for your area.\ntimedatectl set-timezone _timezone _to set the right timezone\nA partition is a logical division of storage that allows you to allot a set amount of space on a computer’s disk for different purposes. Each partition stores 1 file system which organizes the partition’s information. Partitions can be mounted on a mount point, which gives the partition access to the file system through a directory. It is possible to make dynamic partitions that grow/shrink depending on disk usage with LVM (logical volume manger), but I opted to use regular partitions for this basic install.\nThere are two types of partitions: primary and extended. A primary partition is your typical partition that stores a complete file system. However, only 4 primary partitions are allowed on a single disk, so if you would like more 5+ partitions you have to use an extended partition. You are only allowed 1 extended partition per disk, and it is counted as 1 of your 4 primary partitions, but extended partitions can contain an unlimited number of smaller logical partitions.\nSome partitions commonly used are:\nThe root partition: contains many top-level directories like /etc and/bin that store important information \u0026 configuration files for a system. Where the primary filesystem is mounted and where all other file systems stem. The swap partition: provides memory that can be used as “overflow” virtual RAM The boot partition: stores the kernel, images, and the bootloader, not required for a system to function but used during the boot process upgrades. At this point it is important to remember if you chose UEFI or BIOS to boot your machine. If your machine is booting in UEFI mode, you will use a globally unique identifiers (GUID) partition table to create your partitions. GUID is alternative partitioning style that aims to fix quirks found in older partitioning methods. For GUID you’ll create a root partition, swap partition, and a EFI system (boot) partition. BIOS however, uses a master boot record (MBR) to store the OS bootloader and the partition table. So if you are using BIOS, as I did, you’ll only need a root partition and a swap partition.\nI used fdisk to manipulate the disk’s partition table.\nI viewed the partition table with fdisk -l then began editing the main disk by entering fdisk /dev/sda since my VM’s disk was /dev/sda.\nfdisk’s command mode allows you to enter single letters to specify actions. Entering “m” will show you all possible commands and make navigating fdisk easy.\nType “n” to create a new partition.\nType “p” to create a primary partition, or “l” to create a logical partition (in an extended partition) .\nYou’ll be ask to enter the number of the partition, which will give the partition the name /dev/sda#. I entered 1 for my first partition, 2 for my second, etc.\nNext specify the sector of the disk where you want the partition to start. Press Enter to accept the first free sector.\nLastly, specify the last sector of the disk you want the partition to occupy. This is how you control the size of your partition. You can use the format +_size_K/M/G to set the size of the partition in kilobytes (K), megabytes (M), or gigabytes (G). If you want to use all remaining space, press Enter.\nSwap partitions should be 512+ MiB Boot partitions (if using) should be 260-512 MiB Root partitions should take up the remainder of the device. Typing “w” will write the changes and put you out of fdisk’s command mode.\nEnter fdisk -l to view your partition table again. You should see the new partitions you created and be able to check that their names/sizes are correct.\nFinally, your root partition needs to be bootable.\nEntering fdisk -u /dev/_partition_ puts you into the command mode of a particular partition. Enter the command mode of your root partition and enter “a” to toggle a bootable flag.\nThen confirm the number of the partition you want to make bootable (In my case, 1) and enter “w” to write the changes. If you view your partition table again, your root partition will have a “*” next to it, signifying it is bootable.\nOnce the partitions are created, they must be given a file system. I gave my root partition an ext4 file system and intialized my swap partition using:\nmkfs.ext4 /dev/root_partition mkswap /dev/swap_partition swapon /dev/swap_partition The root partition’s file system needs to be mounted through the file system’s /mnt directory.\nmount /dev/root_partition /mnt After the partitions are made, you need to install a basic package, the Linux kernel (or kernel of choice), and firmware. This is done using pacstrap, which contacts servers across the globe called mirror servers to get essential packages for the system to run and download them.Like apt or get, pacman is the package installer for Arch Linux.\nAll mirrors are stored in /etc/pacman.d/mirrorlist, the higher the mirror on the list the more priority it has when downloading a package. You can edit the /etc/pacman.d/mirrorlist file using nano or vi to delete all mirror servers not in your area to speed up the process. Here, I used nano.\nnano /etc/pacman.d/mirrorlist ctrl+K to delete all mirror servers not in my region. Then install the packages. The “linux-firmware option can be left off if your installing arch on a VM or a container.\npacstrap /mnt base linux linux-firmware After the essential packages/kernel is installed, you can install any other packages you’d like. I downloaded a nano package, because you need a text editor to complete the last few steps of installing Arch Linux.\npacman -S nano An fstab file allows you to set which partitions will be automatically mounted when the system boots. To generate the fstab file run:\ngenfstab -U /mnt \u003e\u003e /mnt/etc/fstab Since the kernel and packages have been installed, you can now change root into the new Arch Linux system.\narch-chroot /mnt Set the timezone, I used the same region as when I updated the system clock in step 2.\nln -sf /usr/share/zoneinfo/Region/City /etc/localtime Generate a /etc/adjtime file with hwclock:\nhwclock --systohc Lastly, there are a few config files that need to be set.\nGenerate locales, which are used for correctly displaying information that depends on where you are in the world (monetary symbols, date/time, alphabets, etc).\nlocale-gen Then edit /etc/locale.conf with the text editor package installed in step 4, set the LANG variable to the correct language.\nThe hostname file sets the unique name given to your machine. Create the /etc/hostname file with your text editor, and enter the name you want to give your Arch Linux machine (I named mine Arch_Linux).\nnano /etc/hostname hostname You then add your hostname to the /hosts file, which is a static table lookup for hostnames. Here you’ll add your host’s loopback address.\nThen, set the root password.\npasswd Finally, install a bootloader so you can remove the installation medium (USB, CD, .iso image, etc.) and the OS will be able to boot on the machine. This VM is a non-UEFI system, and while I chose to use grub there are many bootloaders to choose from. The commands to install grub on a non-UEFI system are:\npacman -S grub grub-install /dev/sda grub-mkconfig -o /boot/grub/grub.cfg When you reboot your machine, you are then able to sign in as root and begin working on Arch Linux!\n",
+  "wordCount" : "1566",
+  "inLanguage": "en",
+  "datePublished": "2020-06-17T00:00:00Z",
+  "dateModified": "2020-06-17T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Olivia Snowden"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/arch-linux-install/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Olivia Snowden's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Olivia Snowden&#39;s Blog (Alt + H)">Olivia Snowden&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                    <ul class="lang-switch"><li>|</li>
+                        <li>
+                            <a href="//localhost:1313/fr/" title="French"
+                                aria-label=":fr:">🇫🇷</a>
+                        </li>
+                        <li>
+                            <a href="//localhost:1313/fa/" title="Fa"
+                                aria-label="Fa">Fa</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="//localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/adityatelange/hugo-PaperMod/wiki/" title="WiKi">
+                    <span>WiKi</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="//localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="//localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      ARCH LINUX INSTALL
+    </h1>
+    <div class="post-meta"><span title='2020-06-17 00:00:00 +0000 UTC'>Wed, Jun 17, 2020</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span>
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>Arch Linux&rsquo;s official website describes Arch as a distribution that &ldquo;tries to Keep It Simple&rdquo;. It also states that Arch is not for those without the ability or time for a &ldquo;do-it-yourself&rdquo; system&ndash;which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here&rsquo;s what I did:</p>
+<p>The Arch Linux <a href="https://wiki.archlinux.org/index.php/Installation_guide">installation guide</a> lists each step to install Arch and provides links to a variety of wiki pages that are worth reviewing before you begin. I opted to practice installing Arch Linux on a virtual machine in my home lab, so I downloaded an Arch iso and spun up a VM.</p>
+<p>BIOS and UEFI are both interfaces that boot the operating system, but UEFI is newer and more powerful. My VM allowed BIOS, so that is what I used, but it is important to remember which you chose for steps later in the install.</p>
+<p><img alt="Linux Boot Screen" loading="lazy" src="/arch-boot-screen.png"></p>
+<p>Whether you are installing Arch Linux on a VM or real computer, the first step is to confirm you can connect to the internet on the machine you are running the install. With Arch you are building the OS from basically nothing, and without an internet connection you wont be able to install the packages required for a functioning computer. Connect to an ethernet cable/wireless LAN and check your network with a few commands:</p>
+<pre><code>ip link 
+ip addr
+ping google.com
+</code></pre>
+<p>If your link is up, you have an IP address, and you can ping a website you are ready to continue with the install.</p>
+<p>Updating the system clock is a surprisingly important step in installing Arch Linux. I passed over this step at first and it prevented me from reaching any mirror servers (mentioned later) to install essential packages. To avoid that you can use <code>timedatectl</code> commands to update the clock:</p>
+<p><code>timedatectl status </code> shows you the timezone/time set on your machine</p>
+<p><code>timedatectl list-timezones </code>to view all timezones, and find the one for your area.</p>
+<p><code> timedatectl set-timezone _timezone _</code>to set the right timezone</p>
+<p>A partition is a logical division of storage that allows you to allot a set amount of space on a computer&rsquo;s disk for different purposes. Each partition stores 1 file system which organizes the partition&rsquo;s information. Partitions can be mounted on a mount point, which gives the partition access to the file system through a directory. It is possible to make dynamic partitions that grow/shrink depending on disk usage with LVM (logical volume manger), but I opted to use regular partitions for this basic install.</p>
+<p>There are two types of partitions: primary and extended. A primary partition is your typical partition that stores a complete file system. However, only 4 primary partitions are allowed on a single disk, so if you would like more 5+ partitions you have to use an extended partition. You are only allowed 1 extended partition per disk, and it is counted as 1 of your 4 primary partitions, but extended partitions can contain an unlimited number of smaller logical partitions.</p>
+<p>Some partitions commonly used are:</p>
+<ol>
+<li>The root partition: contains many top-level directories like /etc and/bin that store important information &amp; configuration files for a system. Where the primary filesystem is mounted and where all other file systems stem.</li>
+<li>The swap partition: provides memory that can be used as &ldquo;overflow&rdquo; virtual RAM</li>
+<li>The boot partition: stores the kernel, images, and the bootloader, not required for a system to function but used during the boot process upgrades.</li>
+</ol>
+<p>At this point it is important to remember if you chose UEFI or BIOS to boot your machine. If your machine is booting in UEFI mode, you will use a globally unique identifiers (GUID) partition table to create your partitions. GUID is alternative partitioning style that aims to fix quirks found in older partitioning methods. For GUID you&rsquo;ll create a root partition, swap partition, and a EFI system (boot) partition. BIOS however, uses a master boot record (MBR) to store the OS bootloader and the partition table.  So if you are using BIOS, as I did, you&rsquo;ll only need a root partition and a swap partition.</p>
+<p>I used fdisk to manipulate the disk&rsquo;s partition table.</p>
+<p>I viewed the partition table with <code>fdisk -l</code> then began editing the main disk by entering <code>fdisk /dev/sda</code> since my VM&rsquo;s disk was /dev/sda.</p>
+<p><img alt="Partitioning using fdisk" loading="lazy" src="/arch-fdisk.png"></p>
+<p>fdisk&rsquo;s command mode allows you to enter single letters to specify actions. Entering &ldquo;m&rdquo; will show you all possible commands and make navigating fdisk easy.</p>
+<p>Type &ldquo;n&rdquo; to create a new partition.</p>
+<p>Type &ldquo;p&rdquo; to create a primary partition, or &ldquo;l&rdquo; to create a logical partition (in an extended partition) .</p>
+<p>You&rsquo;ll be ask to enter the number of the partition, which will give the partition the name /dev/sda#. I entered 1 for my first partition, 2 for my second, etc.</p>
+<p>Next specify the sector of the disk where you want the partition to start. Press Enter to accept the first free sector.</p>
+<p>Lastly, specify the last sector of the disk you want the partition to occupy. This is how you control the size of your partition. You can use the format +_size_K/M/G to set the size of the partition in kilobytes (K), megabytes (M), or gigabytes (G). If you want to use all remaining space, press Enter.</p>
+<ul>
+<li>Swap partitions should be 512+ MiB</li>
+<li>Boot partitions (if using) should be 260-512 MiB</li>
+<li>Root partitions should take up the remainder of the device.</li>
+</ul>
+<p>Typing &ldquo;w&rdquo; will write the changes and put you out of fdisk&rsquo;s command mode.</p>
+<p>Enter<code> fdisk -l</code> to view your partition table again. You should see the new partitions you created and be able to check that their names/sizes are correct.</p>
+<p>Finally, your root partition needs to be bootable.</p>
+<p>Entering <code>fdisk -u /dev/_partition_ </code> puts you into the command mode of a particular partition. Enter the command mode of your root partition and enter &ldquo;a&rdquo; to toggle a bootable flag.</p>
+<p>Then confirm the number of the partition you want to make bootable (In my case, 1) and enter &ldquo;w&rdquo; to write the changes. If you view your partition table again, your root partition will have a &ldquo;*&rdquo; next to it, signifying it is bootable.</p>
+<p>Once the partitions are created, they must be given a file system. I gave my root partition an ext4 file system and intialized my swap partition using:</p>
+<pre><code>mkfs.ext4 /dev/&lt;em&gt;root_partition&lt;/em&gt; 
+mkswap /dev/&lt;em&gt;swap_partition&lt;/em&gt;
+swapon /dev/&lt;em&gt;swap_partition&lt;/em&gt;
+</code></pre>
+<p>The root partition&rsquo;s file system needs to be mounted through the file system&rsquo;s /mnt directory.</p>
+<pre><code>mount /dev/&lt;em&gt;root_partition&lt;/em&gt; /mnt
+</code></pre>
+<p>After the partitions are made, you need to install a basic package, the Linux kernel (or kernel of choice), and firmware. This is done using pacstrap, which contacts servers across the globe called <em>mirror servers</em> to get essential packages for the system to run and download them.Like apt or get, pacman is the package installer for Arch Linux.</p>
+<p>All mirrors are stored in /etc/pacman.d/mirrorlist, the higher the mirror on the list the more priority it has when downloading a package. You can edit the /etc/pacman.d/mirrorlist file using nano or vi to delete all mirror servers not in your area to speed up the process. Here, I used nano.</p>
+<pre><code>nano /etc/pacman.d/mirrorlist 
+ctrl+K to delete all mirror servers not in my region.
+</code></pre>
+<p>Then install the packages. The &ldquo;linux-firmware option can be left off if your installing arch on a VM or a container.</p>
+<pre><code>pacstrap /mnt base linux linux-firmware
+</code></pre>
+<p>After the essential packages/kernel is installed, you can install any other packages you&rsquo;d like. I downloaded a nano package, because you need a text editor to complete the last few steps of installing Arch Linux.</p>
+<pre><code>pacman -S nano
+</code></pre>
+<p>An fstab file allows you to set which partitions will be automatically mounted when the system boots. To generate the fstab file run:</p>
+<pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre>
+<p>Since the kernel and packages have been installed, you can now change root into the new Arch Linux system.</p>
+<pre><code>arch-chroot /mnt
+</code></pre>
+<p>Set the timezone, I used the same region as when I updated the system clock in step 2.</p>
+<pre><code>ln -sf /usr/share/zoneinfo/&lt;em&gt;Region&lt;/em&gt;/&lt;em&gt;City&lt;/em&gt; /etc/localtime
+</code></pre>
+<p>Generate a /etc/adjtime file with hwclock:</p>
+<pre><code>hwclock --systohc
+</code></pre>
+<p>Lastly, there are a few config files that need to be set.</p>
+<p>Generate locales, which are used for correctly displaying information that depends on where you are in the world (monetary symbols, date/time, alphabets, etc).</p>
+<pre><code>locale-gen
+</code></pre>
+<p>Then edit /etc/locale.conf with the text editor package installed in step 4, set the LANG variable to the correct language.</p>
+<p><img alt="Editing /etc/locale.conf" loading="lazy" src="/arch-locale.png"></p>
+<p>The hostname file sets the unique name given to your machine. Create the /etc/hostname file with your text editor, and enter the name you want to give your Arch Linux machine (I named mine Arch_Linux).</p>
+<pre><code>nano /etc/hostname 
+  &lt;em&gt;hostname &lt;/em&gt;
+</code></pre>
+<p>You then add your hostname to the /hosts file, which is a static table lookup for hostnames. Here you&rsquo;ll add your host&rsquo;s loopback address.</p>
+<p><img loading="lazy" src="/arch-loopback.png"></p>
+<p>Then, set the root password.</p>
+<pre><code>passwd 
+</code></pre>
+<p>Finally, install a bootloader so you can remove the installation medium (USB, CD, .iso image, etc.) and the OS will be able to boot on the machine. This VM is a non-UEFI system, and while I chose to use grub there are many bootloaders to choose from. The commands to install grub on a non-UEFI system are:</p>
+<pre><code>pacman -S grub
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>When you reboot your machine, you are then able to sign in as root and begin working on Arch Linux!</p>
+<p><img loading="lazy" src="/arch-arch.png"></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="//localhost:1313/tags/home-lab/">Home-Lab</a></li>
+    </ul>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on x"
+            href="https://x.com/intent/tweet/?text=ARCH%20LINUX%20INSTALL&amp;url=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f&amp;hashtags=linux%2chome-lab">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f&amp;title=ARCH%20LINUX%20INSTALL&amp;summary=ARCH%20LINUX%20INSTALL&amp;source=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on reddit"
+            href="https://reddit.com/submit?url=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f&title=ARCH%20LINUX%20INSTALL">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on whatsapp"
+            href="https://api.whatsapp.com/send?text=ARCH%20LINUX%20INSTALL%20-%20%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on telegram"
+            href="https://telegram.me/share/url?text=ARCH%20LINUX%20INSTALL&amp;url=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share ARCH LINUX INSTALL on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=ARCH%20LINUX%20INSTALL&u=%2f%2flocalhost%3a1313%2fposts%2farch-linux-install%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/adityatelange/hugo-PaperMod/graphs/contributors">PaperMod Contributors</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

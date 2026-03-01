@@ -1,109 +1,111 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Olivia Snowden&#39;s Blog</title>
-    <link>/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Olivia Snowden&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>automation</title>
-      <link>/tags/automation/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/automation/</guid>
+      <title>Cloud</title>
+      <link>//localhost:1313/tags/cloud/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/cloud/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>code</title>
-      <link>/tags/code/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/code/</guid>
+      <title>Code</title>
+      <link>//localhost:1313/tags/code/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/code/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
-      <link>/tags/python/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
+      <title>Gcp</title>
+      <link>//localhost:1313/tags/gcp/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/gcp/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Networking</title>
+      <link>//localhost:1313/tags/networking/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>//localhost:1313/tags/terraform/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>//localhost:1313/tags/automation/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home-Lab</title>
+      <link>//localhost:1313/tags/home-lab/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/home-lab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Raspberrypi</title>
+      <link>//localhost:1313/tags/raspberrypi/</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>//localhost:1313/tags/python/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
-      <link>/tags/ai/</link>
-      <pubDate>Wed, 17 Feb 2021 22:04:21 +0000</pubDate>
-      
-      <guid>/tags/ai/</guid>
+      <link>//localhost:1313/tags/ai/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ai/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bash</title>
-      <link>/tags/bash/</link>
-      <pubDate>Sat, 03 Oct 2020 17:50:51 +0000</pubDate>
-      
-      <guid>/tags/bash/</guid>
+      <title>Bash</title>
+      <link>//localhost:1313/tags/bash/</link>
+      <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Sat, 03 Oct 2020 17:50:51 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
+      <title>Linux</title>
+      <link>//localhost:1313/tags/linux/</link>
+      <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Fri, 17 Jul 2020 00:02:29 +0000</pubDate>
-      
-      <guid>/tags/docker/</guid>
+      <title>Docker</title>
+      <link>//localhost:1313/tags/docker/</link>
+      <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>home-lab</title>
-      <link>/tags/home-lab/</link>
-      <pubDate>Fri, 17 Jul 2020 00:02:29 +0000</pubDate>
-      
-      <guid>/tags/home-lab/</guid>
+      <title>Vms</title>
+      <link>//localhost:1313/tags/vms/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/vms/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>raspberrypi</title>
-      <link>/tags/raspberrypi/</link>
-      <pubDate>Fri, 17 Jul 2020 00:02:29 +0000</pubDate>
-      
-      <guid>/tags/raspberrypi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vms</title>
-      <link>/tags/vms/</link>
-      <pubDate>Wed, 08 Jul 2020 18:47:39 +0000</pubDate>
-      
-      <guid>/tags/vms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cloud</title>
-      <link>/tags/cloud/</link>
-      <pubDate>Thu, 25 Jun 2020 16:41:36 +0000</pubDate>
-      
-      <guid>/tags/cloud/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

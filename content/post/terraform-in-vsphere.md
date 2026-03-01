@@ -1,12 +1,10 @@
 ---
-author: osnowden
-comments: true
-date: 2020-07-08 18:47:39+00:00
-layout: post
-link: http://oliviasnowden.me/2020/07/08/terraform-in-vsphere/
-slug: terraform-in-vsphere
-title: TERRAFORM IN vSPHERE
-tags: [home-lab, linux, vms]
+author: ["Olivia Snowden"]
+title: "TERRAFORM IN vSPHERE"
+date: "2020-07-08"
+tags: ["home-lab", "linux", "vms"]
+ShowToc: true
+TocOpen: true
 ---
 
 
