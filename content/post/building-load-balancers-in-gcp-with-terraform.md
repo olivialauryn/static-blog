@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM"
+title: "GCP Load Balancers with Terraform"
 date: "2023-03-22"
-tags: ["code", "terraform", "networking", "gcp", "cloud"]
+tags: ["IaC", "Terraform", "Networking", "GCP"]
 ShowToc: true
 TocOpen: true
 ---

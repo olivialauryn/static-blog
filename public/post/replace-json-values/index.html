@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON | Olivia Snowden&#39;s Blog</title>
-<meta name="keywords" content="code, python, automation">
+<title>Automate Replacing JSON Values with Python | Olivia Snowden&#39;s Blog</title>
+<meta name="keywords" content="Python, Automation">
 <meta name="description" content="
 In this post:
 
@@ -91,7 +91,7 @@ I was recently tasked with automating the replacement of key:value pairs in a JS
 
 </script><meta property="og:url" content="http://localhost:1313/post/replace-json-values/">
   <meta property="og:site_name" content="Olivia Snowden&#39;s Blog">
-  <meta property="og:title" content="AUTOMATE REPLACING VALUES IN JSON USING PYTHON">
+  <meta property="og:title" content="Automate Replacing JSON Values with Python">
   <meta property="og:description" content=" In this post:
 Intro
 JSON File
@@ -104,11 +104,10 @@ I was recently tasked with automating the replacement of key:value pairs in a JS
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2021-12-22T00:00:00+00:00">
     <meta property="article:modified_time" content="2021-12-22T00:00:00+00:00">
-    <meta property="article:tag" content="Code">
     <meta property="article:tag" content="Python">
     <meta property="article:tag" content="Automation">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AUTOMATE REPLACING VALUES IN JSON USING PYTHON">
+<meta name="twitter:title" content="Automate Replacing JSON Values with Python">
 <meta name="twitter:description" content="
 In this post:
 
@@ -145,7 +144,7 @@ I was recently tasked with automating the replacement of key:value pairs in a JS
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "AUTOMATE REPLACING VALUES IN JSON USING PYTHON",
+      "name": "Automate Replacing JSON Values with Python",
       "item": "http://localhost:1313/post/replace-json-values/"
     }
   ]
@@ -155,11 +154,11 @@ I was recently tasked with automating the replacement of key:value pairs in a JS
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "AUTOMATE REPLACING VALUES IN JSON USING PYTHON",
-  "name": "AUTOMATE REPLACING VALUES IN JSON USING PYTHON",
+  "headline": "Automate Replacing JSON Values with Python",
+  "name": "Automate Replacing JSON Values with Python",
   "description": " In this post:\nIntro\nJSON File\nCSV File\nPython Script\nWriting the Python Script\nI was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.\n",
   "keywords": [
-    "code", "python", "automation"
+    "Python", "Automation"
   ],
   "articleBody": " In this post:\nIntro\nJSON File\nCSV File\nPython Script\nWriting the Python Script\nI was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.\nThere are a wide variety of python modules that can be used to search and replace values in a file-however the JSON file I was working with presented some challenges. In this post I’ll go into detail about the format of that file, the CSV, and how to write a python script to search/update values in JSON.\nJSON File To keep things simple, I have replaced the actual JSON file I used with a fake one. However the format of the file and the location of the values to be replaced are the same. Ideally the python script could automate the replacement of any number of values, but we will only be working with 2 sets of key:value pairs. This project results in 2 JSON files-the original JSON file and a new one with updated values. In my project there were 6 values spread across 3 blocks that needed to be replaced. First 2 old keys together in one block, old-key1 and old-key2 needed to be updated. Further down, both key:value pairs old-key1:old-value1 and old-key2:old-value2 needed to be updated in their own blocks- and it was very important that the keys were matched with their corresponding values. I discovered that the nested format of the JSON file made it difficult to search for values in the file using python. Additionally-some values were of the type list and some were type dictionaries. To find the work around for this, see the “Writing the Python Script” section.\nCSV File The new values to be placed in the json file came from a CSV file I generated from CLI output. However, the CSV can contain just about anything and use any delimiter. In this case, I used two sets of comma separated values and column headers: Python Script Lines 4-12: Setup\nIn the first portion of the python script, I import the necessary modules (csv and json) and initialize 2 lists and a total of 6 variables. One list will contain the keys from the CSV, the other will contain the values. This is so the content of the CSV can be easily processed in the script. The variable y is set to 1, while the rest are 0-this comes into play later in the script and ensures that the iterations work correctly.\nLines 14-19: Accept input from CSV and add values to lists\nOnce everything is setup, the CSV file must be opened and the keys/values be placed into their respective lists. First, line 14 opens the CSV file “input.csv” as the variable myfile with read r permission. Then the csv module is used to read the file and specify that the delimiter used is a comma “,”. Line 16 specifies to skip the first line in the CSV file since mine contains column headers. Finally, lines 17-29 iterate through the rows in the CSV and add the keys to the keys_list and the values to the values_list. This is done by specifying that the keys are in the 0 index of each row, row[0], while the values are in the 1 index row[1].\nLines 22-34: Open original JSON file and update keys in file\nLine 22 opens the JSON file in the same way the CSV was opened, but here the JSON module is used to load the content as read_content. Next, 3 separate for loops are used to replace the keys in the JSON file. The first for loop replaces the keys that are together in a nested block in the JSON file, without being paired with their values. This is the only for loop that uses 2 variables to iterate. a iterates through key_list and since a is set to equal 0 the iteration begins at the first key in the key_list. y, which is set to equal 1, iterates through the original values in the JSON file that are being replaced in this for loop. The original JSON file has 2 values that need to be replaced using this for loop: old-key1 and old-key2. This is specified in line 25 as \"old-key\"+str(y). So as y is increased by 1 in the for loop the old key is replaced with the corresponding new key. The second and third for loops replace the other keys in the script when they are separated with their respective values. This means that the exact location of the value to be replaced is specified, instead of using an if statement like the first loop. Lines 37-41: Update values in file\nThe values are replaced in the JSON file similarly to how the keys were replaced using for loops. Here 2 loops are used, each replacing one value in the JSON file which correspond to the second and third loops that replace keys. Once this portion of the script is ran, the key:value pairs that are grouped together in the JSON file are replaced with new key:value pairs. Lines 44-45: Write to new JSON file\nFinally, a new JSON file “new-file.json” is opened as access_json with write w permission. Then the json module combines the content of the old JSON file read_content with the updated content access_json. This creates a new JSON file with the updated values while the original JSON file is untouched.\nWriting the Python Script Creating the python script involved lots of trial and error since, as mentioned previously, the nesting in the JSON file caused the usual methods I use to find/replace values using python to fail. My first thought was to iterate through the JSON file and use an if statement to say if oldvalue: oldvalue=newvalue, newvalue being one of the keys/values from the CSV. However, with that method it seemed that python was only going through the outermost layer of the JSON file. While I’m sure there is a “better” way of doing this-I ended up keeping the if x: x=y to replace the values in the JSON file, but specified the exact location inside the file to find “x”.\nThis is where the trial and error comes in. For each value that needs to be replaced, I used print statements to narrow down the location of where I was inside the file. The format I used was read_content followed by the names of each nested layer in brackets []. This is similar to using indexes to find values in a list. Some layers of the JSON file contained multiple layers of the same name which meant that using [\"name of layer\"] wouldn’t work. To figure out how to get where I needed, I checked the type of where I was using print(type(read_content['layer1']['layer2']etc)).\nI discovered that layers with multiple layers within them are lists-which meant that I could use the index of the layer I wanted to go into as part of the path I was specifying. For example, read_content ['json']['group2']['resources'][0] to enter one layer and read_content ['json']['group2']['resources'][1] to enter another layer both under json \u003e group2 \u003e resources. NOTE: If you use Visual Studio Code to open the JSON file, you can see the path to a value at the top of the screen if you click on a value. You can use this path separated by brackets instead of using print statements to find the path. ",
   "wordCount" : "1284",
@@ -249,7 +248,7 @@ I was recently tasked with automating the replacement of key:value pairs in a JS
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      AUTOMATE REPLACING VALUES IN JSON USING PYTHON
+      Automate Replacing JSON Values with Python
     </h1>
     <div class="post-meta"><span title='2021-12-22 00:00:00 +0000 UTC'>Wed, Dec 22, 2021</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span>
 
@@ -337,7 +336,6 @@ The second and third for loops replace the other keys in the script when they ar
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/code/">Code</a></li>
       <li><a href="http://localhost:1313/tags/python/">Python</a></li>
       <li><a href="http://localhost:1313/tags/automation/">Automation</a></li>
     </ul>
@@ -345,20 +343,20 @@ The second and third for loops replace the other keys in the script when they ar
   <a class="prev" href="http://localhost:1313/post/ansible/">
     <span class="title">« Prev</span>
     <br>
-    <span>INTRODUCTION TO ANSIBLE</span>
+    <span>Getting Started with Ansible</span>
   </a>
   <a class="next" href="http://localhost:1313/post/static-blog/">
     <span class="title">Next »</span>
     <br>
-    <span>STATIC BLOG WITH HUGO, GIT, &amp; AWS</span>
+    <span>Static Blog with Hugo, Git, and AWS</span>
   </a>
 </nav>
 
 
 <ul class="share-buttons">
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on x"
-            href="https://x.com/intent/tweet/?text=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f&amp;hashtags=code%2cpython%2cautomation">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on x"
+            href="https://x.com/intent/tweet/?text=Automate%20Replacing%20JSON%20Values%20with%20Python&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f&amp;hashtags=Python%2cAutomation">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -366,8 +364,8 @@ The second and third for loops replace the other keys in the script when they ar
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f&amp;title=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON&amp;summary=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON&amp;source=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f&amp;title=Automate%20Replacing%20JSON%20Values%20with%20Python&amp;summary=Automate%20Replacing%20JSON%20Values%20with%20Python&amp;source=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -375,8 +373,8 @@ The second and third for loops replace the other keys in the script when they ar
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f&title=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f&title=Automate%20Replacing%20JSON%20Values%20with%20Python">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -384,7 +382,7 @@ The second and third for loops replace the other keys in the script when they ar
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on facebook"
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on facebook"
             href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
@@ -393,8 +391,8 @@ The second and third for loops replace the other keys in the script when they ar
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on whatsapp"
-            href="https://api.whatsapp.com/send?text=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON%20-%20http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on whatsapp"
+            href="https://api.whatsapp.com/send?text=Automate%20Replacing%20JSON%20Values%20with%20Python%20-%20http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -402,8 +400,8 @@ The second and third for loops replace the other keys in the script when they ar
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on telegram"
-            href="https://telegram.me/share/url?text=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on telegram"
+            href="https://telegram.me/share/url?text=Automate%20Replacing%20JSON%20Values%20with%20Python&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -411,8 +409,8 @@ The second and third for loops replace the other keys in the script when they ar
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share AUTOMATE REPLACING VALUES IN JSON USING PYTHON on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=AUTOMATE%20REPLACING%20VALUES%20IN%20JSON%20USING%20PYTHON&u=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Automate Replacing JSON Values with Python on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Automate%20Replacing%20JSON%20Values%20with%20Python&u=http%3a%2f%2flocalhost%3a1313%2fpost%2freplace-json-values%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path

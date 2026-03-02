@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "NEURAL NETWORKS & TENSORFLOW - Capstone Pt.2"
+title: "Neural Networks and Tensorflow - Capstone Pt.2"
 date: "2020-11-11"
-tags: ["code", "AI"]
+tags: ["Python", "AI"]
 ShowToc: true
 TocOpen: true
 ---

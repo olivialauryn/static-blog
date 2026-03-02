@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "BASH BASICS"
+title: "Bash Basics"
 date: "2020-10-03"
-tags: ["linux", "bash"]
+tags: ["Linux", "Bash"]
 ShowToc: true
 TocOpen: true
 ---

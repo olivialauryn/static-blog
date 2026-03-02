@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "ARCH LINUX INSTALL"
+title: "Installing Arch Linux"
 date: "2020-06-17"
-tags: ["linux", "home-lab"]
+tags: ["Linux", "Home-Lab"]
 ShowToc: true
 TocOpen: true
 ---

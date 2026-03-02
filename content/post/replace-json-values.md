@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "AUTOMATE REPLACING VALUES IN JSON USING PYTHON"
+title: "Automate Replacing JSON Values with Python"
 date: "2021-12-22"
-tags: ["code", "python","automation"]
+tags: ["Python","Automation"]
 ShowToc: true
 TocOpen: true
 ---

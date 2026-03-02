@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM | Olivia Snowden&#39;s Blog</title>
-<meta name="keywords" content="code, terraform, networking, gcp, cloud">
+<title>GCP Load Balancers with Terraform | Olivia Snowden&#39;s Blog</title>
+<meta name="keywords" content="IaC, Terraform, Networking, GCP">
 <meta name="description" content="
 Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you&rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation here.
 However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.">
@@ -74,7 +74,7 @@ However, if you have an understanding of how load balancers work internally, and
 
 </script><meta property="og:url" content="http://localhost:1313/post/building-load-balancers-in-gcp-with-terraform/">
   <meta property="og:site_name" content="Olivia Snowden&#39;s Blog">
-  <meta property="og:title" content="BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM">
+  <meta property="og:title" content="GCP Load Balancers with Terraform">
   <meta property="og:description" content="
 Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you’ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation here.
 However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.">
@@ -83,13 +83,12 @@ However, if you have an understanding of how load balancers work internally, and
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2023-03-22T00:00:00+00:00">
     <meta property="article:modified_time" content="2023-03-22T00:00:00+00:00">
-    <meta property="article:tag" content="Code">
+    <meta property="article:tag" content="IaC">
     <meta property="article:tag" content="Terraform">
     <meta property="article:tag" content="Networking">
-    <meta property="article:tag" content="Gcp">
-    <meta property="article:tag" content="Cloud">
+    <meta property="article:tag" content="GCP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM">
+<meta name="twitter:title" content="GCP Load Balancers with Terraform">
 <meta name="twitter:description" content="
 Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you&rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation here.
 However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.">
@@ -109,7 +108,7 @@ However, if you have an understanding of how load balancers work internally, and
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM",
+      "name": "GCP Load Balancers with Terraform",
       "item": "http://localhost:1313/post/building-load-balancers-in-gcp-with-terraform/"
     }
   ]
@@ -119,11 +118,11 @@ However, if you have an understanding of how load balancers work internally, and
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM",
-  "name": "BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM",
+  "headline": "GCP Load Balancers with Terraform",
+  "name": "GCP Load Balancers with Terraform",
   "description": "\nNetworking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you\u0026rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation here.\nHowever, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.\n",
   "keywords": [
-    "code", "terraform", "networking", "gcp", "cloud"
+    "IaC", "Terraform", "Networking", "GCP"
   ],
   "articleBody": "\nNetworking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you’ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation here.\nHowever, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.\nWhat is a Load Balancer? Load balancers are networking resources that take in network traffic through their frontend and distribute that traffic to their backend(s). Load balancers have a few basic parts you should know:\nFrontend Where clients reach the load balancer, the “face” of the load balancer.\nBackend The server(s) where the load balancer directs traffic\nForwarding Rules The logic the load balancer uses to distribute traffic. Also referred to as a load balancer’s “algorithm”.\nHealth Checks Checks the status of the backend(s) and whether they can recieve traffic. Load balancers will not send traffic to an unhealthy backend.\nBelow is a simple diagram that illustrates the flow of traffic through a load balancer: Traffic enters the load balancer through its frontend IP, the forwarding rule(s) determines how to route traffic to the backends, the health check confirms that the backend is healthy-and if so then the traffic is routed there.\nRules Deciding how to route traffic to a load balancer’s backends depends on the use case. For example, if a network admin has 2 servers and server 1 can handle more requests than server 2, then the load balancer can be configured to use a weighted rule which will send more traffic to server 1.\nHowever if a network admin has 2 servers with the same processing power they can confgure the load balancer to use a least connection rule which will send traffic to the server that is the most available at the time.\nGCP Load Balancers Load balancers can exist in the cloud as well as on-premises networks. This post will primarily focus on internal/external TCP/HTTPS cloud-based load balancers in GCP, although similar load balancers exist in AWS and Azure cloud platforms. Load balancers in GCP work just like load balancers in any other network, with the exception that some or all of the traffic of GCP load balancers is between GCP cloud resources.\nWhen creating a load balancer in GCP, it is important to understand the different types of load balancers supported.\nInternal and External Load Balancers GCP supports 2 options for the IP address of their load balancers, internal and external.\nInternal LBs only distribute traffic to resources within GCP. External LBs route traffic coming from the internet into GCP. It is important to note that external LBs often require additional security measures due to the LBs being public-facing.\nTCP/UDP and HTTP(S) Load Balancers GCP supports 4 types of traffic on their load balancers: TCP, UDP, HTTP(S), and SSL. This post will primarily focus on TCP/UDP and HTTP(S) load balancing.\nCreating a Load Balancer using Terraform Load balancers can be created in GCP using Terraform, however there is not a single Terraform resource that creates a load balancer. Instead, multiple Terraform resources together create a GCP load balancer. These resources include:\n“google_compute_global_address” = The public IP address that is the frontend of the LB. (External LBs only)\n“google_compute_target_http_proxy” = Routes requests to the url map (“google_compute_global_forwarding_rule” for external LBs)\n“google_compute_url_map” = Defines the rules to route traffic to the backend\n“google_compute_forwarding_rule” = Routes traffic to the backends\n“google_compute_backend_service” = Creates the LB’s backend(s)\n“google_compute_health_check” = The LB’s health check (optiona)\nNote, that the global address and http proxy resources are different between internal and external LBs. External LBs use a global address resource to make a public IP address that clients from the internet can use to access the external LB. Internal LBs do not need a global address. In addiiton, internal LBs use the “google_compute_target_http_proxy” proxy resource, external LBs use the “google_compute_global_forwarding_rule” resource.\nBelow is a diagram illustrating the flow of traffic through the Terraform resources that make an internal load balancer: And this is the flow of traffic through the Terraform resources that make an external load balancer: URL Maps in a GCP LB Created with Terraform It is simple enough to copy/paste the required TF resources to create a GCP LB, but configuring the LB to route traffic in the way that you want isn’t as straightforward. A URL map is used to send requests to the correct backend based on logic that you define.\nHost and Path Rules Creating rules based on the host and path of a request allows you to route traffic coming from specific points to specific backends.\nHost rules match the host name of a request, like “example.com”. Each host rule has a path matcher rule that specifies the what path from that host should go to what backend. The most simple path mather rule is “/*” which matches all paths.\nThe “google_compute_url_map” resource accepts host and path matcher variables, for example:\nresource \"google_compute_url_map\" \"urlmap\" { name = \"my-urlmap\" description = \"Example url map\" default_service = google_compute_backend_bucket.static.id host_rule { hosts = [\"example.com\"] path_matcher = \"example\" } path_matcher { name = \"example\" default_service = google_compute_backend_bucket.home.id path_rule { paths = [\"/home\"] service = google_compute_backend_bucket.home.id } path_rule { paths = [\"/login\"] service = google_compute_backend_service.login.id } path_rule { paths = [\"/static\"] service = google_compute_backend_bucket.static.id } } } In the example you can see that the host rule will match requests for the host “example.com”. That host rule references the path_matcher “example”, which contains 3 path rules. Those path rules send traffic to a certain backend depending on what path the request is for. So a request for “example.com/home” will go to the backend google_compute_backend_bucket.home.\nIn addition to host/path rules, the url map resource accepts many other arguments you may want to use for your load balancer. The Terraform registry includes a complete list of arguments.\nExample Below is a basic example of Terraform code that creates an external HTTPS load balancer in GCP that uses a NEG (network endpoint group) as a backend.\n# Create network endpoint resource \"google_compute_global_network_endpoint\" \"default\" { global_network_endpoint_group = google_compute_global_network_endpoint_group.default.name fqdn = \"www.example.com\" port = 90 } # Add network endpoint to network endpoint group resource \"google_compute_global_network_endpoint_group\" \"default\" { name = \"example-neg\" default_port = \"90\" network_endpoint_type = \"INTERNET_FQDN_PORT\" } # Since this is an external LB it needs a SSL certificate resource \"google_compute_managed_ssl_certificate\" \"default\" { name = \"example-cert\" managed { domains = [\"example\"] } } # Forwarding rule resource \"google_compute_global_forwarding_rule\" \"example\" { name = \"example-forwarding-rule\" provider = google-beta port_range = \"443\" target = google_compute_target_https_proxy.default.self_link ip_address = google_compute_global_address.default.address } # Public IP address resource \"google_compute_global_address\" \"default\" { provider = google-beta name = \"example-address\" ip_version = \"IPV4\" } # HTTPS proxy resource \"google_compute_target_https_proxy\" \"default\" { name = \"example-proxy\" url_map = google_compute_url_map.default.id ssl_certificates = [google_compute_managed_ssl_certificate.default.id] } # URL Map resource \"google_compute_url_map\" \"default\" { name = \"example-urlmap\" description = \"Example url map\" default_service = google_compute_backend_service.default.id } # Make NEG the backend resource \"google_compute_backend_service\" \"default\" { name = \"example-backend-service\" port_name = \"https\" protocol = \"HTTPS\" backend { group = google_compute_global_network_endpoint_group.default.self_link balancing_mode = \"UTILIZATION\" capacity_saler = 1.0 } } ",
   "wordCount" : "1214",
@@ -213,7 +212,7 @@ However, if you have an understanding of how load balancers work internally, and
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM
+      GCP Load Balancers with Terraform
     </h1>
     <div class="post-meta"><span title='2023-03-22 00:00:00 +0000 UTC'>Wed, Mar 22, 2023</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span>
 
@@ -431,30 +430,24 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/code/">Code</a></li>
+      <li><a href="http://localhost:1313/tags/iac/">IaC</a></li>
       <li><a href="http://localhost:1313/tags/terraform/">Terraform</a></li>
       <li><a href="http://localhost:1313/tags/networking/">Networking</a></li>
-      <li><a href="http://localhost:1313/tags/gcp/">Gcp</a></li>
-      <li><a href="http://localhost:1313/tags/cloud/">Cloud</a></li>
+      <li><a href="http://localhost:1313/tags/gcp/">GCP</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/post/testing/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Testing</span>
-  </a>
   <a class="next" href="http://localhost:1313/post/ansible/">
     <span class="title">Next »</span>
     <br>
-    <span>INTRODUCTION TO ANSIBLE</span>
+    <span>Getting Started with Ansible</span>
   </a>
 </nav>
 
 
 <ul class="share-buttons">
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on x"
-            href="https://x.com/intent/tweet/?text=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f&amp;hashtags=code%2cterraform%2cnetworking%2cgcp%2ccloud">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on x"
+            href="https://x.com/intent/tweet/?text=GCP%20Load%20Balancers%20with%20Terraform&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f&amp;hashtags=IaC%2cTerraform%2cNetworking%2cGCP">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -462,8 +455,8 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f&amp;title=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM&amp;summary=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM&amp;source=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f&amp;title=GCP%20Load%20Balancers%20with%20Terraform&amp;summary=GCP%20Load%20Balancers%20with%20Terraform&amp;source=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -471,8 +464,8 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f&title=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f&title=GCP%20Load%20Balancers%20with%20Terraform">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -480,7 +473,7 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on facebook"
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on facebook"
             href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
@@ -489,8 +482,8 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on whatsapp"
-            href="https://api.whatsapp.com/send?text=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM%20-%20http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on whatsapp"
+            href="https://api.whatsapp.com/send?text=GCP%20Load%20Balancers%20with%20Terraform%20-%20http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -498,8 +491,8 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on telegram"
-            href="https://telegram.me/share/url?text=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on telegram"
+            href="https://telegram.me/share/url?text=GCP%20Load%20Balancers%20with%20Terraform&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -507,8 +500,8 @@ resource &#34;google_compute_backend_service&#34; &#34;default&#34; {
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=BUILDING%20LOAD%20BALANCERS%20IN%20GCP%20WITH%20TERRAFORM&u=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share GCP Load Balancers with Terraform on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=GCP%20Load%20Balancers%20with%20Terraform&u=http%3a%2f%2flocalhost%3a1313%2fpost%2fbuilding-load-balancers-in-gcp-with-terraform%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path

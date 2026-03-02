@@ -10,7 +10,7 @@
     <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.1</title>
+      <title>Neural Networks and Tensorflow - Capstone Pt.1</title>
       <link>http://localhost:1313/post/capstone-pt1/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/capstone-pt1/</guid>
@@ -19,7 +19,7 @@
 &lt;p&gt;First, what is &lt;strong&gt;artificial intelligence&lt;/strong&gt; (AI)? AI is a field of computer science pertaining to programming computers so that they demonstrate human-like intelligence.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.2</title>
+      <title>Neural Networks and Tensorflow - Capstone Pt.2</title>
       <link>http://localhost:1313/post/capstone-pt2/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/capstone-pt2/</guid>
@@ -27,14 +27,14 @@
 &lt;p&gt;I&amp;rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&amp;rsquo;m studying self-driving cars, I&amp;rsquo;d like to see if using biased data to train an object detection script affects the model&amp;rsquo;s performance. To do this, I&amp;rsquo;m using a training dataset of clear, bright road images to train a neural network and then testing that script with corrupted images of roads. If the model can&amp;rsquo;t recognize obstacles in images that are corrupted, then the biased training dataset did have an affect on the model.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>COGNITIVE SERVICES-TRANSLATING SPEECH</title>
+      <title>Translating Speech with Cognitive Services</title>
       <link>http://localhost:1313/post/cognitive-services-translation/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/cognitive-services-translation/</guid>
       <description>&lt;p&gt;In addition to text analysis Microsoft&amp;rsquo;s cognitive services allow you to convert speech to text, text to speech, and even translate between spoken languages. This powerful AI service is surprisingly easy to use. I was able to speak into my computers microphone and receive a text translation in one language or a spoken translation in multiple languages &amp;ndash;all with the &lt;a href=&#34;https://docs.microsoft.com/en-us/learn/modules/translate-speech-speech-service/&#34;&gt;code &lt;/a&gt;provided on Microsoft Learn. You have the option to work with the speech SDK (software development kit) in C# or python, I choose python.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>COGNITIVE SERVICES-SENTIMENT IN TEXT</title>
+      <title>Sentiment in Text with Cognitive Services</title>
       <link>http://localhost:1313/post/cognitive-services-text/</link>
       <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/cognitive-services-text/</guid>

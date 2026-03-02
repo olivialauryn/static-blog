@@ -10,7 +10,7 @@
     <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>INTRODUCTION TO ANSIBLE</title>
+      <title>Getting Started with Ansible</title>
       <link>http://localhost:1313/post/ansible/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/ansible/</guid>
@@ -40,7 +40,7 @@
 &lt;p&gt;Ansible is an open-source infrastructure as code tool provided by Red Hat. Instead of agents, Ansible relies on SSH to pass tasks defined in YAML to remote machines.  To get familiar with Ansible, I created a simple scenario where a bash script needed to be uploaded to a remote machine and ran periodically.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON</title>
+      <title>Automate Replacing JSON Values with Python</title>
       <link>http://localhost:1313/post/replace-json-values/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/replace-json-values/</guid>

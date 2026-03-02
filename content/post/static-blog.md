@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "STATIC BLOG WITH HUGO, GIT, & AWS"
+title: "Static Blog with Hugo, Git, and AWS"
 date: "2021-08-30"
-tags: ["code"]
+tags: ["AWS", "Networking"]
 ShowToc: true
 TocOpen: true
 --- 

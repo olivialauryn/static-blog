@@ -10,7 +10,7 @@
     <lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BASH BASICS</title>
+      <title>Bash Basics</title>
       <link>http://localhost:1313/post/bash-basics/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/bash-basics/</guid>
@@ -18,7 +18,7 @@
 &lt;p&gt;If you are using a Linux machine, you can write and execute Bash scripts in terminal. Through the terminal you can use your preferred text editor (nano, vim, etc.) to write your script and save it with the extension .sh. If you are using a MacBook, like me, you can use the terminal or Visual Studio Code to write Bash scripts- just save them with the .bash extension.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>TERRAFORM IN vSPHERE</title>
+      <title>Terraform in vSphere</title>
       <link>http://localhost:1313/post/terraform-in-vsphere/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/terraform-in-vsphere/</guid>
@@ -27,7 +27,7 @@
 &lt;p&gt;In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ARCH LINUX INSTALL</title>
+      <title>Installing Arch Linux</title>
       <link>http://localhost:1313/post/arch-linux-install/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/arch-linux-install/</guid>

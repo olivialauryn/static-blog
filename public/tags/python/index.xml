@@ -10,7 +10,7 @@
     <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AUTOMATE REPLACING VALUES IN JSON USING PYTHON</title>
+      <title>Automate Replacing JSON Values with Python</title>
       <link>http://localhost:1313/post/replace-json-values/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/replace-json-values/</guid>
@@ -34,6 +34,30 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;I was recently tasked with automating the replacement of key:value pairs in a JSON file. The goal was to take the output of a CLI command listing key:value pairs and place those keys/values in specific places within a JSON file. I decided to convert the output of the CLI command to a CSV file and have a python script use that CSV to create a new JSON file with updated keys/values.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python Methods and Classes</title>
+      <link>http://localhost:1313/post/python-methods/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/python-methods/</guid>
+      <description>&lt;p&gt;Once you get past your first &amp;ldquo;Hello World&amp;rdquo; Python script, it&amp;rsquo;s good to learn how to use Python methods and classes. &lt;strong&gt;Methods&lt;/strong&gt; and **functions **are a self-contained block of code that can be reused over and over. There are built-in functions that beginners in Python may already be familiar with, like print() and sum(). A user can also define a function (called a user-defined function) that executes a task they need done in their script multiple times. This is especially useful because it keeps the user from having to write that same chunk of code repeatedly. Variables that exist outside of the function can be passed to the function as &lt;strong&gt;parameters&lt;/strong&gt;, but they are not required. The format of defining your own function is below:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Neural Networks and Tensorflow - Capstone Pt.1</title>
+      <link>http://localhost:1313/post/capstone-pt1/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/capstone-pt1/</guid>
+      <description>&lt;p&gt;Over the next year, I will be completing a research project exploring how biased training data effects the machine learning algorithm of self-driving cars. This project, which I&amp;rsquo;ll detail in a later post, involves deep neural networks (DNNs), computer vision, linear algebra, and more. Is this project a massive undertaking? Yes. Will that stop me? Absolutely not. Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;h4 id=&#34;neural-network-basics&#34;&gt;Neural Network Basics&lt;/h4&gt;
+&lt;p&gt;First, what is &lt;strong&gt;artificial intelligence&lt;/strong&gt; (AI)? AI is a field of computer science pertaining to programming computers so that they demonstrate human-like intelligence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Neural Networks and Tensorflow - Capstone Pt.2</title>
+      <link>http://localhost:1313/post/capstone-pt2/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/capstone-pt2/</guid>
+      <description>&lt;p&gt;In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&amp;rsquo;m studying self-driving cars, I&amp;rsquo;d like to see if using biased data to train an object detection script affects the model&amp;rsquo;s performance. To do this, I&amp;rsquo;m using a training dataset of clear, bright road images to train a neural network and then testing that script with corrupted images of roads. If the model can&amp;rsquo;t recognize obstacles in images that are corrupted, then the biased training dataset did have an affect on the model.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

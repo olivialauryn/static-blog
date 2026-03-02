@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "vSPHERE INTRODUCTION"
+title: "Getting Started with vSphere"
 date: "2020-07-01"
-tags: ["home-lab", "vms"]
+tags: ["Home-Lab"]
 ShowToc: true
 TocOpen: true
 ---

@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "COGNITIVE SERVICES-TRANSLATING SPEECH"
+title: "Translating Speech with Cognitive Services"
 date: "2020-06-25"
-tags: ["code", "AI"]
+tags: ["Azure", "AI"]
 ShowToc: true
 TocOpen: true
 ---

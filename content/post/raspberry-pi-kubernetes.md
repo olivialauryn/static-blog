@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "RASPI KUBERNETES CLUSTER WITH RANCHER"
+title: "Raspi Kubernetes Cluster with Rancher"
 date: "2020-07-17"
-tags: ["code", "raspberrypi", "home-lab", "docker"]
+tags: [ "Raspberry-Pi", "Home-Lab", "Docker"]
 ShowToc: true
 TocOpen: true
 ---

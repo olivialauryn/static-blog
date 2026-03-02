@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "HOME-LAB SETUP"
+title: "First Home Lab Setup"
 date: "2020-06-12"
-tags: ["home-lab"]
+tags: ["Home-Lab", "Networking"]
 ShowToc: true
 TocOpen: true
 ---

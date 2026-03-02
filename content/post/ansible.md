@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "INTRODUCTION TO ANSIBLE"
+title: "Getting Started with Ansible"
 date: "2022-01-13"
-tags: ["code", "raspberrypi", "home-lab", "automation"]
+tags: ["IaC", "Raspberry-Pi", "Home-Lab", "Automation"]
 ShowToc: true
 TocOpen: true
 ---

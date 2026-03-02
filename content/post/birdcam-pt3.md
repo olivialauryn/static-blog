@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "BIRDCAM Pt. 3"
+title: "Birdcam Pt. 3"
 date: "2020-05-22"
-tags: ["code", "raspberrypi", "docker"]
+tags: ["Home-Lab", "Raspberry-Pi", "Docker"]
 ShowToc: true
 TocOpen: true
 ---

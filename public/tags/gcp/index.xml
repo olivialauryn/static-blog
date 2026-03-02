@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Gcp on Olivia Snowden&#39;s Blog</title>
+    <title>GCP on Olivia Snowden&#39;s Blog</title>
     <link>http://localhost:1313/tags/gcp/</link>
-    <description>Recent content in Gcp on Olivia Snowden&#39;s Blog</description>
+    <description>Recent content in GCP on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BUILDING LOAD BALANCERS IN GCP WITH TERRAFORM</title>
+      <title>GCP Load Balancers with Terraform</title>
       <link>http://localhost:1313/post/building-load-balancers-in-gcp-with-terraform/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/building-load-balancers-in-gcp-with-terraform/</guid>

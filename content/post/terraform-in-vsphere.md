@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "TERRAFORM IN vSPHERE"
+title: "Terraform in vSphere"
 date: "2020-07-08"
-tags: ["home-lab", "linux", "vms"]
+tags: ["Home-Lab", "Linux", "IaC"]
 ShowToc: true
 TocOpen: true
 ---

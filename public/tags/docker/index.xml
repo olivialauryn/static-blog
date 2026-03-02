@@ -10,7 +10,7 @@
     <lastBuildDate>Fri, 17 Jul 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>RASPI KUBERNETES CLUSTER WITH RANCHER</title>
+      <title>Raspi Kubernetes Cluster with Rancher</title>
       <link>http://localhost:1313/post/raspberry-pi-kubernetes/</link>
       <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/raspberry-pi-kubernetes/</guid>
@@ -18,7 +18,7 @@
 &lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3S&lt;/a&gt; is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB. K3S is ideal for Raspberry Pis, since traditionally building a Kubernetes cluster on Pis could be too much for them to handle.  In addition to K3S this is what I used to build a simple Kubernetes cluster in my home lab:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BIRDCAM Pt. 3</title>
+      <title>Birdcam Pt. 3</title>
       <link>http://localhost:1313/post/birdcam-pt3/</link>
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/birdcam-pt3/</guid>
@@ -29,7 +29,7 @@ sudo apt install docker-compose
 &lt;p&gt;Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file.  On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos.  At this point, I had already configured an NFS server and made this Pi an NFS client via a shared folder. To create the photo gallery, I first signed into my personal Docker account. I then added two subdirectories to my home directory on the Pi: a config directory, and a thumbs directory.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BIRDCAM Pt. 2</title>
+      <title>Birdcam Pt. 2</title>
       <link>http://localhost:1313/post/birdcam-pt2/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/birdcam-pt2/</guid>
@@ -37,7 +37,7 @@ sudo apt install docker-compose
 &lt;p&gt;First, I put the Raspbian Lite OS on a mini SD card. Once the OS was finished downloading, I removed the card from my computer and inserted it again. On my computer&amp;rsquo;s terminal I entered the SD card&amp;rsquo;s boot directory (found with &lt;strong&gt;df -h&lt;/strong&gt;) and created a new file to configure the wifi information for my home network.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BIRDCAM Pt. 1</title>
+      <title>Birdcam Pt. 1</title>
       <link>http://localhost:1313/post/birdcam-pt1/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/birdcam-pt1/</guid>

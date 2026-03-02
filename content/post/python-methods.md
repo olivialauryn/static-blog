@@ -1,8 +1,8 @@
 ---
 author: ["Olivia Snowden"]
-title: "PYTHON METHODS & CLASSES"
+title: "Python Methods and Classes"
 date: "2021-01-18"
-tags: ["code"]
+tags: ["Python"]
 ShowToc: true
 TocOpen: true
 ---
