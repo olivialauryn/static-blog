@@ -46,21 +46,6 @@ weight = 10
 name = "WiKi"
 url = "https://github.com/adityatelange/hugo-PaperMod/wiki/"
 
-[languages.fa]
-languagedirection = "rtl"
-weight = 3
-title = "PaperMod RTL"
-
-[languages.fa.taxonomies]
-category = "FAcategories"
-tag = "FAtags"
-series = "FAseries"
-
-[[languages.fa.menu.main]]
-name = "FATags"
-url = "fatags"
-weight = 10
-
 [outputFormats.llms]
 mediaType = "text/plain"
 baseName = "llms"

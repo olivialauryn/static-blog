@@ -1,8 +1,167 @@
-<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Home-Lab | Olivia Snowden's Blog</title><meta name=keywords content><meta name=description content="The Cloud + AI + Linux + More"><meta name=author content="Olivia Snowden"><link rel=canonical href=https://www.osnowden.com/tags/home-lab/><link crossorigin=anonymous href=/assets/css/stylesheet.7f8702ad4c3159231ff7aa5f7bf1a574a69e60a988350dee1489d2c17b25d91e.css integrity="sha256-f4cCrUwxWSMf96pfe/GldKaeYKmINQ3uFInSwXsl2R4=" rel="preload stylesheet" as=style><link rel=icon href=https://www.osnowden.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://www.osnowden.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://www.osnowden.com/favicon-32x32.png><link rel=apple-touch-icon href=https://www.osnowden.com/apple-touch-icon.png><link rel=mask-icon href=https://www.osnowden.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://www.osnowden.com/tags/home-lab/index.xml title=rss><link rel=alternate hreflang=en href=https://www.osnowden.com/tags/home-lab/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://www.osnowden.com/tags/home-lab/"><meta property="og:site_name" content="Olivia Snowden's Blog"><meta property="og:title" content="Home-Lab"><meta property="og:description" content="The Cloud + AI + Linux + More"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Home-Lab"><meta name=twitter:description content="The Cloud + AI + Linux + More"></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=https://www.osnowden.com/ accesskey=h title="Olivia Snowden's Blog (Alt + H)">Olivia Snowden's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
-<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li><li><a href=https://www.osnowden.com/fr/ title=French aria-label=:fr:>🇫🇷</a></li><li><a href=https://www.osnowden.com/fa/ title=Fa aria-label=Fa>Fa</a></li></ul></div></div><ul id=menu><li><a href=https://www.osnowden.com/archives title=Archive><span>Archive</span></a></li><li><a href=https://www.osnowden.com/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://www.osnowden.com/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://github.com/adityatelange/hugo-PaperMod/wiki/ title=WiKi><span>WiKi</span>&nbsp;
-<svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=https://www.osnowden.com/>Home</a>&nbsp;»&nbsp;<a href=https://www.osnowden.com/tags/>Tags</a></div><h1>Home-Lab
-<a href=/tags/home-lab/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>INTRODUCTION TO ANSIBLE</h2></header><div class=entry-content><p>In this post:
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Home-Lab | Olivia Snowden&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="The Cloud &#43; AI &#43; Linux &#43; More">
+<meta name="author" content="Olivia Snowden">
+<link rel="canonical" href="http://localhost:1313/tags/home-lab/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7f8702ad4c3159231ff7aa5f7bf1a574a69e60a988350dee1489d2c17b25d91e.css" integrity="sha256-f4cCrUwxWSMf96pfe/GldKaeYKmINQ3uFInSwXsl2R4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/home-lab/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/home-lab/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/tags/home-lab/">
+  <meta property="og:site_name" content="Olivia Snowden&#39;s Blog">
+  <meta property="og:title" content="Home-Lab">
+  <meta property="og:description" content="The Cloud &#43; AI &#43; Linux &#43; More">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Home-Lab">
+<meta name="twitter:description" content="The Cloud &#43; AI &#43; Linux &#43; More">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Olivia Snowden&#39;s Blog (Alt + H)">Olivia Snowden&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/adityatelange/hugo-PaperMod/wiki/" title="WiKi">
+                    <span>WiKi</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    Home-Lab
+    <a href="/tags/home-lab/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">INTRODUCTION TO ANSIBLE
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> In this post:
 What is Ansible
 Installing Ansible
 Authentication
@@ -10,16 +169,156 @@ Inventories
 Playbooks
 Testing Ansible
 What is Ansible? Ansible is an open-source infrastructure as code tool provided by Red Hat. Instead of agents, Ansible relies on SSH to pass tasks defined in YAML to remote machines. To get familiar with Ansible, I created a simple scenario where a bash script needed to be uploaded to a remote machine and ran periodically.
-...</p></div><footer class=entry-footer><span title='2022-01-13 00:00:00 +0000 UTC'>Thu, Jan 13, 2022</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer><a class=entry-link aria-label="post link to INTRODUCTION TO ANSIBLE" href=https://www.osnowden.com/post/ansible/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>RASPI KUBERNETES CLUSTER WITH RANCHER</h2></header><div class=entry-content><p>Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-01-13 00:00:00 +0000 UTC'>Thu, Jan 13, 2022</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to INTRODUCTION TO ANSIBLE" href="http://localhost:1313/post/ansible/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">RASPI KUBERNETES CLUSTER WITH RANCHER
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.
 K3S is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB. K3S is ideal for Raspberry Pis, since traditionally building a Kubernetes cluster on Pis could be too much for them to handle. In addition to K3S this is what I used to build a simple Kubernetes cluster in my home lab:
-...</p></div><footer class=entry-footer><span title='2020-07-17 00:00:00 +0000 UTC'>Fri, Jul 17, 2020</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer><a class=entry-link aria-label="post link to RASPI KUBERNETES CLUSTER WITH RANCHER" href=https://www.osnowden.com/post/raspberry-pi-kubernetes/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>TERRAFORM IN vSPHERE</h2></header><div class=entry-content><p>Introduction to Terraform Terraform by Hashicorp is a “tool for building, changing, and versioning infrastructure safely and efficiently”. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-07-17 00:00:00 +0000 UTC'>Fri, Jul 17, 2020</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to RASPI KUBERNETES CLUSTER WITH RANCHER" href="http://localhost:1313/post/raspberry-pi-kubernetes/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">TERRAFORM IN vSPHERE
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction to Terraform Terraform by Hashicorp is a “tool for building, changing, and versioning infrastructure safely and efficiently”. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
 In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is “smart” enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.
-...</p></div><footer class=entry-footer><span title='2020-07-08 00:00:00 +0000 UTC'>Wed, Jul 8, 2020</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer><a class=entry-link aria-label="post link to TERRAFORM IN vSPHERE" href=https://www.osnowden.com/post/terraform-in-vsphere/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>vSPHERE INTRODUCTION</h2></header><div class=entry-content><p>Practicing installing/updating/building machines is much more fun when you aren’t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware’s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.
-...</p></div><footer class=entry-footer><span title='2020-07-01 00:00:00 +0000 UTC'>Wed, Jul 1, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer><a class=entry-link aria-label="post link to vSPHERE INTRODUCTION" href=https://www.osnowden.com/post/vmware-and-vsphere/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>ARCH LINUX INSTALL</h2></header><div class=entry-content><p>Arch Linux’s official website describes Arch as a distribution that “tries to Keep It Simple”. It also states that Arch is not for those without the ability or time for a “do-it-yourself” system–which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here’s what I did:
-...</p></div><footer class=entry-footer><span title='2020-06-17 00:00:00 +0000 UTC'>Wed, Jun 17, 2020</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer><a class=entry-link aria-label="post link to ARCH LINUX INSTALL" href=https://www.osnowden.com/post/arch-linux-install/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>HOME-LAB SETUP</h2></header><div class=entry-content><p>For the home-lab, we used the following devices:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>Wed, Jul 8, 2020</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to TERRAFORM IN vSPHERE" href="http://localhost:1313/post/terraform-in-vsphere/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">vSPHERE INTRODUCTION
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Practicing installing/updating/building machines is much more fun when you aren’t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware’s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Wed, Jul 1, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to vSPHERE INTRODUCTION" href="http://localhost:1313/post/vmware-and-vsphere/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ARCH LINUX INSTALL
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Arch Linux’s official website describes Arch as a distribution that “tries to Keep It Simple”. It also states that Arch is not for those without the ability or time for a “do-it-yourself” system–which is true. I recently built a machine that needed a lightweight OS, so Arch Linux was a good choice. Installing Arch Linux can seem complicated, but understanding what needs to happen in each step of the install makes it feel fun and easy. Here’s what I did:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-06-17 00:00:00 +0000 UTC'>Wed, Jun 17, 2020</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to ARCH LINUX INSTALL" href="http://localhost:1313/post/arch-linux-install/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">HOME-LAB SETUP
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>For the home-lab, we used the following devices:
 Ubiquiti EdgeRouter X Ubiquiti UniFi 24 port switch 2 VMware ESXi Hosts A Synology NAS DS420j (Diskstation) Building the home lab also required quite a few patch cables to connect devices, and I made most of them myself. This required UTP cable, plastic clips for the ends, a cable crimping tool, and a lot of patience. The arrangement of the wires, or the pinout, had to be in a specific order.
-...</p></div><footer class=entry-footer><span title='2020-06-12 00:00:00 +0000 UTC'>Fri, Jun 12, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer><a class=entry-link aria-label="post link to HOME-LAB SETUP" href=https://www.osnowden.com/post/home-lab-setup/></a></article></main><footer class=footer><span>© <a href=https://github.com/adityatelange/hugo-PaperMod/graphs/contributors>PaperMod Contributors</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-06-12 00:00:00 +0000 UTC'>Fri, Jun 12, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to HOME-LAB SETUP" href="http://localhost:1313/post/home-lab-setup/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/adityatelange/hugo-PaperMod/graphs/contributors">PaperMod Contributors</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI on Olivia Snowden&#39;s Blog</title>
-    <link>https://www.osnowden.com/tags/ai/</link>
+    <link>http://localhost:1313/tags/ai/</link>
     <description>Recent content in AI on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.osnowden.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.1</title>
-      <link>https://www.osnowden.com/post/capstone-pt1/</link>
+      <link>http://localhost:1313/post/capstone-pt1/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/capstone-pt1/</guid>
+      <guid>http://localhost:1313/post/capstone-pt1/</guid>
       <description>&lt;p&gt;Over the next year, I will be completing a research project exploring how biased training data effects the machine learning algorithm of self-driving cars. This project, which I&amp;rsquo;ll detail in a later post, involves deep neural networks (DNNs), computer vision, linear algebra, and more. Is this project a massive undertaking? Yes. Will that stop me? Absolutely not. Let&amp;rsquo;s get started.&lt;/p&gt;
 &lt;h4 id=&#34;neural-network-basics&#34;&gt;Neural Network Basics&lt;/h4&gt;
 &lt;p&gt;First, what is &lt;strong&gt;artificial intelligence&lt;/strong&gt; (AI)? AI is a field of computer science pertaining to programming computers so that they demonstrate human-like intelligence.&lt;/p&gt;</description>
     </item>
     <item>
       <title>NEURAL NETWORKS &amp; TENSORFLOW - Capstone Pt.2</title>
-      <link>https://www.osnowden.com/post/capstone-pt2/</link>
+      <link>http://localhost:1313/post/capstone-pt2/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/capstone-pt2/</guid>
+      <guid>http://localhost:1313/post/capstone-pt2/</guid>
       <description>&lt;p&gt;In my first Capstone post I gave a rundown of basic AI terms and how to use Tensorflow to create your own machine learning (ML) script.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m using Tensorflow to write a script that can process images of roads and determine whether there is an obstacle in the road or not. Since I&amp;rsquo;m studying self-driving cars, I&amp;rsquo;d like to see if using biased data to train an object detection script affects the model&amp;rsquo;s performance. To do this, I&amp;rsquo;m using a training dataset of clear, bright road images to train a neural network and then testing that script with corrupted images of roads. If the model can&amp;rsquo;t recognize obstacles in images that are corrupted, then the biased training dataset did have an affect on the model.&lt;/p&gt;</description>
     </item>
     <item>
       <title>COGNITIVE SERVICES-TRANSLATING SPEECH</title>
-      <link>https://www.osnowden.com/post/cognitive-services-translation/</link>
+      <link>http://localhost:1313/post/cognitive-services-translation/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/cognitive-services-translation/</guid>
+      <guid>http://localhost:1313/post/cognitive-services-translation/</guid>
       <description>&lt;p&gt;In addition to text analysis Microsoft&amp;rsquo;s cognitive services allow you to convert speech to text, text to speech, and even translate between spoken languages. This powerful AI service is surprisingly easy to use. I was able to speak into my computers microphone and receive a text translation in one language or a spoken translation in multiple languages &amp;ndash;all with the &lt;a href=&#34;https://docs.microsoft.com/en-us/learn/modules/translate-speech-speech-service/&#34;&gt;code &lt;/a&gt;provided on Microsoft Learn. You have the option to work with the speech SDK (software development kit) in C# or python, I choose python.&lt;/p&gt;</description>
     </item>
     <item>
       <title>COGNITIVE SERVICES-SENTIMENT IN TEXT</title>
-      <link>https://www.osnowden.com/post/cognitive-services-text/</link>
+      <link>http://localhost:1313/post/cognitive-services-text/</link>
       <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/cognitive-services-text/</guid>
+      <guid>http://localhost:1313/post/cognitive-services-text/</guid>
       <description>&lt;p&gt;As I continue to study artificial intelligence I&amp;rsquo;ve been able to practice using Microsoft&amp;rsquo;s cognitive services. I was first introduced to cognitive services during the virtual Microsoft Build 2020 conference, and I&amp;rsquo;ve enjoyed getting to use them for myself. Since creating and training your own artificial intelligence/machine learning software is all kinds of complicated, cognitive services allow anyone to use AI in their projects without having to write much code.  All you have to do is call the service that you want, and it will do the hard work for you.&lt;/p&gt;</description>
     </item>
   </channel>

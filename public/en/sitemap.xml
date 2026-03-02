@@ -2,144 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.osnowden.com/tags/code/</loc>
+    <loc>http://localhost:1313/tags/code/</loc>
     <lastmod>2026-02-28T20:59:10-05:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-02-28T20:59:10-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://www.osnowden.com/fr/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
-                href="https://www.osnowden.com/fa/"
+                href="http://localhost:1313/fa/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.osnowden.com/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://www.osnowden.com/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2026-02-28T20:59:10-05:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-02-28T20:59:10-05:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/testing/</loc>
+    <loc>http://localhost:1313/post/testing/</loc>
     <lastmod>2026-02-28T20:59:10-05:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/building-load-balancers-in-gcp-with-terraform/</loc>
+    <loc>http://localhost:1313/post/building-load-balancers-in-gcp-with-terraform/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/cloud/</loc>
+    <loc>http://localhost:1313/tags/cloud/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/gcp/</loc>
+    <loc>http://localhost:1313/tags/gcp/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/networking/</loc>
+    <loc>http://localhost:1313/tags/networking/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/terraform/</loc>
+    <loc>http://localhost:1313/tags/terraform/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/home-lab/</loc>
+    <loc>http://localhost:1313/tags/home-lab/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/ansible/</loc>
+    <loc>http://localhost:1313/post/ansible/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/raspberrypi/</loc>
+    <loc>http://localhost:1313/tags/raspberrypi/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/replace-json-values/</loc>
+    <loc>http://localhost:1313/post/replace-json-values/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/static-blog/</loc>
+    <loc>http://localhost:1313/post/static-blog/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/python-methods/</loc>
+    <loc>http://localhost:1313/post/python-methods/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/ai/</loc>
+    <loc>http://localhost:1313/tags/ai/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/capstone-pt1/</loc>
+    <loc>http://localhost:1313/post/capstone-pt1/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/capstone-pt2/</loc>
+    <loc>http://localhost:1313/post/capstone-pt2/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/bash/</loc>
+    <loc>http://localhost:1313/tags/bash/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/bash-basics/</loc>
+    <loc>http://localhost:1313/post/bash-basics/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/raspberry-pi-kubernetes/</loc>
+    <loc>http://localhost:1313/post/raspberry-pi-kubernetes/</loc>
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/terraform-in-vsphere/</loc>
+    <loc>http://localhost:1313/post/terraform-in-vsphere/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/tags/vms/</loc>
+    <loc>http://localhost:1313/tags/vms/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/vmware-and-vsphere/</loc>
+    <loc>http://localhost:1313/post/vmware-and-vsphere/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/cognitive-services-translation/</loc>
+    <loc>http://localhost:1313/post/cognitive-services-translation/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/cognitive-services-text/</loc>
+    <loc>http://localhost:1313/post/cognitive-services-text/</loc>
     <lastmod>2020-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/arch-linux-install/</loc>
+    <loc>http://localhost:1313/post/arch-linux-install/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/home-lab-setup/</loc>
+    <loc>http://localhost:1313/post/home-lab-setup/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/birdcam-pt3/</loc>
+    <loc>http://localhost:1313/post/birdcam-pt3/</loc>
     <lastmod>2020-05-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/birdcam-pt2/</loc>
+    <loc>http://localhost:1313/post/birdcam-pt2/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/post/birdcam-pt1/</loc>
+    <loc>http://localhost:1313/post/birdcam-pt1/</loc>
     <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/page/about/</loc>
+    <loc>http://localhost:1313/page/about/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/page/contact/</loc>
+    <loc>http://localhost:1313/page/contact/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/page/</loc>
+    <loc>http://localhost:1313/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>https://www.osnowden.com/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>https://www.osnowden.com/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://www.osnowden.com/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url><url>
-    <loc>https://www.osnowden.com/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
   </url>
 </urlset>

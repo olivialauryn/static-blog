@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Raspberrypi on Olivia Snowden&#39;s Blog</title>
-    <link>https://www.osnowden.com/tags/raspberrypi/</link>
+    <link>http://localhost:1313/tags/raspberrypi/</link>
     <description>Recent content in Raspberrypi on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.osnowden.com/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>INTRODUCTION TO ANSIBLE</title>
-      <link>https://www.osnowden.com/post/ansible/</link>
+      <link>http://localhost:1313/post/ansible/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/ansible/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://www.osnowden.com/ansible-logo.png&#34;&gt;
+      <guid>http://localhost:1313/post/ansible/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ansible-logo.png&#34;&gt;
 &lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -41,17 +41,17 @@
     </item>
     <item>
       <title>RASPI KUBERNETES CLUSTER WITH RANCHER</title>
-      <link>https://www.osnowden.com/post/raspberry-pi-kubernetes/</link>
+      <link>http://localhost:1313/post/raspberry-pi-kubernetes/</link>
       <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/raspberry-pi-kubernetes/</guid>
+      <guid>http://localhost:1313/post/raspberry-pi-kubernetes/</guid>
       <description>&lt;p&gt;Kubernetes provides a framework to orchestrate multiple containers, verses working with one container at a time. To practice managing containers I opted to build a Kubernetes cluster on Raspberry Pis using Rancher. Rancher came about soon after Docker introduced containers to the market, and provides an open-source platform for enterprises to easily use Kubernetes in their environment.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;K3S&lt;/a&gt; is a Rancher product that allows you to deploy a Kubernetes cluster using a single binary file thats less than 40MB. K3S is ideal for Raspberry Pis, since traditionally building a Kubernetes cluster on Pis could be too much for them to handle.  In addition to K3S this is what I used to build a simple Kubernetes cluster in my home lab:&lt;/p&gt;</description>
     </item>
     <item>
       <title>BIRDCAM Pt. 3</title>
-      <link>https://www.osnowden.com/post/birdcam-pt3/</link>
+      <link>http://localhost:1313/post/birdcam-pt3/</link>
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/birdcam-pt3/</guid>
+      <guid>http://localhost:1313/post/birdcam-pt3/</guid>
       <description>&lt;p&gt;The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt install docker 
 sudo apt install docker-compose 
@@ -60,17 +60,17 @@ sudo apt install docker-compose
     </item>
     <item>
       <title>BIRDCAM Pt. 2</title>
-      <link>https://www.osnowden.com/post/birdcam-pt2/</link>
+      <link>http://localhost:1313/post/birdcam-pt2/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/birdcam-pt2/</guid>
+      <guid>http://localhost:1313/post/birdcam-pt2/</guid>
       <description>&lt;p&gt;After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.&lt;/p&gt;
 &lt;p&gt;First, I put the Raspbian Lite OS on a mini SD card. Once the OS was finished downloading, I removed the card from my computer and inserted it again. On my computer&amp;rsquo;s terminal I entered the SD card&amp;rsquo;s boot directory (found with &lt;strong&gt;df -h&lt;/strong&gt;) and created a new file to configure the wifi information for my home network.&lt;/p&gt;</description>
     </item>
     <item>
       <title>BIRDCAM Pt. 1</title>
-      <link>https://www.osnowden.com/post/birdcam-pt1/</link>
+      <link>http://localhost:1313/post/birdcam-pt1/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.osnowden.com/post/birdcam-pt1/</guid>
+      <guid>http://localhost:1313/post/birdcam-pt1/</guid>
       <description>&lt;p&gt;In this project I wanted to set up a camera to take pictures of pretty birds at a feeder, and then view those photos online.  To do so I used three Raspberry Pis, NFS, and Docker.&lt;/p&gt;
 &lt;p&gt;One Raspberry pi served as the NFS server, while the other two were NFS clients. One of the clients was a Raspberry Pi zero w outfitted with a camera to take the pictures and store them on the NFS server. The other client hosted the docker container linuxserver/photoshow that accessed the NFS server to display the photos in a gallery.&lt;/p&gt;</description>
     </item>
