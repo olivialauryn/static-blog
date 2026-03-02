@@ -46,67 +46,15 @@ weight = 10
 name = "WiKi"
 url = "https://github.com/adityatelange/hugo-PaperMod/wiki/"
 
-[languages.fr]
-languageName = ":fr:"
-weight = 2
-title = "PaperModL2"
-
-  [languages.fr.taxonomies]
-  category = "FRcategories"
-  tag = "FRtags"
-  series = "FRseries"
-
-[[languages.fr.menu.main]]
-name = "Archive"
-url = "archives/"
-weight = 5
-
-[[languages.fr.menu.main]]
-name = "FRTags"
-url = "frtags"
-weight = 10
-
-[[languages.fr.menu.main]]
-name = "FRCategories"
-url = "frcategories"
-weight = 10
-
-[[languages.fr.menu.main]]
-name = "FRSeries"
-url = "frseries"
-weight = 10
-
-[[languages.fr.menu.main]]
-name = "NullLink"
-url = "#"
-
-  [languages.fr.params]
-  languageAltTitle = "French"
-
-    [languages.fr.params.profileMode]
-    enabled = true
-    title = "PaperMod"
-    imageUrl = "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/svg/emoji_u1f9d1_1f3fb_200d_1f4bb.svg"
-    imageTitle = "ProfileMode image"
-    subtitle = "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
-
-      [[languages.fr.params.profileMode.buttons]]
-      name = "Blog"
-      url = "posts"
-
-      [[languages.fr.params.profileMode.buttons]]
-      name = "Profile Mode"
-      url = "https://github.com/adityatelange/hugo-PaperMod/wiki/Features#profile-mode"
-
 [languages.fa]
 languagedirection = "rtl"
 weight = 3
 title = "PaperMod RTL"
 
-  [languages.fa.taxonomies]
-  category = "FAcategories"
-  tag = "FAtags"
-  series = "FAseries"
+[languages.fa.taxonomies]
+category = "FAcategories"
+tag = "FAtags"
+series = "FAseries"
 
 [[languages.fa.menu.main]]
 name = "FATags"
