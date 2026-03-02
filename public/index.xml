@@ -7,8 +7,15 @@
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 16:29:01 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2026 Testing</title>
+      <link>http://localhost:1313/post/2026-testing/</link>
+      <pubDate>Mon, 02 Mar 2026 16:29:01 -0500</pubDate>
+      <guid>http://localhost:1313/post/2026-testing/</guid>
+      <description>&lt;p&gt;New testing post&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GCP Load Balancers with Terraform</title>
       <link>http://localhost:1313/post/2023-building-load-balancers-in-gcp-with-terraform/</link>
