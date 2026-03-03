@@ -10,8 +10,6 @@ buildExpired = false
 enableEmoji = true
 pygmentsUseClasses = true
 mainsections = [ "posts", "papermod"]
-canonifyURLs = true
-relativeURLs = false
 
 [minify]
 disableXML = true
