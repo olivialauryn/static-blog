@@ -1,7 +1,7 @@
 # Olivia Snowden's Blog
 
 ## Posts
-- [2026 Testing](http://localhost:1313/post/2026-testing/)
+- [Rebuilding My Blog with Grok](http://localhost:1313/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](http://localhost:1313/post/2023-building-load-balancers-in-gcp-with-terraform/)
 - [Getting Started with Ansible](http://localhost:1313/post/2022-ansible/)
 - [Automate Replacing JSON Values with Python](http://localhost:1313/post/2021-replace-json-values/)

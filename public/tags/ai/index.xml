@@ -7,8 +7,17 @@
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 16:30:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rebuilding My Blog with Grok</title>
+      <link>http://localhost:1313/post/2026-rebuilding-blog-with-grok/</link>
+      <pubDate>Mon, 02 Mar 2026 16:30:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/2026-rebuilding-blog-with-grok/</guid>
+      <description>&lt;p&gt;After running a clean, minimal Ghostwriter theme for some time, I recently migrated this site to Hugo-PaperMod. The goal was better performance, built-in dark mode, improved mobile responsiveness, and easier customization while keeping the lightweight blogging feel.&lt;/p&gt;
+&lt;h3 id=&#34;what-is-hugo&#34;&gt;What is Hugo?&lt;/h3&gt;
+&lt;p&gt;Hugo is a fast, open-source static site generator written in Go. Unlike traditional CMS platforms (WordPress, Ghost, etc.), Hugo compiles Markdown content, templates, and assets into plain HTML, CSS, and JS files at build time—no database, no server-side runtime. This results in blazing-fast page loads, strong security (no attack surface), low hosting costs, and easy version control via Git.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Neural Networks and Tensorflow - Capstone Pt.1</title>
       <link>http://localhost:1313/post/2020-capstone-pt1/</link>
