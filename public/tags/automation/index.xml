@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Automation on Olivia Snowden&#39;s Blog</title>
-    <link>http://localhost:1313/tags/automation/</link>
+    <link>https://osnowden.com/tags/automation/</link>
     <description>Recent content in Automation on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://osnowden.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Ansible</title>
-      <link>http://localhost:1313/post/2022-ansible/</link>
+      <link>https://osnowden.com/post/2022-ansible/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2022-ansible/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ansible-logo.png&#34;&gt;
+      <guid>https://osnowden.com/post/2022-ansible/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://osnowden.com/ansible-logo.png&#34;&gt;
 &lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -41,10 +41,10 @@
     </item>
     <item>
       <title>Automate Replacing JSON Values with Python</title>
-      <link>http://localhost:1313/post/2021-replace-json-values/</link>
+      <link>https://osnowden.com/post/2021-replace-json-values/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2021-replace-json-values/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/json-logo2.jpeg&#34;&gt;
+      <guid>https://osnowden.com/post/2021-replace-json-values/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://osnowden.com/json-logo2.jpeg&#34;&gt;
 &lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

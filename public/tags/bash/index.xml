@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bash on Olivia Snowden&#39;s Blog</title>
-    <link>http://localhost:1313/tags/bash/</link>
+    <link>https://osnowden.com/tags/bash/</link>
     <description>Recent content in Bash on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://osnowden.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash Basics</title>
-      <link>http://localhost:1313/post/2020-bash-basics/</link>
+      <link>https://osnowden.com/post/2020-bash-basics/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2020-bash-basics/</guid>
+      <guid>https://osnowden.com/post/2020-bash-basics/</guid>
       <description>&lt;p&gt;Bash, or the Bourne-Again SHell, is named after the creator of the Unix shell Stephen Bourn. Bash is a command language interpreter that can execute commands and process text files as input. Shell scripts are, basically, files containing a series of commands. You can schedule Bash scripts to run at certain times to automate tasks for you.&lt;/p&gt;
 &lt;p&gt;If you are using a Linux machine, you can write and execute Bash scripts in terminal. Through the terminal you can use your preferred text editor (nano, vim, etc.) to write your script and save it with the extension .sh. If you are using a MacBook, like me, you can use the terminal or Visual Studio Code to write Bash scripts- just save them with the .bash extension.&lt;/p&gt;</description>
     </item>

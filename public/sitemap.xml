@@ -2,120 +2,120 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://osnowden.com/tags/ai/</loc>
     <lastmod>2026-03-02T16:30:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://osnowden.com/</loc>
     <lastmod>2026-03-02T16:30:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://osnowden.com/post/</loc>
     <lastmod>2026-03-02T16:30:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2026-rebuilding-blog-with-grok/</loc>
+    <loc>https://osnowden.com/post/2026-rebuilding-blog-with-grok/</loc>
     <lastmod>2026-03-02T16:30:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://osnowden.com/tags/</loc>
     <lastmod>2026-03-02T16:30:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gcp/</loc>
+    <loc>https://osnowden.com/tags/gcp/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2023-building-load-balancers-in-gcp-with-terraform/</loc>
+    <loc>https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/iac/</loc>
+    <loc>https://osnowden.com/tags/iac/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
+    <loc>https://osnowden.com/tags/networking/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/terraform/</loc>
+    <loc>https://osnowden.com/tags/terraform/</loc>
     <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
+    <loc>https://osnowden.com/tags/automation/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2022-ansible/</loc>
+    <loc>https://osnowden.com/post/2022-ansible/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/home-lab/</loc>
+    <loc>https://osnowden.com/tags/home-lab/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/raspberry-pi/</loc>
+    <loc>https://osnowden.com/tags/raspberry-pi/</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2021-replace-json-values/</loc>
+    <loc>https://osnowden.com/post/2021-replace-json-values/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://osnowden.com/tags/python/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws/</loc>
+    <loc>https://osnowden.com/tags/aws/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2021-static-blog/</loc>
+    <loc>https://osnowden.com/post/2021-static-blog/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2021-python-methods/</loc>
+    <loc>https://osnowden.com/post/2021-python-methods/</loc>
     <lastmod>2021-01-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-capstone-pt1/</loc>
+    <loc>https://osnowden.com/post/2020-capstone-pt1/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-capstone-pt2/</loc>
+    <loc>https://osnowden.com/post/2020-capstone-pt2/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bash/</loc>
+    <loc>https://osnowden.com/tags/bash/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-bash-basics/</loc>
+    <loc>https://osnowden.com/post/2020-bash-basics/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://osnowden.com/tags/linux/</loc>
     <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>https://osnowden.com/tags/docker/</loc>
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-raspberry-pi-kubernetes/</loc>
+    <loc>https://osnowden.com/post/2020-raspberry-pi-kubernetes/</loc>
     <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-terraform-in-vsphere/</loc>
+    <loc>https://osnowden.com/post/2020-terraform-in-vsphere/</loc>
     <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-vmware-and-vsphere/</loc>
+    <loc>https://osnowden.com/post/2020-vmware-and-vsphere/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure/</loc>
+    <loc>https://osnowden.com/tags/azure/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-cognitive-services-translation/</loc>
+    <loc>https://osnowden.com/post/2020-cognitive-services-translation/</loc>
     <lastmod>2020-06-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-cognitive-services-text/</loc>
+    <loc>https://osnowden.com/post/2020-cognitive-services-text/</loc>
     <lastmod>2020-06-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-arch-linux-install/</loc>
+    <loc>https://osnowden.com/post/2020-arch-linux-install/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-home-lab-setup/</loc>
+    <loc>https://osnowden.com/post/2020-home-lab-setup/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-birdcam-pt3/</loc>
+    <loc>https://osnowden.com/post/2020-birdcam-pt3/</loc>
     <lastmod>2020-05-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-birdcam-pt2/</loc>
+    <loc>https://osnowden.com/post/2020-birdcam-pt2/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/2020-birdcam-pt1/</loc>
+    <loc>https://osnowden.com/post/2020-birdcam-pt1/</loc>
     <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://osnowden.com/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://osnowden.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://osnowden.com/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://osnowden.com/series/</loc>
   </url>
 </urlset>
