@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>IaC on Olivia Snowden&#39;s Blog</title>
-    <link>https://osnowden.com/tags/iac/</link>
+    <link>http://localhost:1313/tags/iac/</link>
     <description>Recent content in IaC on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://osnowden.com/tags/iac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/iac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCP Load Balancers with Terraform</title>
-      <link>https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/</link>
+      <link>http://localhost:1313/post/2023-building-load-balancers-in-gcp-with-terraform/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://osnowden.com/building-a-lb-with-tf-logo.png&#34;&gt;&lt;/p&gt;
+      <guid>http://localhost:1313/post/2023-building-load-balancers-in-gcp-with-terraform/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/building-a-lb-with-tf-logo.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Networking in GCP, or any cloud environment, often requires a load balancer(LB). If you try to use Terraform to deploy a load balancer in GCP you&amp;rsquo;ll notice that there is not a single Terraform resource to create a GCP LB. GCP provides example Terraform scripts to create LBs in their documentation &lt;a href=&#34;https://cloud.google.com/load-balancing/docs/load-balancing-overview&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, if you have an understanding of how load balancers work internally, and how to properly structure your Terraform code, creating your own LB modules in GCP using Terraform is possible. This can allow you to configure your LBs to do exactly what you need.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Started with Ansible</title>
-      <link>https://osnowden.com/post/2022-ansible/</link>
+      <link>http://localhost:1313/post/2022-ansible/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/post/2022-ansible/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://osnowden.com/ansible-logo.png&#34;&gt;
+      <guid>http://localhost:1313/post/2022-ansible/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/ansible-logo.png&#34;&gt;
 &lt;strong&gt;In this post:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -50,9 +50,9 @@
     </item>
     <item>
       <title>Terraform in vSphere</title>
-      <link>https://osnowden.com/post/2020-terraform-in-vsphere/</link>
+      <link>http://localhost:1313/post/2020-terraform-in-vsphere/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/post/2020-terraform-in-vsphere/</guid>
+      <guid>http://localhost:1313/post/2020-terraform-in-vsphere/</guid>
       <description>&lt;h4 id=&#34;introduction-to-terraform&#34;&gt;Introduction to Terraform&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.terraform.io/intro/index.html&#34;&gt;Terraform&lt;/a&gt; by Hashicorp is a &amp;ldquo;tool for building, changing, and versioning infrastructure safely and efficiently&amp;rdquo;. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the &lt;code&gt;.tf &lt;/code&gt;extension) and Terraform builds that infrastructure for you.  The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.&lt;/p&gt;
 &lt;p&gt;In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is &amp;ldquo;smart&amp;rdquo; enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.&lt;/p&gt;</description>

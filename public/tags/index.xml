@@ -2,109 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Olivia Snowden&#39;s Blog</title>
-    <link>https://osnowden.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
     <lastBuildDate>Mon, 02 Mar 2026 16:30:00 -0500</lastBuildDate>
-    <atom:link href="https://osnowden.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
-      <link>https://osnowden.com/tags/ai/</link>
+      <link>http://localhost:1313/tags/ai/</link>
       <pubDate>Mon, 02 Mar 2026 16:30:00 -0500</pubDate>
-      <guid>https://osnowden.com/tags/ai/</guid>
+      <guid>http://localhost:1313/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>GCP</title>
-      <link>https://osnowden.com/tags/gcp/</link>
+      <link>http://localhost:1313/tags/gcp/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/gcp/</guid>
+      <guid>http://localhost:1313/tags/gcp/</guid>
       <description></description>
     </item>
     <item>
       <title>IaC</title>
-      <link>https://osnowden.com/tags/iac/</link>
+      <link>http://localhost:1313/tags/iac/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/iac/</guid>
+      <guid>http://localhost:1313/tags/iac/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>https://osnowden.com/tags/networking/</link>
+      <link>http://localhost:1313/tags/networking/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/networking/</guid>
+      <guid>http://localhost:1313/tags/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Terraform</title>
-      <link>https://osnowden.com/tags/terraform/</link>
+      <link>http://localhost:1313/tags/terraform/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/terraform/</guid>
+      <guid>http://localhost:1313/tags/terraform/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>https://osnowden.com/tags/automation/</link>
+      <link>http://localhost:1313/tags/automation/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/automation/</guid>
+      <guid>http://localhost:1313/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Home-Lab</title>
-      <link>https://osnowden.com/tags/home-lab/</link>
+      <link>http://localhost:1313/tags/home-lab/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/home-lab/</guid>
+      <guid>http://localhost:1313/tags/home-lab/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberry-Pi</title>
-      <link>https://osnowden.com/tags/raspberry-pi/</link>
+      <link>http://localhost:1313/tags/raspberry-pi/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/raspberry-pi/</guid>
+      <guid>http://localhost:1313/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://osnowden.com/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>AWS</title>
-      <link>https://osnowden.com/tags/aws/</link>
+      <link>http://localhost:1313/tags/aws/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/aws/</guid>
+      <guid>http://localhost:1313/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://osnowden.com/tags/bash/</link>
+      <link>http://localhost:1313/tags/bash/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/bash/</guid>
+      <guid>http://localhost:1313/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://osnowden.com/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://osnowden.com/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>https://osnowden.com/tags/azure/</link>
+      <link>http://localhost:1313/tags/azure/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://osnowden.com/tags/azure/</guid>
+      <guid>http://localhost:1313/tags/azure/</guid>
       <description></description>
     </item>
   </channel>
