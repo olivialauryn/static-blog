@@ -7,8 +7,16 @@
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2026 00:00:00 -0500</lastBuildDate>
     <atom:link href="https://osnowden.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating My Blog With Claude Code</title>
+      <link>https://osnowden.com/post/2026-automating-blog-with-claude/</link>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 -0500</pubDate>
+      <guid>https://osnowden.com/post/2026-automating-blog-with-claude/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently started using Claude — specifically the Claude Code CLI — and it&amp;rsquo;s already changed how I manage this blog. Instead of manually writing posts and running git commands, I can now just describe what I want and Claude handles the rest: writing the post, building the site, committing, and pushing to GitHub. It&amp;rsquo;s pretty wild.&lt;/p&gt;
+&lt;p&gt;To get started I picked up a Claude Pro subscription, which is required to use Claude Code — the free tier doesn&amp;rsquo;t include it. Totally worth it. Here&amp;rsquo;s how to get it set up on a MacBook Air.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Getting Started with Ansible</title>
       <link>https://osnowden.com/post/2022-ansible/</link>

@@ -1,6 +1,7 @@
 # Olivia Snowden's Blog
 
 ## Posts
+- [Automating My Blog With Claude Code](https://osnowden.com/post/2026-automating-blog-with-claude/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/)
 - [Getting Started with Ansible](https://osnowden.com/post/2022-ansible/)
