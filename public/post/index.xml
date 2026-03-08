@@ -7,25 +7,8 @@
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 16:30:00 -0500</lastBuildDate>
     <atom:link href="https://osnowden.com/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>A Brief History of Knitting</title>
-      <link>https://osnowden.com/post/2026-history-of-knitting/</link>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 -0500</pubDate>
-      <guid>https://osnowden.com/post/2026-history-of-knitting/</guid>
-      <description>&lt;p&gt;Knitting has been around way longer than you might think. Here&amp;rsquo;s a quick rundown of how we got from ancient yarn to your favorite cozy sweater.&lt;/p&gt;
-&lt;h2 id=&#34;the-early-days&#34;&gt;The Early Days&lt;/h2&gt;
-&lt;p&gt;The oldest known knitted artifacts date back to around the 11th century in Egypt — mostly socks, because apparently keeping your feet warm has always been a priority. These early pieces used a technique called &lt;em&gt;nalbinding&lt;/em&gt;, which is a bit different from modern knitting but close enough to count.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2026 Claude Test</title>
-      <link>https://osnowden.com/post/2026-claude-test/</link>
-      <pubDate>Fri, 06 Mar 2026 07:43:52 -0500</pubDate>
-      <guid>https://osnowden.com/post/2026-claude-test/</guid>
-      <description>&lt;h2 id=&#34;testing-header&#34;&gt;Testing header&lt;/h2&gt;
-&lt;p&gt;Testing body.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Rebuilding My Blog with Grok</title>
       <link>https://osnowden.com/post/2026-rebuilding-blog-with-grok/</link>

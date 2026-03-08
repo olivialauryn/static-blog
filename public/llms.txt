@@ -1,8 +1,6 @@
 # Olivia Snowden's Blog
 
 ## Posts
-- [A Brief History of Knitting](https://osnowden.com/post/2026-history-of-knitting/)
-- [2026 Claude Test](https://osnowden.com/post/2026-claude-test/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/)
 - [Getting Started with Ansible](https://osnowden.com/post/2022-ansible/)

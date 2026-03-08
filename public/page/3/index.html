@@ -159,33 +159,6 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Terraform in vSphere
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Introduction to Terraform Terraform by Hashicorp is a “tool for building, changing, and versioning infrastructure safely and efficiently”. Terraform works using infrastructure as code, meaning that build a blueprint of the resources you need in a configuration file (with the .tf extension) and Terraform builds that infrastructure for you. The Terraform package itself is a single binary file, easily downloaded, and is used to build/edit/destroy your resources.
-In contrast to older versions of infrastructure build tools like Packer, Terraform allows you to create infrastructure across multiple cloud providers and is “smart” enough to know how many more machines to create in context of what you already have. For example, if you have 5 servers on Azure, but you want 10, Terraform will build 5 more for you to bring you to a total of 10 versus building 10 more servers and leaving you with 15.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-07-08 00:00:00 +0000 UTC'>Wed, Jul 8, 2020</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
-  <a class="entry-link" aria-label="post link to Terraform in vSphere" href="https://osnowden.com/post/2020-terraform-in-vsphere/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Getting Started with vSphere
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Practicing installing/updating/building machines is much more fun when you aren’t running the risk of ruining an entire computer. To give myself a safe environment to work in, I have been using VMware’s vSphere in our home lab for many of my computer projects. vSphere is a suite of virtualization products that allow you to create and manage VMs. This allows me to work on VMs that can run any OS I like, and if I something goes wrong I can just delete the VM and begin again.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-07-01 00:00:00 +0000 UTC'>Wed, Jul 1, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
-  <a class="entry-link" aria-label="post link to Getting Started with vSphere" href="https://osnowden.com/post/2020-vmware-and-vsphere/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">Translating Speech with Cognitive Services
     </h2>
   </header>
@@ -235,6 +208,34 @@ Ubiquiti EdgeRouter X Ubiquiti UniFi 24 port switch 2 VMware ESXi Hosts A Synolo
   </div>
   <footer class="entry-footer"><span title='2020-06-12 00:00:00 +0000 UTC'>Fri, Jun 12, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
   <a class="entry-link" aria-label="post link to First Home Lab Setup" href="https://osnowden.com/post/2020-home-lab-setup/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Birdcam Pt. 3
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The final step in building my bird cam was creating a way to view the bird photos on demand. To do this I utilized Docker on a third Raspberry Pi by installing Docker and Docker Compose.
+sudo apt install docker sudo apt install docker-compose Compose is a useful Docker tool that, among other things, allows you to run multi-container applications configured in a YAML file. On Docker Hub a useful photo gallery image linuxserver/photoshow has already been created, so I used that image to serve up the bird photos. At this point, I had already configured an NFS server and made this Pi an NFS client via a shared folder. To create the photo gallery, I first signed into my personal Docker account. I then added two subdirectories to my home directory on the Pi: a config directory, and a thumbs directory.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-05-22 00:00:00 +0000 UTC'>Fri, May 22, 2020</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to Birdcam Pt. 3" href="https://osnowden.com/post/2020-birdcam-pt3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Birdcam Pt. 2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>After setting up the NFS server, but before making any NFS clients, I configured another Raspberry Pi to take the photos for my Bird Cam project. For this I used a Raspberry Pi Zero W and the appropriate camera attachment. Instead of using a keyboard/monitor to configure the Zero, I created a headless setup to allow the Zero to connect to wifi automatically when plugged in.
+First, I put the Raspbian Lite OS on a mini SD card. Once the OS was finished downloading, I removed the card from my computer and inserted it again. On my computer’s terminal I entered the SD card’s boot directory (found with df -h) and created a new file to configure the wifi information for my home network.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-05-20 00:00:00 +0000 UTC'>Wed, May 20, 2020</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Olivia Snowden</span></footer>
+  <a class="entry-link" aria-label="post link to Birdcam Pt. 2" href="https://osnowden.com/post/2020-birdcam-pt2/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
