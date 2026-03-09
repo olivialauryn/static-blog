@@ -223,9 +223,9 @@ def call_claude(encoded_photos: list[dict], filenames: list[str], post_slug: str
             }
         })
 
-    # Build the figure shortcode list for Claude to reference
-    shortcodes = "\n".join(
-        [f'  {{{{< figure src="/images/{post_slug}/{fn}" caption="[describe this photo]" >}}}}' for fn in filenames]
+    # Build standard Markdown image references for Claude to use
+    image_refs = "\n".join(
+        [f'  ![](/images/{post_slug}/{fn})' for fn in filenames]
     )
 
     content.append({
@@ -236,8 +236,8 @@ def call_claude(encoded_photos: list[dict], filenames: list[str], post_slug: str
             f"- Front matter with: title, date ({datetime.now().strftime('%Y-%m-%dT%H:%M:%S+00:00')}), "
             f"draft: false, tags (infer from content), description\n"
             f"- An engaging introduction paragraph\n"
-            f"- One section per photo using Hugo figure shortcodes. "
-            f"The image paths must use exactly these filenames:\n{shortcodes}\n"
+            f"- One section per photo using standard Markdown image syntax. "
+            f"The image references must use exactly these paths:\n{image_refs}\n"
             f"- A conclusion paragraph\n"
             f"- Total length: ~600-800 words\n\n"
             f"Respond with ONLY the Markdown. No code fences. No explanation."
