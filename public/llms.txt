@@ -1,7 +1,7 @@
 # Olivia Snowden's Blog
 
 ## Posts
-- [Cozy Projects and Analog Downtime](https://osnowden.com/post/2026-03-08-cozy-projects-and-analog-downtime/)
+- [When Your Home Lab Partner Models Handmade Knitwear](https://osnowden.com/post/2026-03-09-when-your-home-lab-partner-models-handmade-knitwear/)
 - [Automating My Blog With Claude Code](https://osnowden.com/post/2026-automating-blog-with-claude/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/)

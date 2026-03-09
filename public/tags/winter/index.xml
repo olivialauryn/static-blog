@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Winter on Olivia Snowden&#39;s Blog</title>
-    <link>https://osnowden.com/tags/winter/</link>
+    <link>http://localhost:1313/tags/winter/</link>
     <description>Recent content in Winter on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 20:20:08 +0000</lastBuildDate>
-    <atom:link href="https://osnowden.com/tags/winter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Mar 2026 07:50:43 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/winter/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>When Your Home Network Runs Cooler Than Your Knitting Projects</title>
-      <link>https://osnowden.com/post/2026-03-08-when-your-home-network-runs-cooler-than-your-knitting-projects/</link>
-      <pubDate>Sun, 08 Mar 2026 20:20:08 +0000</pubDate>
-      <guid>https://osnowden.com/post/2026-03-08-when-your-home-network-runs-cooler-than-your-knitting-projects/</guid>
-      <description>A cozy collection of handmade winter warmers that put even the most efficient home lab cooling systems to shame</description>
+      <title>Winter Coding Sessions: When Your Home Lab Gets Cozy</title>
+      <link>http://localhost:1313/post/2026-03-09-winter-coding-sessions-when-your-home-lab-gets-cozy/</link>
+      <pubDate>Mon, 09 Mar 2026 07:50:43 +0000</pubDate>
+      <guid>http://localhost:1313/post/2026-03-09-winter-coding-sessions-when-your-home-lab-gets-cozy/</guid>
+      <description>Sometimes the best home lab upgrades aren&amp;#39;t about hardware specs or network topology - they&amp;#39;re about staying warm and comfortable during those long winter coding sessions.</description>
     </item>
   </channel>
 </rss>

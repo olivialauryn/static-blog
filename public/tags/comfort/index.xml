@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Comfort on Olivia Snowden&#39;s Blog</title>
+    <link>http://localhost:1313/tags/comfort/</link>
+    <description>Recent content in Comfort on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Mon, 09 Mar 2026 07:50:43 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/comfort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Winter Coding Sessions: When Your Home Lab Gets Cozy</title>
+      <link>http://localhost:1313/post/2026-03-09-winter-coding-sessions-when-your-home-lab-gets-cozy/</link>
+      <pubDate>Mon, 09 Mar 2026 07:50:43 +0000</pubDate>
+      <guid>http://localhost:1313/post/2026-03-09-winter-coding-sessions-when-your-home-lab-gets-cozy/</guid>
+      <description>Sometimes the best home lab upgrades aren&amp;#39;t about hardware specs or network topology - they&amp;#39;re about staying warm and comfortable during those long winter coding sessions.</description>
+    </item>
+  </channel>
+</rss>

@@ -276,11 +276,45 @@ def slugify(title: str) -> str:
     return slug.strip("-")
 
 
-def write_post_to_hugo(markdown: str, config: dict, post_slug: str) -> Path:
+def fix_image_extensions(markdown: str, image_dir: Path) -> str:
+    """
+    Correct any image extension mismatches in the Markdown.
+    Replaces .jpeg references with .jpg (or whatever the actual file extension is)
+    by checking what files actually exist in the image directory.
+    """
+    # Build a map of stem -> actual filename for all images in the folder
+    actual_files = {p.stem.lower(): p.name for p in image_dir.iterdir() if p.is_file()}
+
+    def replace_ext(match):
+        full_ref = match.group(0)   # e.g. ![](/images/my-post/IMG_0001.jpeg)
+        img_path = match.group(1)   # e.g. /images/my-post/IMG_0001.jpeg
+        stem = Path(img_path).stem.lower()
+        if stem in actual_files:
+            correct_name = actual_files[stem]
+            corrected_path = str(Path(img_path).parent / correct_name)
+            return full_ref.replace(img_path, corrected_path)
+        return full_ref
+
+    fixed = re.sub(r'!\[.*?\]\((/images/[^\)]+)\)', replace_ext, markdown)
+
+    # Count how many were corrected
+    original_refs = re.findall(r'!\[.*?\]\((/images/[^\)]+)\)', markdown)
+    fixed_refs = re.findall(r'!\[.*?\]\((/images/[^\)]+)\)', fixed)
+    corrections = sum(1 for a, b in zip(original_refs, fixed_refs) if a != b)
+    if corrections:
+        print(f"   🔧 Fixed {corrections} image extension mismatch(es) in post.")
+
+    return fixed
+
+
+def write_post_to_hugo(markdown: str, config: dict, post_slug: str, image_dir: Path) -> Path:
     """Write the generated Markdown to Hugo's content/posts/ folder."""
     hugo_root = Path(config["hugo"]["site_path"]).expanduser()
     posts_dir = hugo_root / config["hugo"]["posts_path"]
     posts_dir.mkdir(parents=True, exist_ok=True)
+
+    # Fix any image extension mismatches before writing
+    markdown = fix_image_extensions(markdown, image_dir)
 
     date_prefix = config.get("output", {}).get("date_prefix", True)
     prefix = datetime.now().strftime("%Y-%m-%d-") if date_prefix else ""
@@ -385,7 +419,7 @@ def main():
 
     # Step 7: Write post file
     print("\n📄 Writing post to Hugo...")
-    post_path = write_post_to_hugo(markdown, config, post_slug)
+    post_path = write_post_to_hugo(markdown, config, post_slug, image_dir)
 
     # Step 8: Build Hugo site (optional — only needed if not using CI/CD)
     if config["hugo"].get("build_before_push", False):
