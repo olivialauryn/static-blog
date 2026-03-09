@@ -96,8 +96,18 @@ def fetch_photos_from_synology(config: dict, local_staging: Path) -> list[Path]:
         print("❌ No photos found in staging folder. Exiting.")
         sys.exit(1)
 
-    print(f"✅ {len(photos)} photo(s) ready for processing.")
-    return photos
+    # Rename HEIC/HEIF files to .jpg so filenames are consistent downstream
+    renamed = []
+    for p in photos:
+        if p.suffix.lower() in {".heic", ".heif"}:
+            new_path = p.with_suffix(".jpg")
+            p.rename(new_path)
+            renamed.append(new_path)
+        else:
+            renamed.append(p)
+
+    print(f"✅ {len(renamed)} photo(s) ready for processing.")
+    return renamed
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -110,15 +120,20 @@ def copy_photos_to_hugo(photos: list[Path], config: dict, post_slug: str) -> tup
     Returns (image_dir, list_of_filenames).
     """
     hugo_root = Path(config["hugo"]["site_path"]).expanduser()
-    images_root = hugo_root / config["hugo"]["images_path"] / post_slug
+
+    # Always use static/images as the base — Hugo serves static/ as web root
+    images_root = hugo_root / "static" / "images" / post_slug
     images_root.mkdir(parents=True, exist_ok=True)
+    print(f"   📁 Image folder created: {images_root}")
 
     filenames = []
     for photo in photos:
-        dest = images_root / photo.name
+        # Convert HEIC filenames to .jpg since we re-encode as JPEG
+        dest_name = Path(photo.name).stem + ".jpg"
+        dest = images_root / dest_name
         shutil.copy2(photo, dest)
-        filenames.append(photo.name)
-        print(f"   🖼️  Copied to Hugo: static/images/{post_slug}/{photo.name}")
+        filenames.append(dest_name)
+        print(f"   🖼️  Copied to Hugo: static/images/{post_slug}/{dest_name}")
 
     print(f"✅ {len(filenames)} photo(s) copied to Hugo static folder.")
     return images_root, filenames
@@ -154,17 +169,20 @@ def encode_photos_for_claude(photos: list[Path]) -> list[dict]:
             scale = MAX_DIM / max(w, h)
             img = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
 
-        # Re-encode as JPEG
+        # Re-encode as JPEG (also saves .jpg version to staging for consistent filenames)
         import io
         buf = io.BytesIO()
         img.save(buf, format="JPEG", quality=85)
         b64 = base64.standard_b64encode(buf.getvalue()).decode("utf-8")
 
+        # Use .jpg extension consistently regardless of original format
+        jpg_name = Path(photo.name).stem + ".jpg"
+
         encoded.append({
-            "filename": photo.name,
+            "filename": jpg_name,
             "b64": b64,
         })
-        print(f"   🔐 Encoded: {photo.name}")
+        print(f"   🔐 Encoded: {photo.name} → {jpg_name}")
 
     print(f"✅ {len(encoded)} photo(s) encoded for Claude.")
     return encoded

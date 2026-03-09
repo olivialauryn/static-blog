@@ -1,6 +1,7 @@
 # Olivia Snowden's Blog
 
 ## Posts
+- [When Your Partner's Knitting Hobby Takes Over (And You Secretly Love It)](https://osnowden.com/post/2026-03-08-when-your-partners-knitting-hobby-takes-over-and-you-secretly-love-it/)
 - [When Knitting Meets Home Lab Life: My Unexpected Tech Break](https://osnowden.com/post/2026-03-08-when-knitting-meets-home-lab-life-my-unexpected-tech-break/)
 - [Automating My Blog With Claude Code](https://osnowden.com/post/2026-automating-blog-with-claude/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
