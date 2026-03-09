@@ -1,0 +1,51 @@
+# ============================================================
+# Blog Post Pipeline Configuration
+# Usage: python blog-pipeline.py --config blog-config.yaml
+# ============================================================
+
+synology:
+  host: "192.168.1.90"
+  port: 5000
+  username: "admin"
+  password: "HomeLab123#"
+  # Shared folder path on the NAS where photos are stored
+  photo_share: "blog"
+  photo_folder: "photos/latest"
+
+hugo:
+  # Absolute path to your Hugo site root
+  site_path: "/Users/oliviasnowden/Desktop/Blog/blog"
+  posts_path: "/Users/oliviasnowden/Desktop/Blog/blog/content/post"
+  images_path: "/Users/oliviasnowden/Desktop/Blog/blog/static"
+  # Run 'hugo' to build the public/ folder before pushing
+  # Set to true if you manually push the public/ folder (no CI/CD)
+  # Set to false if you use GitHub Actions, Netlify, or Vercel (they build automatically)
+  build_before_push: true
+  # Preview site locally before pushing (opens browser)
+  preview: false
+  preview_port: 1313
+
+github:
+  repo_path: "/Users/oliviasnowden/Desktop/Blog/blog"
+  branch: "main"
+  # Automatically push after post is created
+  auto_push: true
+  # Commit message template (%s = post title)
+  commit_message: "Add blog post: %s"
+
+claude:
+  # Model to use for generation
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 2000
+  # Tone: conversational | professional | technical | humorous
+  blog_tone: "conversational"
+  # Describe your blog so Claude writes in context
+  blog_topic: "Personal technology and home lab adventures"
+  # Override the default system prompt (optional — leave blank to use default)
+  custom_system_prompt: ""
+
+output:
+  # How to name the output .md file: auto = slugified post title
+  filename_mode: "auto"
+  # If auto, optionally prefix with date
+  date_prefix: true

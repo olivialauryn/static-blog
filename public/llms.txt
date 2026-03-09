@@ -1,6 +1,7 @@
 # Olivia Snowden's Blog
 
 ## Posts
+- [Knitting My Way Through Winter: A Collection of Cozy Creations](https://osnowden.com/post/2026-03-08-knitting-my-way-through-winter-a-collection-of-cozy-creations/)
 - [Automating My Blog With Claude Code](https://osnowden.com/post/2026-automating-blog-with-claude/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/)
