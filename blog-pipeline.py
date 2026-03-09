@@ -202,11 +202,30 @@ def call_claude(encoded_photos: list[dict], filenames: list[str], post_slug: str
     model = claude_cfg.get("model", "claude-sonnet-4-20250514")
     max_tokens = claude_cfg.get("max_tokens", 2000)
 
+    # Build author context from config
+    author_cfg = config.get("author", {})
+    author_name = author_cfg.get("name", "")
+    author_bio = author_cfg.get("bio", "")
+    author_interests = author_cfg.get("interests", [])
+    author_writing_style = author_cfg.get("writing_style", "")
+
+    author_context = ""
+    if author_name:
+        author_context += f"The author's name is {author_name}. "
+    if author_bio:
+        author_context += f"About the author: {author_bio} "
+    if author_interests:
+        author_context += f"Their interests include: {', '.join(author_interests)}. "
+    if author_writing_style:
+        author_context += f"Writing style notes: {author_writing_style} "
+
     custom_prompt = claude_cfg.get("custom_system_prompt", "").strip()
     system_prompt = custom_prompt if custom_prompt else (
         f"You are a blog post writer for a Hugo static site. "
         f"This blog is about: {topic}. "
         f"Write in a {tone} tone. "
+        f"{author_context}"
+        f"Write the post in the first person, as if the author is telling the story themselves. "
         f"Always respond with ONLY valid Hugo Markdown — no preamble, no explanation, just the post. "
         f"Include a complete front matter block at the top."
     )

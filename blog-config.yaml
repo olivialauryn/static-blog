@@ -32,6 +32,26 @@ github:
   auto_push: true
   # Commit message template (%s = post title)
   commit_message: "Add blog post: %s"
+  
+# ============================================================
+# Author Details
+# These are injected into Claude's system prompt so every post
+# is written in your voice and reflects your background.
+# ============================================================
+author:
+  name: "Olivia Snowden"
+  bio: "Technology professional and home lab enthusiast."
+  # Used to help Claude write relevant, on-brand content
+  gender: female
+  age: 26
+  interests:
+    - home lab
+    - self-hosted software
+    - Raspberry Pi
+    - networking
+    - my female dog named Ruby
+  # Optional: describe how you like to write
+  writing_style: "Personal and approachable, with technical detail where relevant. I like to explain the why behind decisions, not just the what."
 
 claude:
   # Model to use for generation

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Crafting on Olivia Snowden&#39;s Blog</title>
-    <link>https://osnowden.com/tags/crafting/</link>
+    <link>http://localhost:1313/tags/crafting/</link>
     <description>Recent content in Crafting on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 20:24:02 +0000</lastBuildDate>
-    <atom:link href="https://osnowden.com/tags/crafting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Mar 2026 19:46:22 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/crafting/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>When Knitting Meets Home Lab Life: My Unexpected Tech Break</title>
-      <link>https://osnowden.com/post/2026-03-08-when-knitting-meets-home-lab-life-my-unexpected-tech-break/</link>
-      <pubDate>Sun, 08 Mar 2026 20:24:02 +0000</pubDate>
-      <guid>https://osnowden.com/post/2026-03-08-when-knitting-meets-home-lab-life-my-unexpected-tech-break/</guid>
-      <description>Sometimes the best debugging happens away from the keyboard. How I discovered that knitting needles and network cables have more in common than you&amp;#39;d think.</description>
+      <title>Knitting My Way Through Winter: A Collection of Cozy Projects</title>
+      <link>http://localhost:1313/post/2026-03-09-knitting-my-way-through-winter-a-collection-of-cozy-projects/</link>
+      <pubDate>Mon, 09 Mar 2026 19:46:22 +0000</pubDate>
+      <guid>http://localhost:1313/post/2026-03-09-knitting-my-way-through-winter-a-collection-of-cozy-projects/</guid>
+      <description>A look at my recent knitting adventures, from dog accessories to festive sweaters, and why I&amp;#39;ve fallen in love with colorwork patterns this winter.</description>
     </item>
   </channel>
 </rss>
