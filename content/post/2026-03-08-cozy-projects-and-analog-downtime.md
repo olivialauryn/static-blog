@@ -10,7 +10,7 @@ You know, sometimes you need to step away from the glowing screens and blinking 
 
 ## The Most Patient Model
 
-![](/images/cozy-projects-and-analog-downtime/IMG_0003.jpeg)
+![](/static/images/cozy-projects-and-analog-downtime/IMG_0003.jpeg)
 
 Let me introduce you to my quality assurance department. This little chihuahua has become the unofficial tester for all my knitted accessories, starting with this adorable hat and hood combo. Look at that expression – pure resignation mixed with just a hint of "the things I do for treats." The brown and cream pattern turned out better than I expected, and honestly, seeing how cozy it keeps our tiny friend during our chilly morning walks makes all those dropped stitches worth it.
 
