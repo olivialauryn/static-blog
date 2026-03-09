@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Work-From-Home on Olivia Snowden&#39;s Blog</title>
+    <link>https://osnowden.com/tags/work-from-home/</link>
+    <description>Recent content in Work-From-Home on Olivia Snowden&#39;s Blog</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>en</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Sun, 08 Mar 2026 20:12:13 +0000</lastBuildDate>
+    <atom:link href="https://osnowden.com/tags/work-from-home/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cozy Knits and Code: When Your Sweater Collection Rivals Your Server Rack</title>
+      <link>https://osnowden.com/post/2026-03-08-cozy-knits-and-code-when-your-sweater-collection-rivals-your-server-rack/</link>
+      <pubDate>Sun, 08 Mar 2026 20:12:13 +0000</pubDate>
+      <guid>https://osnowden.com/post/2026-03-08-cozy-knits-and-code-when-your-sweater-collection-rivals-your-server-rack/</guid>
+      <description>A peek into my unexpected knitting obsession and how handmade sweaters have become my favorite work-from-home uniform while managing my home lab.</description>
+    </item>
+  </channel>
+</rss>

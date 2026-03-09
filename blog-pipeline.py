@@ -291,7 +291,7 @@ def run_hugo_preview(config: dict):
 # ─────────────────────────────────────────────────────────────────────────────
 
 def git_push(config: dict, post_title: str, post_path: Path, image_dir: Path):
-    """Stage, commit, and push changes to GitHub."""
+    """Stage entire repo folder, commit, and push to GitHub."""
     gh = config["github"]
     repo_path = Path(gh["repo_path"]).expanduser()
     branch = gh.get("branch", "main")
@@ -300,8 +300,7 @@ def git_push(config: dict, post_title: str, post_path: Path, image_dir: Path):
     if not GIT_AVAILABLE:
         print("⚠️  gitpython not installed. Running git via shell instead.")
         cmds = [
-            ["git", "add", str(post_path.relative_to(repo_path))],
-            ["git", "add", str(image_dir.relative_to(repo_path))],
+            ["git", "add", "."],  # Stage entire folder
             ["git", "commit", "-m", commit_msg],
             ["git", "push", "origin", branch],
         ]
@@ -312,10 +311,7 @@ def git_push(config: dict, post_title: str, post_path: Path, image_dir: Path):
                 sys.exit(1)
     else:
         repo = Repo(repo_path)
-        repo.index.add([
-            str(post_path.relative_to(repo_path)),
-            str(image_dir.relative_to(repo_path)),
-        ])
+        repo.git.add(".")  # Stage entire folder
         repo.index.commit(commit_msg)
         origin = repo.remote(name="origin")
         origin.push(branch)
