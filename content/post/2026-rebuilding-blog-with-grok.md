@@ -2,7 +2,7 @@
 title: "Rebuilding My Blog with Grok"
 date: 2026-03-02T16:30:00-05:00
 draft: false
-tags: ["AI"]
+tags: ["AI", "grok"]
 ---
 
 After running a clean, minimal Ghostwriter theme for some time, I recently migrated this site to Hugo-PaperMod. The goal was better performance, built-in dark mode, improved mobile responsiveness, and easier customization while keeping the lightweight blogging feel.

@@ -2,7 +2,7 @@
 title: "Automating My Blog With Claude Code"
 date: 2026-03-08T00:00:00-05:00
 draft: false
-tags: ["ai", "automation", "linux"]
+tags: ["AI", "Automation", "Linux", "Claude"]
 ---
 
 I've recently started using Claude — specifically the Claude Code CLI — and it's already changed how I manage this blog. Instead of manually writing posts and running git commands, I can now just describe what I want and Claude handles the rest: writing the post, building the site, committing, and pushing to GitHub. It's pretty wild.
