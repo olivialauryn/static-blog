@@ -42,14 +42,14 @@ author:
   name: "Olivia Snowden"
   bio: "Technology professional and home lab enthusiast."
   # Used to help Claude write relevant, on-brand content
-  gender: female
-  age: 26
+  gender: "female"
+  age: "26"
+  occupation: "Work from home position as a cloud developer at a bank"
   interests:
     - home lab
-    - self-hosted software
-    - Raspberry Pi
-    - networking
+    - GCP
     - my female dog named Ruby
+    - my home city Louisville
   # Optional: describe how you like to write
   writing_style: "Personal and approachable, with technical detail where relevant. I like to explain the why behind decisions, not just the what."
 

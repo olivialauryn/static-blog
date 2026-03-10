@@ -1,7 +1,7 @@
 # Olivia Snowden's Blog
 
 ## Posts
-- [Winter Knits and Ruby's New Look: My Recent Fiber Adventures](https://osnowden.com/post/2026-03-10-winter-knits-and-rubys-new-look-my-recent-fiber-adventures/)
+- [When Knitting Becomes a Full-Stack Problem: Adventures in Analog Programming](https://osnowden.com/post/2026-03-10-when-knitting-becomes-a-full-stack-problem-adventures-in-analog-programming/)
 - [Automating My Blog With Claude Code](https://osnowden.com/post/2026-automating-blog-with-claude/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/)
