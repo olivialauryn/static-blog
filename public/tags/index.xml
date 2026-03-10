@@ -2,200 +2,144 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Olivia Snowden&#39;s Blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://osnowden.com/tags/</link>
     <description>Recent content in Tags on Olivia Snowden&#39;s Blog</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Mon, 09 Mar 2026 19:46:22 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Mar 2026 07:30:21 +0000</lastBuildDate>
+    <atom:link href="https://osnowden.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Crafting</title>
-      <link>http://localhost:1313/tags/crafting/</link>
-      <pubDate>Mon, 09 Mar 2026 19:46:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/crafting/</guid>
+      <title>Cozy</title>
+      <link>https://osnowden.com/tags/cozy/</link>
+      <pubDate>Tue, 10 Mar 2026 07:30:21 +0000</pubDate>
+      <guid>https://osnowden.com/tags/cozy/</guid>
       <description></description>
     </item>
     <item>
-      <title>Hobbies</title>
-      <link>http://localhost:1313/tags/hobbies/</link>
-      <pubDate>Mon, 09 Mar 2026 19:46:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hobbies/</guid>
+      <title>Crafts</title>
+      <link>https://osnowden.com/tags/crafts/</link>
+      <pubDate>Tue, 10 Mar 2026 07:30:21 +0000</pubDate>
+      <guid>https://osnowden.com/tags/crafts/</guid>
       <description></description>
     </item>
     <item>
       <title>Knitting</title>
-      <link>http://localhost:1313/tags/knitting/</link>
-      <pubDate>Mon, 09 Mar 2026 19:46:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/knitting/</guid>
+      <link>https://osnowden.com/tags/knitting/</link>
+      <pubDate>Tue, 10 Mar 2026 07:30:21 +0000</pubDate>
+      <guid>https://osnowden.com/tags/knitting/</guid>
       <description></description>
     </item>
     <item>
-      <title>Personal</title>
-      <link>http://localhost:1313/tags/personal/</link>
-      <pubDate>Mon, 09 Mar 2026 19:46:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/personal/</guid>
+      <title>Ruby</title>
+      <link>https://osnowden.com/tags/ruby/</link>
+      <pubDate>Tue, 10 Mar 2026 07:30:21 +0000</pubDate>
+      <guid>https://osnowden.com/tags/ruby/</guid>
       <description></description>
     </item>
     <item>
       <title>Winter</title>
-      <link>http://localhost:1313/tags/winter/</link>
-      <pubDate>Mon, 09 Mar 2026 19:46:22 +0000</pubDate>
-      <guid>http://localhost:1313/tags/winter/</guid>
+      <link>https://osnowden.com/tags/winter/</link>
+      <pubDate>Tue, 10 Mar 2026 07:30:21 +0000</pubDate>
+      <guid>https://osnowden.com/tags/winter/</guid>
       <description></description>
     </item>
     <item>
       <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <link>https://osnowden.com/tags/ai/</link>
       <pubDate>Sun, 08 Mar 2026 00:00:00 -0500</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>https://osnowden.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>https://osnowden.com/tags/automation/</link>
       <pubDate>Sun, 08 Mar 2026 00:00:00 -0500</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>https://osnowden.com/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://osnowden.com/tags/linux/</link>
       <pubDate>Sun, 08 Mar 2026 00:00:00 -0500</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://osnowden.com/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>GCP</title>
-      <link>http://localhost:1313/tags/gcp/</link>
+      <link>https://osnowden.com/tags/gcp/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gcp/</guid>
+      <guid>https://osnowden.com/tags/gcp/</guid>
       <description></description>
     </item>
     <item>
       <title>IaC</title>
-      <link>http://localhost:1313/tags/iac/</link>
+      <link>https://osnowden.com/tags/iac/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/iac/</guid>
+      <guid>https://osnowden.com/tags/iac/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>http://localhost:1313/tags/networking/</link>
+      <link>https://osnowden.com/tags/networking/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/networking/</guid>
+      <guid>https://osnowden.com/tags/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Terraform</title>
-      <link>http://localhost:1313/tags/terraform/</link>
+      <link>https://osnowden.com/tags/terraform/</link>
       <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/terraform/</guid>
+      <guid>https://osnowden.com/tags/terraform/</guid>
       <description></description>
     </item>
     <item>
       <title>Home-Lab</title>
-      <link>http://localhost:1313/tags/home-lab/</link>
+      <link>https://osnowden.com/tags/home-lab/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/home-lab/</guid>
+      <guid>https://osnowden.com/tags/home-lab/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberry-Pi</title>
-      <link>http://localhost:1313/tags/raspberry-pi/</link>
+      <link>https://osnowden.com/tags/raspberry-pi/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/raspberry-pi/</guid>
+      <guid>https://osnowden.com/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://osnowden.com/tags/python/</link>
       <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://osnowden.com/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>AWS</title>
-      <link>http://localhost:1313/tags/aws/</link>
+      <link>https://osnowden.com/tags/aws/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/aws/</guid>
+      <guid>https://osnowden.com/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>http://localhost:1313/tags/bash/</link>
+      <link>https://osnowden.com/tags/bash/</link>
       <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bash/</guid>
+      <guid>https://osnowden.com/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>https://osnowden.com/tags/docker/</link>
       <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>https://osnowden.com/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>http://localhost:1313/tags/azure/</link>
+      <link>https://osnowden.com/tags/azure/</link>
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/azure/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Coding</title>
-      <link>http://localhost:1313/tags/coding/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/coding/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Comfort</title>
-      <link>http://localhost:1313/tags/comfort/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/comfort/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Craft</title>
-      <link>http://localhost:1313/tags/craft/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/craft/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Home-Projects</title>
-      <link>http://localhost:1313/tags/home-projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/home-projects/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Homelab</title>
-      <link>http://localhost:1313/tags/homelab/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/homelab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Lifestyle</title>
-      <link>http://localhost:1313/tags/lifestyle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lifestyle/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pets</title>
-      <link>http://localhost:1313/tags/pets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pets/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Remote-Work</title>
-      <link>http://localhost:1313/tags/remote-work/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/remote-work/</guid>
+      <guid>https://osnowden.com/tags/azure/</guid>
       <description></description>
     </item>
   </channel>
