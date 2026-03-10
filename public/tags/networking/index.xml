@@ -7,8 +7,15 @@
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 07:54:47 +0000</lastBuildDate>
     <atom:link href="https://osnowden.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When Knitting Becomes a Full-Stack Problem: Adventures in Analog Programming</title>
+      <link>https://osnowden.com/post/2026-03-10-when-knitting-becomes-a-full-stack-problem-adventures-in-analog-programming/</link>
+      <pubDate>Tue, 10 Mar 2026 07:54:47 +0000</pubDate>
+      <guid>https://osnowden.com/post/2026-03-10-when-knitting-becomes-a-full-stack-problem-adventures-in-analog-programming/</guid>
+      <description>From colorwork algorithms to dog hat deployment strategies - how my knitting hobby mirrors my tech career in unexpected ways</description>
+    </item>
     <item>
       <title>GCP Load Balancers with Terraform</title>
       <link>https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/</link>

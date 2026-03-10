@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Automating My Blog With Claude Code | Olivia Snowden&#39;s Blog</title>
-<meta name="keywords" content="ai, automation, linux">
+<meta name="keywords" content="AI, Automation, Linux, Claude">
 <meta name="description" content="I&rsquo;ve recently started using Claude — specifically the Claude Code CLI — and it&rsquo;s already changed how I manage this blog. Instead of manually writing posts and running git commands, I can now just describe what I want and Claude handles the rest: writing the post, building the site, committing, and pushing to GitHub. It&rsquo;s pretty wild.
 To get started I picked up a Claude Pro subscription, which is required to use Claude Code — the free tier doesn&rsquo;t include it. Totally worth it. Here&rsquo;s how to get it set up on a MacBook Air.">
 <meta name="author" content="Olivia Snowden">
@@ -81,9 +81,10 @@ To get started I picked up a Claude Pro subscription, which is required to use C
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2026-03-08T00:00:00-05:00">
     <meta property="article:modified_time" content="2026-03-08T00:00:00-05:00">
-    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="AI">
     <meta property="article:tag" content="Automation">
     <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Claude">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Automating My Blog With Claude Code">
 <meta name="twitter:description" content="I&rsquo;ve recently started using Claude — specifically the Claude Code CLI — and it&rsquo;s already changed how I manage this blog. Instead of manually writing posts and running git commands, I can now just describe what I want and Claude handles the rest: writing the post, building the site, committing, and pushing to GitHub. It&rsquo;s pretty wild.
@@ -118,7 +119,7 @@ To get started I picked up a Claude Pro subscription, which is required to use C
   "name": "Automating My Blog With Claude Code",
   "description": "I\u0026rsquo;ve recently started using Claude — specifically the Claude Code CLI — and it\u0026rsquo;s already changed how I manage this blog. Instead of manually writing posts and running git commands, I can now just describe what I want and Claude handles the rest: writing the post, building the site, committing, and pushing to GitHub. It\u0026rsquo;s pretty wild.\nTo get started I picked up a Claude Pro subscription, which is required to use Claude Code — the free tier doesn\u0026rsquo;t include it. Totally worth it. Here\u0026rsquo;s how to get it set up on a MacBook Air.\n",
   "keywords": [
-    "ai", "automation", "linux"
+    "AI", "Automation", "Linux", "Claude"
   ],
   "articleBody": "I’ve recently started using Claude — specifically the Claude Code CLI — and it’s already changed how I manage this blog. Instead of manually writing posts and running git commands, I can now just describe what I want and Claude handles the rest: writing the post, building the site, committing, and pushing to GitHub. It’s pretty wild.\nTo get started I picked up a Claude Pro subscription, which is required to use Claude Code — the free tier doesn’t include it. Totally worth it. Here’s how to get it set up on a MacBook Air.\nInstalling Claude Code CLI on a MacBook Air Prerequisites:\nmacOS 13 (Ventura) or later A Claude Pro, Max, Teams, or Enterprise account Option 1: Native Installer (Recommended) Open Terminal and run:\ncurl -fsSL https://claude.ai/install.sh | bash This pulls down the latest stable release with no extra dependencies. It also auto-updates in the background, so you’ll always be on the latest version.\nOption 2: Homebrew If you’re already a Homebrew user:\nbrew install --cask claude-code Note that Homebrew installs won’t auto-update — you’ll need to run brew upgrade claude-code manually when a new version drops.\nOption 3: npm If you have Node.js 18+ installed:\nnpm install -g @anthropic-ai/claude-code Skip the sudo — it causes permission headaches and is a security risk.\nLogging In Once installed, just run claude in your terminal. It’ll open a browser tab to Anthropic’s auth page. Log in with your account, hit Authorize, and head back to your terminal. Your credentials get saved to your Mac’s keychain so you only have to do this once.\nWhat I’m Using It For Right now I’m using Claude Code to automate my Hugo blog workflow. I tell it what I want to write, it generates the markdown post, rebuilds the site, and pushes everything to GitHub — all from a single conversation in the terminal. No context switching, no manual git commands.\nIt’s a genuinely useful tool, especially if you’re already comfortable in the terminal. Worth trying if you haven’t already.\n",
   "wordCount" : "336",
@@ -271,9 +272,10 @@ To get started I picked up a Claude Pro subscription, which is required to use C
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://osnowden.com/tags/ai/">Ai</a></li>
+      <li><a href="https://osnowden.com/tags/ai/">AI</a></li>
       <li><a href="https://osnowden.com/tags/automation/">Automation</a></li>
       <li><a href="https://osnowden.com/tags/linux/">Linux</a></li>
+      <li><a href="https://osnowden.com/tags/claude/">Claude</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://osnowden.com/post/2026-03-10-when-knitting-becomes-a-full-stack-problem-adventures-in-analog-programming/">
@@ -292,7 +294,7 @@ To get started I picked up a Claude Pro subscription, which is required to use C
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Automating My Blog With Claude Code on x"
-            href="https://x.com/intent/tweet/?text=Automating%20My%20Blog%20With%20Claude%20Code&amp;url=https%3a%2f%2fosnowden.com%2fpost%2f2026-automating-blog-with-claude%2f&amp;hashtags=ai%2cautomation%2clinux">
+            href="https://x.com/intent/tweet/?text=Automating%20My%20Blog%20With%20Claude%20Code&amp;url=https%3a%2f%2fosnowden.com%2fpost%2f2026-automating-blog-with-claude%2f&amp;hashtags=AI%2cAutomation%2cLinux%2cClaude">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
