@@ -7,8 +7,15 @@
     <generator>Hugo -- 0.157.0</generator>
     <language>en</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Sun, 08 Mar 2026 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://osnowden.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Blog Posts with a Synology NAS and Claude AI</title>
+      <link>https://osnowden.com/post/2026-03-10-automating-blog-posts-with-nas-and-claude/</link>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://osnowden.com/post/2026-03-10-automating-blog-posts-with-nas-and-claude/</guid>
+      <description>How I built a Python pipeline that pulls photos from a Synology DS420j NAS, sends them to the Claude API, and automatically generates and publishes a Hugo blog post to GitHub — all from a single command.</description>
+    </item>
     <item>
       <title>Automating My Blog With Claude Code</title>
       <link>https://osnowden.com/post/2026-automating-blog-with-claude/</link>

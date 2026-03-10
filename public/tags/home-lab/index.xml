@@ -17,6 +17,13 @@
       <description>From colorwork algorithms to dog hat deployment strategies - how my knitting hobby mirrors my tech career in unexpected ways</description>
     </item>
     <item>
+      <title>Automating Blog Posts with a Synology NAS and Claude AI</title>
+      <link>https://osnowden.com/post/2026-03-10-automating-blog-posts-with-nas-and-claude/</link>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://osnowden.com/post/2026-03-10-automating-blog-posts-with-nas-and-claude/</guid>
+      <description>How I built a Python pipeline that pulls photos from a Synology DS420j NAS, sends them to the Claude API, and automatically generates and publishes a Hugo blog post to GitHub — all from a single command.</description>
+    </item>
+    <item>
       <title>Getting Started with Ansible</title>
       <link>https://osnowden.com/post/2022-ansible/</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>

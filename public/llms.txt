@@ -2,6 +2,7 @@
 
 ## Posts
 - [When Knitting Becomes a Full-Stack Problem: Adventures in Analog Programming](https://osnowden.com/post/2026-03-10-when-knitting-becomes-a-full-stack-problem-adventures-in-analog-programming/)
+- [Automating Blog Posts with a Synology NAS and Claude AI](https://osnowden.com/post/2026-03-10-automating-blog-posts-with-nas-and-claude/)
 - [Automating My Blog With Claude Code](https://osnowden.com/post/2026-automating-blog-with-claude/)
 - [Rebuilding My Blog with Grok](https://osnowden.com/post/2026-rebuilding-blog-with-grok/)
 - [GCP Load Balancers with Terraform](https://osnowden.com/post/2023-building-load-balancers-in-gcp-with-terraform/)
