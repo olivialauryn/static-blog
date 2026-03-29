@@ -15,7 +15,7 @@
       <pubDate>Sun, 29 Mar 2026 10:44:59 -0400</pubDate>
       <guid>https://osnowden.com/post/2026-03-29-capstone-redo-pt1/</guid>
       <description>&lt;h1 id=&#34;i-redid-my-2020-college-capstone-with-ai--heres-what-changed&#34;&gt;I Redid My 2020 College Capstone With AI — Here&amp;rsquo;s What Changed&lt;/h1&gt;
-&lt;p&gt;In 2020, I spent my senior year of college building a machine learning model for my capstone project. Inspired by new (at the time) advances in self-driving cars, the goal to train a convolutional neural network (CNN) to detect obstacles in road images. Then prove that biased training data made it worse. It took months of grinding through TensorFlow documentation, manually hunting for images, and writing code I didn&amp;rsquo;t fully understand yet.&lt;/p&gt;</description>
+&lt;p&gt;In 2020, I spent my senior year of college building a machine learning model for my capstone project. Inspired by new (at the time) advances in self-driving cars, the goal was to train a convolutional neural network to detect obstacles in road images. I wanted to prove that biased training data made the CNN worse. It took months of grinding through TensorFlow documentation, manually hunting for images, and writing code I didn&amp;rsquo;t fully understand yet.&lt;/p&gt;</description>
     </item>
     <item>
       <title>When Knitting Becomes a Full-Stack Problem: Adventures in Analog Programming</title>

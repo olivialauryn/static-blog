@@ -7,23 +7,23 @@ tags: ["AI", "Claude", "Automation", "Python", "Kaggle"]
 
 # I Redid My 2020 College Capstone With AI — Here's What Changed
 
-In 2020, I spent my senior year of college building a machine learning model for my capstone project. Inspired by new (at the time) advances in self-driving cars, the goal to train a convolutional neural network (CNN) to detect obstacles in road images. Then prove that biased training data made it worse. It took months of grinding through TensorFlow documentation, manually hunting for images, and writing code I didn't fully understand yet.
+In 2020, I spent my senior year of college building a machine learning model for my capstone project. Inspired by new (at the time) advances in self-driving cars, the goal was to train a convolutional neural network to detect obstacles in road images. I wanted to prove that biased training data made the CNN worse. It took months of grinding through TensorFlow documentation, manually hunting for images, and writing code I didn't fully understand yet.
 
 In 2026, I redid the entire thing in a single conversation with Claude.
 
-This post is about what that experience revealed — not just about how much AI tooling has improved, but about what it means to actually understand a project versus just completing one.
+This post is about what that experience revealed — not just about how much AI tooling has improved, but how to use it to acomplish bigger and better projects.
 
 ---
 
 ## The original project
 
-Read about my original capstone at the blog posts here:
+Read about my original capstone here:
 [pt1](https://osnowden.com/post/2020-capstone-pt1/)
 [pt2](https://osnowden.com/post/2020-capstone-pt2/)
 
 Self-driving cars use neural networks to detect obstacles — pedestrians, cyclists, vehicles — and if those networks are trained on biased data, they perform poorly in conditions they've never seen. I wanted to demonstrate this experimentally using a model I built myself.
 
-The 2020 version had real limitations. My dataset was only 200 images since I scraped manually from a dashcam livestream website and a Kaggle dataset. My CNN was copied largely from TensorFlow tutorials. The code worked, sort of. Testing accuracy hovered between 72–80%, which I had to be happy with given how small my dataset was.
+The 2020 version had real limitations. My dataset was only 200 images since I scraped manually from a dashcam livestream website and a Kaggle dataset of roads. My CNN was copied largely from TensorFlow tutorials. The code worked, sort of. Testing accuracy hovered between 72–80%, which I had to be happy with given how small my dataset was.
 
 One of my utility scripts had a bug I didn't catch until years later: `i=+1` always set the counter to 1 instead of incrementing it. Small, but the kind of thing that erodes confidence in your own results.
 
@@ -31,7 +31,7 @@ One of my utility scripts had a bug I didn't catch until years later: `i=+1` alw
 
 ## What I brought to Claude in 2026
 
-I uploaded everything: two blog posts I'd written explaining the project, the academic paper draft, and the Python scripts I originally used to edit images. Then I described what I wanted: redo the experiment, modernize the code, understand it better this time.
+I uploaded everything I could to give Claude AI a starting point: two blog posts I'd written explaining the project, the academic paper draft, and scripts. Then I described what I wanted: redo the experiment, modernize the code, and understand it better this time.
 
 ### The code audit
 
