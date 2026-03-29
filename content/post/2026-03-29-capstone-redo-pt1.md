@@ -1,7 +1,7 @@
 ---
 title: "Capstone Revisited Pt1"
 date: 2026-03-29T10:44:59-04:00
-draft: true
+draft: false
 tags: ["AI", "Claude", "Automation", "Python", "Kaggle"]
 ---
 
